@@ -1,0 +1,27 @@
+[
+    {
+        "_id": 0,
+        "name": "LR1",
+        "max_amount": 500000.0
+    },
+    {
+        "_id": 1,
+        "name": "Aframax",
+        "max_amount": 750000.0
+    },
+    {
+        "_id": 2,
+        "name": "Suezmax",
+        "max_amount": 1000000.0
+    },
+    {
+        "_id": 3,
+        "name": "VLCC",
+        "max_amount": 2000000.0
+    },
+    {
+        "_id": 4,
+        "name": "ULCC",
+        "max_amount": 4000000.0
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "type": "Container",
+        "_id": 0
+    },
+    {
+        "type": "Liquid",
+        "_id": 1
+    },
+    {
+        "type": "Bulk",
+        "_id": 2
+    }
+]

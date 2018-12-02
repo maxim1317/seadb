@@ -95,4 +95,21 @@ def gen_ports():
 
             dest_id += 1
 
+        if isinstance(data["junctions"], str):
+            continue
+
+        for destination, distance in data["junctions"].items():
+            d = dest_sample
+            dest_name = destination.lstrip().rstrip().rsplit(' ', 1)[0]
+            d["_id"]         = dest_id
+            d["departure"]   = find_port(name, port_list)
+            if find_port(dest_name, port_list) == -1:
+                continue
+            d["destination"] = find_port(dest_name, port_list)
+            d["distance"]    = distance
+
+            dest_list.append(d.copy())
+
+            dest_id += 1
+
     return port_list, cntr_list, dest_list

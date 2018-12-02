@@ -3,12 +3,8 @@ from utils import *
 
 nav_db = '../resources/PUB151_distances.json'
 
-ports = "../resources/json/ports.json"
-dests = "../resources/json/dests.json"
-cntrs = "../resources/json/cntrs.json"
 
-
-def add_country(country, cntr_id, cntr_list):
+def gen_country(country, cntr_id, cntr_list):
 
     cntr_sample = {
         "_id"        : 0,
@@ -29,22 +25,6 @@ def add_country(country, cntr_id, cntr_list):
 
         cntr_id += 1
     return cntr_id, cntr_list
-
-
-def find_country(country, cntr_list):
-    for cntr in cntr_list:
-        if country == cntr["name"]:
-            return cntr["_id"]
-
-    return -1
-
-
-def find_port(name, port_list):
-    for port in port_list:
-        if name == port["name"]:
-            return port["_id"]
-
-    return -1
 
 
 def gen_ports():
@@ -80,7 +60,7 @@ def gen_ports():
         name    = port_name_split[0].lstrip().rstrip()
         country = port_name_split[-1].lstrip().rstrip()
 
-        cntr_id, cntr_list = add_country(country, cntr_id, cntr_list)
+        cntr_id, cntr_list = gen_country(country, cntr_id, cntr_list)
 
         port["_id"]        = port_id
         port["name"]       = name
@@ -115,14 +95,4 @@ def gen_ports():
 
             dest_id += 1
 
-    list_to_json(port_list, ports)
-    print("Ports added:        ", len(port_list))
-    list_to_json(cntr_list, cntrs)
-    print("Countries added:    ", len(cntr_list))
-    list_to_json(dest_list, dests)
-    print("Destinations added: ", len(dest_list))
-
-    return 0
-
-
-gen_ports()
+    return port_list, cntr_list, dest_list

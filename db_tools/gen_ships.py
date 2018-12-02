@@ -65,7 +65,7 @@ def gen_rand_ship(port_list, crgo_list, cntr_list, size_list):
         size_list[size_type]["max_amount"],
         size_list[size_type]["max_amount"] - 100000.0
     )
-    ship["size_type_id"] = size_list[size_type]["_id"]
+    ship["size_type_id"] = str(size_list[size_type]["_id"])
 
     return ship
 

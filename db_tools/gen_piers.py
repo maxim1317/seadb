@@ -5,16 +5,29 @@ pier_sample = {
 }
 
 
-def gen_piers(port_coll, crgo_coll, per_port_max=5):
+def gen_piers(port_coll, crgo_coll, max_per_port=5):
     import random
+    from tqdm import tqdm
 
     pier_list = []
 
+    pbar = tqdm(total=port_coll.count(), desc="Generating piers")
+
     for port in port_coll.find():
-        for pier in range(random.randint(1, per_port_max)):
+        for pier in range(random.randint(1, max_per_port)):
             pier = pier_sample
 
-            pier["port_id"]   = port["_id"]
-            pier["pier_type"] = crgo_coll.find()[random.randint(crgo_coll.count_documents({}))]
+            k = 750000.0 / 24
+            k_left  = k / 3
+            k_right = k / 10
+
+            pier["port_id"]   = str(port["_id"])
+            pier["pier_type"] = list(crgo_coll.find())[random.randint(0, crgo_coll.count() - 1)]["_id"]
+            pier["rate"]      = random.triangular(k_left, k_right, k / 5)
+
+            pier_list.append(pier.copy())
+        pbar.update()
+
+    pbar.close()
 
     return pier_list

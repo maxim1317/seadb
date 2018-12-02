@@ -42,3 +42,14 @@ def find_port(name, port_list):
             return port["_id"]
 
     return -1
+
+
+def serealize(some_list):
+    import bson
+
+    for item in some_list:
+        for key, value in item.items():
+            if bson.objectid.ObjectId.is_valid(value):
+                item[key] = str(item[key])
+
+    return some_list

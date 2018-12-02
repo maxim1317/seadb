@@ -128,3 +128,5 @@ stats/
 .DS_Store
 
 db/
+
+resources/json/

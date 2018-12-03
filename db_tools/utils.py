@@ -28,20 +28,12 @@ def json_to_list(json_path):
     return json_to_dict(json_path)
 
 
-def find_country(country, cntr_list):
-    for cntr in cntr_list:
-        if country == cntr["name"]:
-            return cntr["_id"]
-
-    return -1
-
-
-def find_port(name, port_list):
-    for port in port_list:
-        if name == port["name"]:
-            return port["_id"]
-
-    return -1
+def find_doc(name, coll):
+    # print(coll.find_one({'name': name}))
+    if coll.count({'name': name}) != 0:
+        return coll.find({'name': name}).limit(1)[0]["_id"]
+    else:
+        return -1
 
 
 def serealize(some_list):
@@ -53,3 +45,8 @@ def serealize(some_list):
                 item[key] = str(item[key])
 
     return some_list
+
+
+def coll_from_list(coll, import_list):
+    coll.insert_many(import_list)
+    return

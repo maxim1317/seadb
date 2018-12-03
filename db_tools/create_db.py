@@ -1,9 +1,9 @@
 from pymongo import MongoClient
 from tqdm import tqdm
 
-from gen_ports_cntrs_dests import gen_ports
-from gen_ships import gen_ships, gen_crgos, gen_sizes
-from gen_piers import gen_piers
+from gen_ports_cntrs_dests import *
+from gen_ships import *
+from gen_piers import *
 
 from utils import *
 
@@ -17,11 +17,6 @@ piers_file = "../resources/json/piers.json"
 
 
 DB_NAME = 'seadb'
-
-
-def coll_from_list(coll, import_list):
-    coll.insert_many(import_list)
-    return
 
 
 def create_coll_ship(db):
@@ -46,13 +41,17 @@ def create_db(gen=False):
     if gen:
         pbar = tqdm(total=7, desc="Generating data ")
 
-        port_list, cntr_list, dest_list = gen_ports()
-        pbar.update(3)
-        crgo_list = gen_crgos()
+        cntr_list = gen_cntrs(db)
         pbar.update()
-        size_list = gen_sizes()
+        port_list = gen_ports(db)
         pbar.update()
-        ship_list = gen_ships(port_list, crgo_list, cntr_list, size_list, amount=100)
+        dest_list = gen_dests(db)
+        pbar.update()
+        crgo_list = gen_crgos(db)
+        pbar.update()
+        size_list = gen_sizes(db)
+        pbar.update()
+        ship_list = gen_ships(db, amount=200)
         pbar.update()
 
     else:
@@ -63,14 +62,12 @@ def create_db(gen=False):
         ship_list = json_to_list(ships_file)
         size_list = json_to_list(sizes_file)
 
-    # shcp_list = ship_list.copy()
-
-    coll_from_list(ports, port_list)
-    coll_from_list(dests, dest_list)
-    coll_from_list(cntrs, cntr_list)
-    coll_from_list(crgos, crgo_list)
-    coll_from_list(ships, ship_list)
-    coll_from_list(sizes, size_list)
+        coll_from_list(ports, port_list)
+        coll_from_list(dests, dest_list)
+        coll_from_list(cntrs, cntr_list)
+        coll_from_list(crgos, crgo_list)
+        coll_from_list(ships, ship_list)
+        coll_from_list(sizes, size_list)
 
     if gen:
         pier_list = gen_piers(ports, crgos, max_per_port=10)
@@ -102,3 +99,4 @@ def create_db(gen=False):
 
 
 create_db(gen=True)
+# create_db()

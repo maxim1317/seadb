@@ -67,11 +67,7 @@ def gen_rand_ship(db):
     ship["home_port_id"] = db.ports.find({})[random.randint(0, db.ports.count() - 1)]["_id"]
     ship["ship_type_id"] = db.cargo_types.find({})[random.randint(0, db.cargo_types.count() - 1)]["_id"]
     ship["flag_id"]      = db.countries.find({})[random.randint(0, db.countries.count() - 1)]["_id"]
-    ship["cargo_amount"] = random.triangular(
-        0,
-        db.sizes.find_one({"no": size_type})["max_amount"],
-        db.sizes.find_one({"no": size_type})["max_amount"] - 100000.0
-    )
+    ship["cargo_amount"] = 0
     ship["size_type_id"] = db.sizes.find_one({"no": size_type})["_id"]
 
     return ship
@@ -80,6 +76,7 @@ def gen_rand_ship(db):
 def gen_ships(db, amount=50):
     from tqdm import tqdm
 
+    db.ships.drop()
     ship_coll = db.ships
     ship_list = []
 

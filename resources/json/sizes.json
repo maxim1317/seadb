@@ -3,30 +3,30 @@
         "no": 0,
         "name": "LR1",
         "max_amount": 500000.0,
-        "_id": "5c0546e2af5b831c612f159a"
+        "_id": "5c058f38af5b831becc6e087"
     },
     {
         "no": 1,
         "name": "Aframax",
         "max_amount": 750000.0,
-        "_id": "5c0546e2af5b831c612f159b"
+        "_id": "5c058f38af5b831becc6e088"
     },
     {
         "no": 2,
         "name": "Suezmax",
         "max_amount": 1000000.0,
-        "_id": "5c0546e2af5b831c612f159c"
+        "_id": "5c058f38af5b831becc6e089"
     },
     {
         "no": 3,
         "name": "VLCC",
         "max_amount": 2000000.0,
-        "_id": "5c0546e2af5b831c612f159d"
+        "_id": "5c058f38af5b831becc6e08a"
     },
     {
         "no": 4,
         "name": "ULCC",
         "max_amount": 4000000.0,
-        "_id": "5c0546e2af5b831c612f159e"
+        "_id": "5c058f38af5b831becc6e08b"
     }
 ]

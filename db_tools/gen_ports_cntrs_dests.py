@@ -71,6 +71,9 @@ def gen_ports(db):
     return port_list
 
 
+
+
+
 def gen_dests(db):
     from tqdm import tqdm
     dest_coll = db.destinations

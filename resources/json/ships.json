@@ -1,2002 +1,2002 @@
 [
     {
-        "name": "Richard Brown",
-        "avg_speed": 8.8635504565237,
-        "home_port_id": "5c054671af5b831c612eddf5",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed79c",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1644528.412431009,
-        "_id": "5c0546e5af5b831c612f159f"
-    },
-    {
-        "name": "Robert Encarnacion",
-        "avg_speed": 15.550186497758514,
-        "home_port_id": "5c054671af5b831c612ede67",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed802",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 364892.5503502858,
-        "_id": "5c0546e5af5b831c612f15a0"
-    },
-    {
-        "name": "Cheryl Crutchfield",
-        "avg_speed": 10.402166749175022,
-        "home_port_id": "5c054671af5b831c612edadd",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed83d",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 794314.1836484248,
-        "_id": "5c0546e5af5b831c612f15a1"
-    },
-    {
-        "name": "Javier Sandoz",
-        "avg_speed": 20.993887437545855,
-        "home_port_id": "5c054671af5b831c612ed888",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed784",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 481380.91974024684,
-        "_id": "5c0546e5af5b831c612f15a2"
-    },
-    {
-        "name": "Robert Boykins",
-        "avg_speed": 14.819291166613532,
-        "home_port_id": "5c054671af5b831c612edd9a",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7f3",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 621151.74006832,
-        "_id": "5c0546e5af5b831c612f15a3"
-    },
-    {
-        "name": "Jason Sneed",
-        "avg_speed": 9.874946531473226,
-        "home_port_id": "5c054671af5b831c612ed97c",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7d3",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 888246.9318772773,
-        "_id": "5c0546e5af5b831c612f15a4"
-    },
-    {
-        "name": "Jennifer Hicks",
-        "avg_speed": 18.087723870204478,
-        "home_port_id": "5c054671af5b831c612edd5b",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7af",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 668686.2765198192,
-        "_id": "5c0546e5af5b831c612f15a5"
-    },
-    {
-        "name": "Marie Stewart",
-        "avg_speed": 13.650533292311339,
-        "home_port_id": "5c054671af5b831c612ed860",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7a7",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1722742.038001156,
-        "_id": "5c0546e5af5b831c612f15a6"
-    },
-    {
-        "name": "Shawn Scott",
-        "avg_speed": 19.904078102578268,
-        "home_port_id": "5c054671af5b831c612ede73",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7e0",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 640453.7734516405,
-        "_id": "5c0546e5af5b831c612f15a7"
-    },
-    {
-        "name": "Celia Alexandre",
-        "avg_speed": 11.61065455883493,
-        "home_port_id": "5c054671af5b831c612ed94f",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7e7",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 420408.76123521023,
-        "_id": "5c0546e5af5b831c612f15a8"
-    },
-    {
-        "name": "Rebecca Bowman",
-        "avg_speed": 21.957023836281422,
-        "home_port_id": "5c054671af5b831c612ede15",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7c7",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 557948.4213541036,
-        "_id": "5c0546e5af5b831c612f15a9"
-    },
-    {
-        "name": "Elsie Gertelman",
-        "avg_speed": 8.071365492778213,
-        "home_port_id": "5c054671af5b831c612ed9ab",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7a9",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 711878.9728436933,
-        "_id": "5c0546e5af5b831c612f15aa"
-    },
-    {
-        "name": "Jeffrey Herrin",
-        "avg_speed": 13.60818137268666,
-        "home_port_id": "5c054671af5b831c612edbd4",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7ba",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 653933.8986208645,
-        "_id": "5c0546e5af5b831c612f15ab"
-    },
-    {
-        "name": "Charles Daniell",
-        "avg_speed": 16.85753797312904,
-        "home_port_id": "5c054671af5b831c612ed946",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed79a",
-        "size_type_id": "5c0546e2af5b831c612f159a",
-        "cargo_amount": 415662.19757119066,
-        "_id": "5c0546e5af5b831c612f15ac"
-    },
-    {
-        "name": "Robert Gough",
-        "avg_speed": 21.925496837441894,
-        "home_port_id": "5c054671af5b831c612edaaa",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed789",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 280565.853290062,
-        "_id": "5c0546e5af5b831c612f15ad"
-    },
-    {
-        "name": "Diana Dewan",
-        "avg_speed": 12.717042477060533,
-        "home_port_id": "5c054671af5b831c612edd48",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7af",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1041606.2725161401,
-        "_id": "5c0546e5af5b831c612f15ae"
-    },
-    {
-        "name": "Angela Faire",
-        "avg_speed": 13.935255303977485,
-        "home_port_id": "5c054671af5b831c612edd87",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7fb",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 602264.072491525,
-        "_id": "5c0546e5af5b831c612f15af"
-    },
-    {
-        "name": "Elizabeth Cooper",
-        "avg_speed": 17.665488855690327,
-        "home_port_id": "5c054671af5b831c612ed975",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed819",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 553018.8849939591,
-        "_id": "5c0546e5af5b831c612f15b0"
-    },
-    {
-        "name": "Jayne Lagrand",
-        "avg_speed": 15.512445845536432,
-        "home_port_id": "5c054671af5b831c612ed973",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed808",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 641352.2655416656,
-        "_id": "5c0546e5af5b831c612f15b1"
-    },
-    {
-        "name": "Jack Nixon",
-        "avg_speed": 13.292614341942647,
-        "home_port_id": "5c054671af5b831c612edcb6",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7aa",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 132651.5083000443,
-        "_id": "5c0546e5af5b831c612f15b2"
-    },
-    {
-        "name": "Virginia White",
-        "avg_speed": 12.459093265864752,
-        "home_port_id": "5c054671af5b831c612edca9",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7db",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 859936.5838449784,
-        "_id": "5c0546e5af5b831c612f15b3"
-    },
-    {
-        "name": "Kenneth Randolph",
-        "avg_speed": 22.013111056990454,
-        "home_port_id": "5c054671af5b831c612edc66",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed830",
-        "size_type_id": "5c0546e2af5b831c612f159a",
-        "cargo_amount": 161901.49800264518,
-        "_id": "5c0546e5af5b831c612f15b4"
-    },
-    {
-        "name": "Irma Yorke",
-        "avg_speed": 16.921532198740433,
-        "home_port_id": "5c054671af5b831c612edba4",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7ee",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 583183.4243091161,
-        "_id": "5c0546e5af5b831c612f15b5"
-    },
-    {
-        "name": "Bernice Brown",
-        "avg_speed": 10.834895209450984,
-        "home_port_id": "5c054671af5b831c612edb61",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed810",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 302907.0142342438,
-        "_id": "5c0546e5af5b831c612f15b6"
-    },
-    {
-        "name": "Ethel Cook",
-        "avg_speed": 15.870882713333257,
-        "home_port_id": "5c054671af5b831c612edb60",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed831",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 462458.07120979036,
-        "_id": "5c0546e5af5b831c612f15b7"
-    },
-    {
-        "name": "Sharon Wisdom",
-        "avg_speed": 11.560357885841325,
-        "home_port_id": "5c054671af5b831c612ed9d7",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed79b",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 682007.8812989625,
-        "_id": "5c0546e5af5b831c612f15b8"
-    },
-    {
-        "name": "Gail Roddy",
-        "avg_speed": 14.809446950959268,
-        "home_port_id": "5c054671af5b831c612ede52",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed772",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 661174.1692682754,
-        "_id": "5c0546e5af5b831c612f15b9"
-    },
-    {
-        "name": "Esmeralda Cifuentes",
-        "avg_speed": 17.922772029472092,
-        "home_port_id": "5c054671af5b831c612ede48",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7e3",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 764105.642788169,
-        "_id": "5c0546e5af5b831c612f15ba"
-    },
-    {
-        "name": "Patrice Kreiter",
-        "avg_speed": 20.0863578869281,
-        "home_port_id": "5c054671af5b831c612ede16",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7de",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1057183.6792383688,
-        "_id": "5c0546e5af5b831c612f15bb"
-    },
-    {
-        "name": "Michael Whitman",
-        "avg_speed": 21.589627141055352,
-        "home_port_id": "5c054671af5b831c612edb00",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7d5",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 596875.2900957032,
-        "_id": "5c0546e5af5b831c612f15bc"
-    },
-    {
-        "name": "Orville Shaw",
-        "avg_speed": 18.84183679931966,
-        "home_port_id": "5c054671af5b831c612edc60",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7d9",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 245501.79832094043,
-        "_id": "5c0546e5af5b831c612f15bd"
-    },
-    {
-        "name": "Zachery William",
-        "avg_speed": 19.499733593103965,
-        "home_port_id": "5c054671af5b831c612ed858",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed828",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 434503.1629057648,
-        "_id": "5c0546e5af5b831c612f15be"
-    },
-    {
-        "name": "Donald Jones",
-        "avg_speed": 19.56818596691017,
-        "home_port_id": "5c054671af5b831c612edb94",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed79e",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 350326.960722306,
-        "_id": "5c0546e5af5b831c612f15bf"
-    },
-    {
-        "name": "George Throckmorton",
-        "avg_speed": 20.108276635140214,
-        "home_port_id": "5c054671af5b831c612edd21",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed779",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 447514.78164867626,
-        "_id": "5c0546e5af5b831c612f15c0"
-    },
-    {
-        "name": "Kathryn Stiltner",
-        "avg_speed": 18.428853934481005,
-        "home_port_id": "5c054671af5b831c612ed8a4",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed82f",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 116647.14592085956,
-        "_id": "5c0546e5af5b831c612f15c1"
-    },
-    {
-        "name": "Jane Legg",
-        "avg_speed": 18.336927140891003,
-        "home_port_id": "5c054671af5b831c612ede54",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed83a",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1597655.3504880343,
-        "_id": "5c0546e5af5b831c612f15c2"
-    },
-    {
-        "name": "Rosalie Lackey",
-        "avg_speed": 16.58183657417682,
-        "home_port_id": "5c054671af5b831c612ed99e",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed766",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 443745.5983641219,
-        "_id": "5c0546e5af5b831c612f15c3"
-    },
-    {
-        "name": "Paula Guidry",
-        "avg_speed": 18.544622082287884,
-        "home_port_id": "5c054671af5b831c612edbba",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed771",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 681973.8908720671,
-        "_id": "5c0546e5af5b831c612f15c4"
-    },
-    {
-        "name": "Barton Bradley",
-        "avg_speed": 10.955358297143633,
-        "home_port_id": "5c054671af5b831c612edb21",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed79c",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 509450.5157935402,
-        "_id": "5c0546e5af5b831c612f15c5"
-    },
-    {
-        "name": "Valerie Ferris",
-        "avg_speed": 14.837026775134202,
-        "home_port_id": "5c054671af5b831c612edbe9",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7df",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 701365.5403042195,
-        "_id": "5c0546e5af5b831c612f15c6"
-    },
-    {
-        "name": "Catherine Jackson",
-        "avg_speed": 19.402903479398518,
-        "home_port_id": "5c054671af5b831c612eda6d",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed776",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 572448.3770600295,
-        "_id": "5c0546e5af5b831c612f15c7"
-    },
-    {
-        "name": "Jason Puckett",
-        "avg_speed": 17.101081048459882,
-        "home_port_id": "5c054671af5b831c612edb1b",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7dd",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1785364.850137279,
-        "_id": "5c0546e5af5b831c612f15c8"
-    },
-    {
-        "name": "Peter Mayes",
-        "avg_speed": 7.531648596923586,
-        "home_port_id": "5c054671af5b831c612ed851",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7f3",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1808386.861455552,
-        "_id": "5c0546e5af5b831c612f15c9"
-    },
-    {
-        "name": "Monica Simmons",
-        "avg_speed": 13.0228891791849,
-        "home_port_id": "5c054671af5b831c612eda90",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7b8",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 685026.5662840673,
-        "_id": "5c0546e5af5b831c612f15ca"
-    },
-    {
-        "name": "Raymond Voss",
-        "avg_speed": 16.98529796120929,
-        "home_port_id": "5c054671af5b831c612edb36",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7d1",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 757106.5105459185,
-        "_id": "5c0546e5af5b831c612f15cb"
-    },
-    {
-        "name": "George Leidall",
-        "avg_speed": 17.229572148915892,
-        "home_port_id": "5c054671af5b831c612ed8b0",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7a2",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1137795.4745431899,
-        "_id": "5c0546e5af5b831c612f15cc"
-    },
-    {
-        "name": "James Adams",
-        "avg_speed": 11.054482597329383,
-        "home_port_id": "5c054671af5b831c612ed86a",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed812",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 680453.1526457203,
-        "_id": "5c0546e5af5b831c612f15cd"
-    },
-    {
-        "name": "Jason Dean",
-        "avg_speed": 19.155695933926282,
-        "home_port_id": "5c054671af5b831c612ede68",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed795",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 616434.7487935362,
-        "_id": "5c0546e5af5b831c612f15ce"
-    },
-    {
-        "name": "Angelica Louden",
-        "avg_speed": 9.334067622577525,
-        "home_port_id": "5c054671af5b831c612edd66",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed817",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 135493.6134369198,
-        "_id": "5c0546e5af5b831c612f15cf"
-    },
-    {
-        "name": "Travis Tracy",
-        "avg_speed": 14.635831563467505,
-        "home_port_id": "5c054671af5b831c612ed8aa",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7c1",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 546221.0590819499,
-        "_id": "5c0546e5af5b831c612f15d0"
-    },
-    {
-        "name": "Kathryn Little",
-        "avg_speed": 16.799156930378793,
-        "home_port_id": "5c054671af5b831c612edc77",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed806",
-        "size_type_id": "5c0546e2af5b831c612f159e",
-        "cargo_amount": 665633.4669872186,
-        "_id": "5c0546e5af5b831c612f15d1"
-    },
-    {
-        "name": "Audrey Phillips",
-        "avg_speed": 19.940294654826783,
-        "home_port_id": "5c054671af5b831c612edd4a",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed774",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 619271.861111443,
-        "_id": "5c0546e5af5b831c612f15d2"
-    },
-    {
-        "name": "Irma Antoniou",
-        "avg_speed": 12.8873943010737,
-        "home_port_id": "5c054671af5b831c612ed8e6",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed841",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 684401.29243875,
-        "_id": "5c0546e5af5b831c612f15d3"
-    },
-    {
-        "name": "Ryan Leasure",
-        "avg_speed": 15.398032741779392,
-        "home_port_id": "5c054671af5b831c612ed9da",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed83f",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 766048.509573233,
-        "_id": "5c0546e5af5b831c612f15d4"
-    },
-    {
-        "name": "Dawn Carpenter",
-        "avg_speed": 11.40727776425307,
-        "home_port_id": "5c054671af5b831c612ed8f1",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7c2",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 655139.7095535521,
-        "_id": "5c0546e5af5b831c612f15d5"
-    },
-    {
-        "name": "Sandy Collins",
-        "avg_speed": 11.254668246408011,
-        "home_port_id": "5c054671af5b831c612edb15",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed77b",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 509668.991262744,
-        "_id": "5c0546e5af5b831c612f15d6"
-    },
-    {
-        "name": "Ella Gonzales",
-        "avg_speed": 20.782041654256467,
-        "home_port_id": "5c054671af5b831c612ed8a9",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7ff",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 812574.3920853582,
-        "_id": "5c0546e5af5b831c612f15d7"
-    },
-    {
-        "name": "Paul Cruz",
-        "avg_speed": 17.195579723357852,
-        "home_port_id": "5c054671af5b831c612ed9bf",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed808",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1868132.9060191158,
-        "_id": "5c0546e5af5b831c612f15d8"
-    },
-    {
-        "name": "Latoya Schumpert",
-        "avg_speed": 11.110555976311307,
-        "home_port_id": "5c054671af5b831c612edc8c",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed771",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 646488.1075191075,
-        "_id": "5c0546e5af5b831c612f15d9"
-    },
-    {
-        "name": "Theodore Sooter",
-        "avg_speed": 16.837684723673924,
-        "home_port_id": "5c054671af5b831c612edc06",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed76f",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 469873.08911604946,
-        "_id": "5c0546e5af5b831c612f15da"
-    },
-    {
-        "name": "George Whitten",
-        "avg_speed": 13.87572709603939,
-        "home_port_id": "5c054671af5b831c612ed8a0",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7a6",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1689389.0225018773,
-        "_id": "5c0546e5af5b831c612f15db"
-    },
-    {
-        "name": "Michele Chandler",
-        "avg_speed": 11.818970295360657,
-        "home_port_id": "5c054671af5b831c612ed85c",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7cf",
-        "size_type_id": "5c0546e2af5b831c612f159a",
-        "cargo_amount": 189531.79518526478,
-        "_id": "5c0546e5af5b831c612f15dc"
-    },
-    {
-        "name": "Celeste Mayhew",
-        "avg_speed": 9.258147285684675,
-        "home_port_id": "5c054671af5b831c612edd18",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed813",
-        "size_type_id": "5c0546e2af5b831c612f159e",
-        "cargo_amount": 3749797.542599748,
-        "_id": "5c0546e5af5b831c612f15dd"
-    },
-    {
-        "name": "Salvador Velasquez",
-        "avg_speed": 13.529583989697398,
-        "home_port_id": "5c054671af5b831c612edd43",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7f2",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 493276.19025074237,
-        "_id": "5c0546e5af5b831c612f15de"
-    },
-    {
-        "name": "Inocencia Donner",
-        "avg_speed": 13.140903447929041,
-        "home_port_id": "5c054671af5b831c612edb92",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed792",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 552507.8503036796,
-        "_id": "5c0546e5af5b831c612f15df"
-    },
-    {
-        "name": "Rosa Thomas",
-        "avg_speed": 9.73194295091749,
-        "home_port_id": "5c054671af5b831c612ed945",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7e8",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 918375.7781999724,
-        "_id": "5c0546e5af5b831c612f15e0"
-    },
-    {
-        "name": "Roger Bronsky",
-        "avg_speed": 21.366020375933033,
-        "home_port_id": "5c054671af5b831c612edd2a",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7a0",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 747048.6847580529,
-        "_id": "5c0546e5af5b831c612f15e1"
-    },
-    {
-        "name": "Jesse Firkins",
-        "avg_speed": 21.384976648561697,
-        "home_port_id": "5c054671af5b831c612edd21",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed780",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 423446.4091278109,
-        "_id": "5c0546e5af5b831c612f15e2"
-    },
-    {
-        "name": "Robert Sparling",
-        "avg_speed": 13.48697400162714,
-        "home_port_id": "5c054671af5b831c612edca4",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed760",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1831783.1388869656,
-        "_id": "5c0546e5af5b831c612f15e3"
-    },
-    {
-        "name": "Mary Bermudez",
-        "avg_speed": 9.468455907836958,
-        "home_port_id": "5c054671af5b831c612edd4d",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7f1",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 643423.3693025573,
-        "_id": "5c0546e5af5b831c612f15e4"
-    },
-    {
-        "name": "James Fredrickson",
-        "avg_speed": 19.875293366998797,
-        "home_port_id": "5c054671af5b831c612edb6e",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7cd",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 348992.53120132635,
-        "_id": "5c0546e5af5b831c612f15e5"
-    },
-    {
-        "name": "Frank Hall",
-        "avg_speed": 19.218689549748742,
-        "home_port_id": "5c054671af5b831c612eda5b",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7d2",
-        "size_type_id": "5c0546e2af5b831c612f159a",
-        "cargo_amount": 298299.216206387,
-        "_id": "5c0546e5af5b831c612f15e6"
-    },
-    {
-        "name": "Daniel Phillips",
-        "avg_speed": 19.19265620209313,
-        "home_port_id": "5c054671af5b831c612ed986",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed814",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 648923.4931822801,
-        "_id": "5c0546e5af5b831c612f15e7"
-    },
-    {
-        "name": "Eric Briggs",
-        "avg_speed": 9.995379723776287,
-        "home_port_id": "5c054671af5b831c612ed971",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed769",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 214762.37731455383,
-        "_id": "5c0546e5af5b831c612f15e8"
-    },
-    {
-        "name": "William Dome",
-        "avg_speed": 10.108482341428532,
-        "home_port_id": "5c054671af5b831c612eda8c",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed818",
-        "size_type_id": "5c0546e2af5b831c612f159a",
-        "cargo_amount": 439334.5198650107,
-        "_id": "5c0546e5af5b831c612f15e9"
-    },
-    {
-        "name": "Melvin Blood",
-        "avg_speed": 18.02810390401773,
-        "home_port_id": "5c054671af5b831c612ed91c",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed806",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 591723.4229034267,
-        "_id": "5c0546e5af5b831c612f15ea"
-    },
-    {
-        "name": "Lillian Montez",
-        "avg_speed": 9.63819839925093,
-        "home_port_id": "5c054671af5b831c612eda68",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed815",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 914355.4507689981,
-        "_id": "5c0546e5af5b831c612f15eb"
-    },
-    {
-        "name": "Richard Holm",
-        "avg_speed": 20.42202970448696,
-        "home_port_id": "5c054671af5b831c612edb8e",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed827",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 603541.1850027518,
-        "_id": "5c0546e5af5b831c612f15ec"
-    },
-    {
-        "name": "Francis Hammond",
-        "avg_speed": 16.549295604942728,
-        "home_port_id": "5c054671af5b831c612ed91c",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed83d",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 711145.7429882137,
-        "_id": "5c0546e5af5b831c612f15ed"
-    },
-    {
-        "name": "Richard Alston",
-        "avg_speed": 14.352235853521533,
-        "home_port_id": "5c054671af5b831c612edd90",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed77f",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1706013.6158810097,
-        "_id": "5c0546e5af5b831c612f15ee"
-    },
-    {
-        "name": "Jeff Lefevre",
-        "avg_speed": 11.910831390807452,
-        "home_port_id": "5c054671af5b831c612ede5a",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed793",
-        "size_type_id": "5c0546e2af5b831c612f159a",
-        "cargo_amount": 154474.97700445788,
-        "_id": "5c0546e5af5b831c612f15ef"
-    },
-    {
-        "name": "Kelly Watkins",
-        "avg_speed": 14.085083785845754,
-        "home_port_id": "5c054671af5b831c612edb31",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7b9",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 695629.6497314951,
-        "_id": "5c0546e5af5b831c612f15f0"
-    },
-    {
-        "name": "Frank Davis",
-        "avg_speed": 19.315005051608182,
-        "home_port_id": "5c054671af5b831c612ed975",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed771",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 689142.0042790743,
-        "_id": "5c0546e5af5b831c612f15f1"
-    },
-    {
-        "name": "Terrance Hughes",
-        "avg_speed": 10.79076594617089,
-        "home_port_id": "5c054671af5b831c612edbca",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed773",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 793602.179028582,
-        "_id": "5c0546e5af5b831c612f15f2"
-    },
-    {
-        "name": "Barbara Nuzum",
-        "avg_speed": 12.750436170046086,
-        "home_port_id": "5c054671af5b831c612edb93",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7e1",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 409504.55261540576,
-        "_id": "5c0546e5af5b831c612f15f3"
-    },
-    {
-        "name": "Louise Whittmore",
-        "avg_speed": 11.989197545312962,
-        "home_port_id": "5c054671af5b831c612edbb9",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7db",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 542955.0928359275,
-        "_id": "5c0546e5af5b831c612f15f4"
-    },
-    {
-        "name": "Sean White",
-        "avg_speed": 15.569929123712907,
-        "home_port_id": "5c054671af5b831c612ed867",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed771",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 461639.26878560724,
-        "_id": "5c0546e5af5b831c612f15f5"
-    },
-    {
-        "name": "Julie Jackson",
-        "avg_speed": 19.73696940305188,
-        "home_port_id": "5c054671af5b831c612ede4c",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed75f",
-        "size_type_id": "5c0546e2af5b831c612f159a",
-        "cargo_amount": 349358.8260421244,
-        "_id": "5c0546e5af5b831c612f15f6"
-    },
-    {
-        "name": "Lisa Pares",
-        "avg_speed": 12.340503443099799,
-        "home_port_id": "5c054671af5b831c612ed9f1",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed817",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 884912.0911973817,
-        "_id": "5c0546e5af5b831c612f15f7"
-    },
-    {
-        "name": "Charmaine Vanderploeg",
-        "avg_speed": 12.129267626701116,
-        "home_port_id": "5c054671af5b831c612edc92",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed813",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 400771.59668859246,
-        "_id": "5c0546e5af5b831c612f15f8"
-    },
-    {
-        "name": "Samuel Niesman",
-        "avg_speed": 15.018006667375678,
-        "home_port_id": "5c054671af5b831c612edd5e",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed76c",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1053741.1018578927,
-        "_id": "5c0546e5af5b831c612f15f9"
-    },
-    {
-        "name": "Evelyn Hunter",
-        "avg_speed": 22.540544684662475,
-        "home_port_id": "5c054671af5b831c612edcb6",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed808",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 538553.8921562929,
-        "_id": "5c0546e5af5b831c612f15fa"
-    },
-    {
-        "name": "Teresa Shah",
-        "avg_speed": 11.247425822432408,
-        "home_port_id": "5c054671af5b831c612eddba",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed83e",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 442142.00362655474,
-        "_id": "5c0546e5af5b831c612f15fb"
-    },
-    {
-        "name": "Emma Pinto",
-        "avg_speed": 19.52749358873891,
-        "home_port_id": "5c054671af5b831c612ed9e3",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7ed",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 939706.2894059258,
-        "_id": "5c0546e5af5b831c612f15fc"
-    },
-    {
-        "name": "Horace Westendorf",
-        "avg_speed": 10.05065946854749,
-        "home_port_id": "5c054671af5b831c612edc0e",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7f5",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1878041.7856645945,
-        "_id": "5c0546e5af5b831c612f15fd"
-    },
-    {
-        "name": "Rafael Mathwich",
-        "avg_speed": 20.750326610426843,
-        "home_port_id": "5c054671af5b831c612edce1",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed79d",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 983126.7917947274,
-        "_id": "5c0546e5af5b831c612f15fe"
-    },
-    {
-        "name": "Jose Lucero",
-        "avg_speed": 19.575516890429178,
-        "home_port_id": "5c054671af5b831c612eda81",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed80e",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 506576.49539546965,
-        "_id": "5c0546e5af5b831c612f15ff"
-    },
-    {
-        "name": "Yvonne Petry",
-        "avg_speed": 12.691802616011792,
-        "home_port_id": "5c054671af5b831c612eddea",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed764",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 538847.926210754,
-        "_id": "5c0546e5af5b831c612f1600"
-    },
-    {
-        "name": "Shirley Dick",
-        "avg_speed": 12.272412415990996,
-        "home_port_id": "5c054671af5b831c612eda5b",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7a2",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 633187.2588031767,
-        "_id": "5c0546e5af5b831c612f1601"
-    },
-    {
-        "name": "Arlene Bayer",
-        "avg_speed": 10.6375122039369,
-        "home_port_id": "5c054671af5b831c612edaf1",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7e4",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 536860.1671774702,
-        "_id": "5c0546e5af5b831c612f1602"
-    },
-    {
-        "name": "Sandra Mejorado",
-        "avg_speed": 14.096374138250875,
-        "home_port_id": "5c054671af5b831c612eda85",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed779",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 523585.49677345174,
-        "_id": "5c0546e5af5b831c612f1603"
-    },
-    {
-        "name": "Doris Spurlin",
-        "avg_speed": 22.774502827141053,
-        "home_port_id": "5c054671af5b831c612edbb7",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7d9",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 358498.73063305375,
-        "_id": "5c0546e5af5b831c612f1604"
-    },
-    {
-        "name": "Earlene Guttirez",
-        "avg_speed": 8.821273101011716,
-        "home_port_id": "5c054671af5b831c612edcf8",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed841",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 805548.1039853103,
-        "_id": "5c0546e5af5b831c612f1605"
-    },
-    {
-        "name": "John Cleary",
-        "avg_speed": 20.814580798771033,
-        "home_port_id": "5c054671af5b831c612edd85",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7a6",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1100701.7663023805,
-        "_id": "5c0546e5af5b831c612f1606"
-    },
-    {
-        "name": "Robin Small",
-        "avg_speed": 6.949632496907318,
-        "home_port_id": "5c054671af5b831c612ed922",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7ed",
-        "size_type_id": "5c0546e2af5b831c612f159e",
-        "cargo_amount": 447141.21063258534,
-        "_id": "5c0546e5af5b831c612f1607"
-    },
-    {
-        "name": "Jose Lerma",
-        "avg_speed": 16.91709438817236,
-        "home_port_id": "5c054671af5b831c612eda86",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7fd",
-        "size_type_id": "5c0546e2af5b831c612f159a",
-        "cargo_amount": 225751.63642106834,
-        "_id": "5c0546e5af5b831c612f1608"
-    },
-    {
-        "name": "Hazel Guerrero",
-        "avg_speed": 9.475135548356974,
-        "home_port_id": "5c054671af5b831c612ede68",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed810",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 774753.4584790027,
-        "_id": "5c0546e5af5b831c612f1609"
-    },
-    {
-        "name": "Nancy Anders",
-        "avg_speed": 11.637638971595567,
-        "home_port_id": "5c054671af5b831c612ed887",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed788",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 265826.5065216249,
-        "_id": "5c0546e5af5b831c612f160a"
-    },
-    {
-        "name": "Earl Ledesma",
-        "avg_speed": 10.26733078361255,
-        "home_port_id": "5c054671af5b831c612eddae",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed835",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 547276.2541489099,
-        "_id": "5c0546e5af5b831c612f160b"
-    },
-    {
-        "name": "Richard Collins",
-        "avg_speed": 18.398489109544492,
-        "home_port_id": "5c054671af5b831c612edd91",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed78f",
-        "size_type_id": "5c0546e2af5b831c612f159a",
-        "cargo_amount": 111897.78243296822,
-        "_id": "5c0546e5af5b831c612f160c"
-    },
-    {
-        "name": "Paula Love",
-        "avg_speed": 20.601858456514517,
-        "home_port_id": "5c054671af5b831c612edbfd",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7b0",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 903918.4623290497,
-        "_id": "5c0546e5af5b831c612f160d"
-    },
-    {
-        "name": "Estela Stockton",
-        "avg_speed": 21.780452991720196,
-        "home_port_id": "5c054671af5b831c612eda1a",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed835",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 606979.0384913997,
-        "_id": "5c0546e5af5b831c612f160e"
-    },
-    {
-        "name": "Mary Hoffman",
-        "avg_speed": 14.540406497898397,
-        "home_port_id": "5c054671af5b831c612ede2c",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7ee",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 585538.5451724248,
-        "_id": "5c0546e5af5b831c612f160f"
-    },
-    {
-        "name": "Joe Lee",
-        "avg_speed": 12.021628675025603,
-        "home_port_id": "5c054671af5b831c612ed9ba",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed776",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 837425.0877182736,
-        "_id": "5c0546e5af5b831c612f1610"
-    },
-    {
-        "name": "Morris Troup",
-        "avg_speed": 15.255929080503224,
-        "home_port_id": "5c054671af5b831c612edce3",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed75f",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1718658.9812803415,
-        "_id": "5c0546e5af5b831c612f1611"
-    },
-    {
-        "name": "George Lord",
-        "avg_speed": 16.47573124568466,
-        "home_port_id": "5c054671af5b831c612edb70",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed767",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 327815.9922774002,
-        "_id": "5c0546e5af5b831c612f1612"
-    },
-    {
-        "name": "Thomas Rapp",
-        "avg_speed": 20.028673549366633,
-        "home_port_id": "5c054671af5b831c612ed93e",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed813",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 421785.11435840226,
-        "_id": "5c0546e5af5b831c612f1613"
-    },
-    {
-        "name": "Alex Ramsey",
-        "avg_speed": 17.061589451975706,
-        "home_port_id": "5c054671af5b831c612edc94",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed794",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 477597.49430986174,
-        "_id": "5c0546e5af5b831c612f1614"
-    },
-    {
-        "name": "Ralph Marks",
-        "avg_speed": 16.689981883825823,
-        "home_port_id": "5c054671af5b831c612eda93",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed822",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 232716.80621145156,
-        "_id": "5c0546e5af5b831c612f1615"
-    },
-    {
-        "name": "Denise Bopp",
-        "avg_speed": 15.607713481933006,
-        "home_port_id": "5c054671af5b831c612ed88c",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed839",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 632835.8853899852,
-        "_id": "5c0546e5af5b831c612f1616"
-    },
-    {
-        "name": "Jaquelyn Riley",
-        "avg_speed": 18.68100985972215,
-        "home_port_id": "5c054671af5b831c612ed85a",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed821",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 381067.3898906523,
-        "_id": "5c0546e5af5b831c612f1617"
-    },
-    {
-        "name": "Allena Tate",
-        "avg_speed": 20.60431938259878,
-        "home_port_id": "5c054671af5b831c612ed9a8",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed820",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 663053.5111584773,
-        "_id": "5c0546e5af5b831c612f1618"
-    },
-    {
-        "name": "Donald Mccaleb",
-        "avg_speed": 21.898416182442396,
-        "home_port_id": "5c054671af5b831c612eda74",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7eb",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 528974.8256718935,
-        "_id": "5c0546e5af5b831c612f1619"
-    },
-    {
-        "name": "Katie Suitt",
-        "avg_speed": 20.817608299096214,
-        "home_port_id": "5c054671af5b831c612ed885",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7f6",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 439315.66410015477,
-        "_id": "5c0546e5af5b831c612f161a"
-    },
-    {
-        "name": "Tonya Pealer",
-        "avg_speed": 17.84232319954772,
-        "home_port_id": "5c054671af5b831c612eddf1",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed762",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1413146.0050488098,
-        "_id": "5c0546e5af5b831c612f161b"
-    },
-    {
-        "name": "Paul Burchard",
-        "avg_speed": 17.753798974170415,
-        "home_port_id": "5c054671af5b831c612ed9fc",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed830",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 882321.830666959,
-        "_id": "5c0546e5af5b831c612f161c"
-    },
-    {
-        "name": "Jacquline Wages",
-        "avg_speed": 11.19284271417651,
-        "home_port_id": "5c054671af5b831c612ede5f",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7a0",
-        "size_type_id": "5c0546e2af5b831c612f159a",
-        "cargo_amount": 171251.66552772408,
-        "_id": "5c0546e5af5b831c612f161d"
-    },
-    {
-        "name": "Bobby Coffin",
-        "avg_speed": 14.47226397744044,
-        "home_port_id": "5c054671af5b831c612edd9d",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed81a",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 472423.95750747295,
-        "_id": "5c0546e5af5b831c612f161e"
-    },
-    {
-        "name": "Mary Isreal",
-        "avg_speed": 17.73638956100614,
-        "home_port_id": "5c054671af5b831c612edd37",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7fc",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 618235.8809417449,
-        "_id": "5c0546e5af5b831c612f161f"
-    },
-    {
-        "name": "Terri Montgomery",
-        "avg_speed": 21.939005101135592,
-        "home_port_id": "5c054671af5b831c612edbfe",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed776",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 151866.18852811307,
-        "_id": "5c0546e5af5b831c612f1620"
-    },
-    {
-        "name": "Leticia Ruiz",
-        "avg_speed": 12.859762143003636,
-        "home_port_id": "5c054671af5b831c612edd8d",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7d5",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 631536.2006153864,
-        "_id": "5c0546e5af5b831c612f1621"
-    },
-    {
-        "name": "Dorothy Harris",
-        "avg_speed": 22.480741431030463,
-        "home_port_id": "5c054671af5b831c612ede62",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed788",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 511958.3563165464,
-        "_id": "5c0546e5af5b831c612f1622"
-    },
-    {
-        "name": "Ronny Taylor",
-        "avg_speed": 14.665956787723703,
-        "home_port_id": "5c054671af5b831c612ed91b",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed79a",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1069488.5968151365,
-        "_id": "5c0546e5af5b831c612f1623"
-    },
-    {
-        "name": "Jeri Edward",
-        "avg_speed": 9.511969390825989,
-        "home_port_id": "5c054671af5b831c612edd84",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed787",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 652654.5097015621,
-        "_id": "5c0546e5af5b831c612f1624"
-    },
-    {
-        "name": "Lori Mcconnell",
-        "avg_speed": 20.39054567199757,
-        "home_port_id": "5c054671af5b831c612eda32",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7fb",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1649812.70369133,
-        "_id": "5c0546e5af5b831c612f1625"
-    },
-    {
-        "name": "Shirley Purtle",
-        "avg_speed": 10.325763469798412,
-        "home_port_id": "5c054671af5b831c612edc3f",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed832",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 477090.1436289519,
-        "_id": "5c0546e5af5b831c612f1626"
-    },
-    {
-        "name": "Joanne Fails",
-        "avg_speed": 17.909684316009717,
-        "home_port_id": "5c054671af5b831c612edd3b",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed81f",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 687658.5503447478,
-        "_id": "5c0546e5af5b831c612f1627"
-    },
-    {
-        "name": "Christie Davis",
-        "avg_speed": 21.72750623697977,
-        "home_port_id": "5c054671af5b831c612ed932",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7f3",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 595244.2293313708,
-        "_id": "5c0546e5af5b831c612f1628"
-    },
-    {
-        "name": "Charles Martin",
-        "avg_speed": 20.593945975698723,
-        "home_port_id": "5c054671af5b831c612ede6c",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed777",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 974566.1650467784,
-        "_id": "5c0546e5af5b831c612f1629"
-    },
-    {
-        "name": "Cherry Reyna",
-        "avg_speed": 19.257103862887107,
-        "home_port_id": "5c054671af5b831c612ed8c0",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7b4",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 612071.2419411127,
-        "_id": "5c0546e5af5b831c612f162a"
-    },
-    {
-        "name": "Nathan Hoffman",
-        "avg_speed": 9.372657803164849,
-        "home_port_id": "5c054671af5b831c612ed9d3",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed836",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 581631.6031754912,
-        "_id": "5c0546e5af5b831c612f162b"
-    },
-    {
-        "name": "Lynn Bothwell",
-        "avg_speed": 7.863701945349371,
-        "home_port_id": "5c054671af5b831c612edd31",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7bd",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1378235.6791507192,
-        "_id": "5c0546e5af5b831c612f162c"
-    },
-    {
-        "name": "Mary Herrera",
-        "avg_speed": 15.217914262778988,
-        "home_port_id": "5c054671af5b831c612edce0",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed80c",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 254794.74774977716,
-        "_id": "5c0546e5af5b831c612f162d"
-    },
-    {
-        "name": "Cheryl Pendergrass",
-        "avg_speed": 14.648761248593006,
-        "home_port_id": "5c054671af5b831c612edd25",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed789",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 711331.2362803633,
-        "_id": "5c0546e5af5b831c612f162e"
-    },
-    {
-        "name": "Colin Velez",
-        "avg_speed": 14.937007202600403,
-        "home_port_id": "5c054671af5b831c612edae1",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed79a",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 914338.8353397095,
-        "_id": "5c0546e5af5b831c612f162f"
-    },
-    {
-        "name": "Jack Gaiser",
-        "avg_speed": 14.67954243688384,
-        "home_port_id": "5c054671af5b831c612ed866",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed815",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1524123.6167720936,
-        "_id": "5c0546e5af5b831c612f1630"
-    },
-    {
-        "name": "Thomas Perry",
-        "avg_speed": 14.79995212034525,
-        "home_port_id": "5c054671af5b831c612eda0f",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed76b",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 537224.2210225235,
-        "_id": "5c0546e5af5b831c612f1631"
-    },
-    {
-        "name": "Michelle Clardy",
-        "avg_speed": 12.252901026545015,
-        "home_port_id": "5c054671af5b831c612edca8",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7b2",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 473543.5696371961,
-        "_id": "5c0546e5af5b831c612f1632"
-    },
-    {
-        "name": "Bill Velasco",
-        "avg_speed": 9.901457788631873,
-        "home_port_id": "5c054671af5b831c612edb14",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed819",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 659734.5419549539,
-        "_id": "5c0546e5af5b831c612f1633"
-    },
-    {
-        "name": "Leota Charney",
-        "avg_speed": 20.408269917110147,
-        "home_port_id": "5c054671af5b831c612ed9b1",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed825",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 627413.847642573,
-        "_id": "5c0546e5af5b831c612f1634"
-    },
-    {
-        "name": "Martha Crumley",
-        "avg_speed": 12.108094991215356,
-        "home_port_id": "5c054671af5b831c612ed8b1",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7e5",
-        "size_type_id": "5c0546e2af5b831c612f159a",
-        "cargo_amount": 201024.4233450039,
-        "_id": "5c0546e5af5b831c612f1635"
-    },
-    {
-        "name": "Victor Mclean",
-        "avg_speed": 17.434600517524004,
-        "home_port_id": "5c054671af5b831c612eda89",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7c6",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1409511.637793956,
-        "_id": "5c0546e5af5b831c612f1636"
-    },
-    {
-        "name": "Mona Galindo",
-        "avg_speed": 13.823659127404088,
-        "home_port_id": "5c054671af5b831c612ed8ea",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7c1",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 795151.815268976,
-        "_id": "5c0546e5af5b831c612f1637"
-    },
-    {
-        "name": "Mike Lewis",
-        "avg_speed": 15.551899220403827,
-        "home_port_id": "5c054671af5b831c612edb2f",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7c7",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 436125.357214264,
-        "_id": "5c0546e5af5b831c612f1638"
-    },
-    {
-        "name": "June Kittelson",
-        "avg_speed": 19.81387986268956,
-        "home_port_id": "5c054671af5b831c612edda4",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed81f",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 760601.4976102058,
-        "_id": "5c0546e5af5b831c612f1639"
-    },
-    {
-        "name": "Loma Casteel",
-        "avg_speed": 12.508328893085713,
-        "home_port_id": "5c054671af5b831c612edd9f",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed841",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 724689.3700056187,
-        "_id": "5c0546e5af5b831c612f163a"
-    },
-    {
-        "name": "Shawn Escarcega",
-        "avg_speed": 18.276444826313092,
-        "home_port_id": "5c054671af5b831c612edce0",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed796",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1574455.605994098,
-        "_id": "5c0546e5af5b831c612f163b"
-    },
-    {
-        "name": "Jimmy Bridges",
-        "avg_speed": 20.252072485207457,
-        "home_port_id": "5c054671af5b831c612edb67",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed811",
-        "size_type_id": "5c0546e2af5b831c612f159a",
-        "cargo_amount": 343533.6352080145,
-        "_id": "5c0546e5af5b831c612f163c"
-    },
-    {
-        "name": "Brian Soule",
-        "avg_speed": 12.671836238817148,
-        "home_port_id": "5c054671af5b831c612eda41",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7d6",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 341594.1716798802,
-        "_id": "5c0546e5af5b831c612f163d"
-    },
-    {
-        "name": "Ronald Peterson",
-        "avg_speed": 14.906116087567916,
-        "home_port_id": "5c054671af5b831c612ede45",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed768",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 596932.2538981041,
-        "_id": "5c0546e5af5b831c612f163e"
-    },
-    {
-        "name": "Judy Ward",
-        "avg_speed": 18.98377911632215,
-        "home_port_id": "5c054671af5b831c612edc3a",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed783",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1751674.288762324,
-        "_id": "5c0546e5af5b831c612f163f"
-    },
-    {
-        "name": "Laverne Nichols",
-        "avg_speed": 15.67382802638506,
-        "home_port_id": "5c054671af5b831c612edc3a",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed809",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 574856.6774845681,
-        "_id": "5c0546e5af5b831c612f1640"
-    },
-    {
-        "name": "Jane Rasmussen",
-        "avg_speed": 20.106348323941297,
-        "home_port_id": "5c054671af5b831c612ed954",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed767",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1833387.1577810117,
-        "_id": "5c0546e5af5b831c612f1641"
-    },
-    {
-        "name": "Patricia Fredrick",
-        "avg_speed": 21.768320775255603,
-        "home_port_id": "5c054671af5b831c612edb23",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed813",
-        "size_type_id": "5c0546e2af5b831c612f159a",
-        "cargo_amount": 430395.7778245738,
-        "_id": "5c0546e5af5b831c612f1642"
-    },
-    {
-        "name": "Jess Estrada",
-        "avg_speed": 19.583361672183262,
-        "home_port_id": "5c054671af5b831c612ed95c",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7b8",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 442455.62770173146,
-        "_id": "5c0546e5af5b831c612f1643"
-    },
-    {
-        "name": "Troy Dawson",
-        "avg_speed": 18.366701283541925,
-        "home_port_id": "5c054671af5b831c612eddd9",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed832",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 682163.9999368759,
-        "_id": "5c0546e5af5b831c612f1644"
-    },
-    {
-        "name": "Mike Metzner",
-        "avg_speed": 19.13667240406091,
-        "home_port_id": "5c054671af5b831c612edb5c",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed81b",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 628337.7139859495,
-        "_id": "5c0546e5af5b831c612f1645"
-    },
-    {
-        "name": "Jenny Augustine",
-        "avg_speed": 21.506420273887507,
-        "home_port_id": "5c054671af5b831c612edaa5",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7c0",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 927541.3097650012,
-        "_id": "5c0546e5af5b831c612f1646"
-    },
-    {
-        "name": "Linda Townsend",
-        "avg_speed": 10.662728307377186,
-        "home_port_id": "5c054671af5b831c612edd89",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7a9",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 761903.7363446449,
-        "_id": "5c0546e5af5b831c612f1647"
-    },
-    {
-        "name": "Cathy Weber",
-        "avg_speed": 15.895889145907779,
-        "home_port_id": "5c054671af5b831c612ed867",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed788",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 837502.768151278,
-        "_id": "5c0546e5af5b831c612f1648"
-    },
-    {
-        "name": "Bruce Armstrong",
-        "avg_speed": 8.124882298279113,
-        "home_port_id": "5c054671af5b831c612edbc3",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed794",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1811892.5200348012,
-        "_id": "5c0546e5af5b831c612f1649"
-    },
-    {
-        "name": "Alan Murphrey",
-        "avg_speed": 16.951204982019227,
-        "home_port_id": "5c054671af5b831c612ed986",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7b7",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 825730.5067158226,
-        "_id": "5c0546e5af5b831c612f164a"
-    },
-    {
-        "name": "Francine Knowles",
-        "avg_speed": 20.22938274953016,
-        "home_port_id": "5c054671af5b831c612ed9cd",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed79f",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 35250.02266851357,
-        "_id": "5c0546e5af5b831c612f164b"
-    },
-    {
-        "name": "Michele Walker",
-        "avg_speed": 15.465776958742914,
-        "home_port_id": "5c054671af5b831c612ed94b",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7d5",
-        "size_type_id": "5c0546e2af5b831c612f159a",
-        "cargo_amount": 469373.35396260343,
-        "_id": "5c0546e5af5b831c612f164c"
-    },
-    {
-        "name": "Belinda Madden",
-        "avg_speed": 11.447751368864779,
-        "home_port_id": "5c054671af5b831c612edd3a",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed831",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 875071.1137104027,
-        "_id": "5c0546e5af5b831c612f164d"
-    },
-    {
-        "name": "Leslie Jacobsma",
-        "avg_speed": 10.42829500262838,
-        "home_port_id": "5c054671af5b831c612ed88e",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed821",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 448528.55647533556,
-        "_id": "5c0546e5af5b831c612f164e"
-    },
-    {
-        "name": "Carol Farmer",
-        "avg_speed": 11.299169488017696,
-        "home_port_id": "5c054671af5b831c612edb90",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed75e",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 524401.883211282,
-        "_id": "5c0546e5af5b831c612f164f"
-    },
-    {
-        "name": "Michelle Franklin",
-        "avg_speed": 9.888461969585357,
-        "home_port_id": "5c054671af5b831c612eda7e",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7cd",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 796260.2465605807,
-        "_id": "5c0546e5af5b831c612f1650"
-    },
-    {
-        "name": "Alexis Lopez",
-        "avg_speed": 10.42677115211863,
-        "home_port_id": "5c054671af5b831c612eda1b",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed795",
-        "size_type_id": "5c0546e2af5b831c612f159a",
-        "cargo_amount": 185591.8906414238,
-        "_id": "5c0546e5af5b831c612f1651"
-    },
-    {
-        "name": "Mildred Walker",
-        "avg_speed": 10.378057693987088,
-        "home_port_id": "5c054671af5b831c612ed93b",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed82a",
-        "size_type_id": "5c0546e2af5b831c612f159d",
-        "cargo_amount": 1858239.4934876515,
-        "_id": "5c0546e5af5b831c612f1652"
-    },
-    {
-        "name": "Laura Portwood",
-        "avg_speed": 10.619343557620407,
-        "home_port_id": "5c054671af5b831c612eda54",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7e6",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 310138.66439463105,
-        "_id": "5c0546e5af5b831c612f1653"
-    },
-    {
-        "name": "Antonio Corona",
-        "avg_speed": 17.09832379305947,
-        "home_port_id": "5c054671af5b831c612edc20",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed80d",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 544188.6282510748,
-        "_id": "5c0546e5af5b831c612f1654"
-    },
-    {
-        "name": "Joshua Jones",
-        "avg_speed": 11.81846365058481,
-        "home_port_id": "5c054671af5b831c612edbab",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed7ff",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 832793.3184363439,
-        "_id": "5c0546e5af5b831c612f1655"
-    },
-    {
-        "name": "Beverly Garrett",
-        "avg_speed": 19.914231420477996,
-        "home_port_id": "5c054671af5b831c612edd16",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed76b",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 260483.81317446425,
-        "_id": "5c0546e5af5b831c612f1656"
-    },
-    {
-        "name": "Peter Currin",
-        "avg_speed": 20.789311566941315,
-        "home_port_id": "5c054671af5b831c612edb06",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed762",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 289529.0381539277,
-        "_id": "5c0546e5af5b831c612f1657"
-    },
-    {
-        "name": "Richard Stepler",
-        "avg_speed": 10.938832372356691,
-        "home_port_id": "5c054671af5b831c612edb2f",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7d0",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 249936.76199870266,
-        "_id": "5c0546e5af5b831c612f1658"
-    },
-    {
-        "name": "Rayford Carmichael",
-        "avg_speed": 14.962562521736151,
-        "home_port_id": "5c054671af5b831c612ed8a9",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed814",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 406161.08950136,
-        "_id": "5c0546e5af5b831c612f1659"
-    },
-    {
-        "name": "Perry Antillon",
-        "avg_speed": 21.860577209108655,
-        "home_port_id": "5c054671af5b831c612ed992",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed825",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 397435.55691815674,
-        "_id": "5c0546e5af5b831c612f165a"
-    },
-    {
-        "name": "Pamela Owens",
-        "avg_speed": 19.583662718459486,
-        "home_port_id": "5c054671af5b831c612eda19",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7ee",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 933969.1449819972,
-        "_id": "5c0546e5af5b831c612f165b"
-    },
-    {
-        "name": "Mary Holman",
-        "avg_speed": 20.209274738229,
-        "home_port_id": "5c054671af5b831c612eda80",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed7b5",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 613528.3433288678,
-        "_id": "5c0546e5af5b831c612f165c"
-    },
-    {
-        "name": "Sonia Battle",
-        "avg_speed": 20.555037659308944,
-        "home_port_id": "5c054671af5b831c612edc7f",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed805",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 526379.6912173759,
-        "_id": "5c0546e5af5b831c612f165d"
-    },
-    {
-        "name": "James Biggers",
-        "avg_speed": 16.52896273779593,
-        "home_port_id": "5c054671af5b831c612eda7f",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed831",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 495281.62872967223,
-        "_id": "5c0546e5af5b831c612f165e"
-    },
-    {
-        "name": "Brent Andrade",
-        "avg_speed": 21.829336581912145,
-        "home_port_id": "5c054671af5b831c612ed954",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7c2",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 417693.0312749718,
-        "_id": "5c0546e5af5b831c612f165f"
-    },
-    {
-        "name": "Evelyn Ware",
-        "avg_speed": 16.04593451390678,
-        "home_port_id": "5c054671af5b831c612edca5",
-        "ship_type_id": 1,
-        "flag_id": "5c054670af5b831c612ed801",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 450335.481013725,
-        "_id": "5c0546e5af5b831c612f1660"
-    },
-    {
-        "name": "Eileen Fortune",
-        "avg_speed": 14.459919974976255,
-        "home_port_id": "5c054671af5b831c612ed89c",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed81b",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 426305.58481256966,
-        "_id": "5c0546e5af5b831c612f1661"
-    },
-    {
-        "name": "Tony Hudson",
-        "avg_speed": 12.200760580846378,
-        "home_port_id": "5c054671af5b831c612ede55",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed819",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 527109.741725535,
-        "_id": "5c0546e5af5b831c612f1662"
-    },
-    {
-        "name": "Roy Lucky",
-        "avg_speed": 12.133719068548878,
-        "home_port_id": "5c054671af5b831c612eda6f",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed80b",
-        "size_type_id": "5c0546e2af5b831c612f159b",
-        "cargo_amount": 508153.518165103,
-        "_id": "5c0546e5af5b831c612f1663"
-    },
-    {
-        "name": "Patrick Hodgson",
-        "avg_speed": 17.160565988964546,
-        "home_port_id": "5c054671af5b831c612ed850",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7e2",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 751226.7235875062,
-        "_id": "5c0546e5af5b831c612f1664"
-    },
-    {
-        "name": "Hazel Sell",
-        "avg_speed": 21.0171214608266,
-        "home_port_id": "5c054671af5b831c612ed9da",
-        "ship_type_id": 2,
-        "flag_id": "5c054670af5b831c612ed7cd",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 358545.20476823393,
-        "_id": "5c0546e5af5b831c612f1665"
-    },
-    {
-        "name": "John Forsythe",
-        "avg_speed": 11.608905195553037,
-        "home_port_id": "5c054671af5b831c612ed854",
-        "ship_type_id": 0,
-        "flag_id": "5c054670af5b831c612ed783",
-        "size_type_id": "5c0546e2af5b831c612f159c",
-        "cargo_amount": 523459.05707098974,
-        "_id": "5c0546e5af5b831c612f1666"
+        "name": "Elizabeth Dobbins",
+        "avg_speed": 16.658178945949878,
+        "home_port_id": "5c058e90af5b831becc6a6cd",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2d8",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e08c"
+    },
+    {
+        "name": "Jeanine Brookman",
+        "avg_speed": 11.404508027197334,
+        "home_port_id": "5c058e90af5b831becc6a44b",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a312",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e08d"
+    },
+    {
+        "name": "Bobby Weber",
+        "avg_speed": 16.12135945877052,
+        "home_port_id": "5c058e90af5b831becc6a5de",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2ba",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e08e"
+    },
+    {
+        "name": "William Winn",
+        "avg_speed": 14.666893806921433,
+        "home_port_id": "5c058e90af5b831becc6a5f7",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a329",
+        "size_type_id": "5c058f38af5b831becc6e08b",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e08f"
+    },
+    {
+        "name": "Dorothy Guertin",
+        "avg_speed": 22.253485647522478,
+        "home_port_id": "5c058e90af5b831becc6a7f9",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a319",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e090"
+    },
+    {
+        "name": "Robert Smith",
+        "avg_speed": 10.639148296555677,
+        "home_port_id": "5c058e90af5b831becc6a875",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2e5",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e091"
+    },
+    {
+        "name": "Maurice Rivera",
+        "avg_speed": 20.348485826337996,
+        "home_port_id": "5c058e90af5b831becc6a5fa",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a25d",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e092"
+    },
+    {
+        "name": "Juan Dvorak",
+        "avg_speed": 12.171563140176245,
+        "home_port_id": "5c058e90af5b831becc6a3f2",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a29e",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e093"
+    },
+    {
+        "name": "Michelle Veazey",
+        "avg_speed": 19.427682190927094,
+        "home_port_id": "5c058e90af5b831becc6a5ce",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2c0",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e094"
+    },
+    {
+        "name": "Vincent Boyd",
+        "avg_speed": 13.053970998646747,
+        "home_port_id": "5c058e90af5b831becc6a685",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a24c",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e095"
+    },
+    {
+        "name": "Brandi Villarreal",
+        "avg_speed": 12.279463237374177,
+        "home_port_id": "5c058e90af5b831becc6a6c2",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2bb",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e096"
+    },
+    {
+        "name": "Monica Frazier",
+        "avg_speed": 13.652004225577292,
+        "home_port_id": "5c058e90af5b831becc6a34d",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a31c",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e097"
+    },
+    {
+        "name": "Gary Hebert",
+        "avg_speed": 15.250372151279866,
+        "home_port_id": "5c058e90af5b831becc6a5c9",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a25b",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e098"
+    },
+    {
+        "name": "Clifford Mcduffy",
+        "avg_speed": 11.877432459722074,
+        "home_port_id": "5c058e90af5b831becc6a46f",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2bc",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e099"
+    },
+    {
+        "name": "Jose Arteaga",
+        "avg_speed": 19.80226276551565,
+        "home_port_id": "5c058e90af5b831becc6a75c",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2c9",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e09a"
+    },
+    {
+        "name": "Jame Collins",
+        "avg_speed": 10.386813847547373,
+        "home_port_id": "5c058e90af5b831becc6a68a",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2d0",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e09b"
+    },
+    {
+        "name": "David Hagan",
+        "avg_speed": 11.13373788625886,
+        "home_port_id": "5c058e90af5b831becc6a860",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a27a",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e09c"
+    },
+    {
+        "name": "Joe Fletcher",
+        "avg_speed": 16.583937530612374,
+        "home_port_id": "5c058e90af5b831becc6a601",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a32a",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e09d"
+    },
+    {
+        "name": "Raymond Flores",
+        "avg_speed": 8.322884180263992,
+        "home_port_id": "5c058e90af5b831becc6a95e",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a293",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e09e"
+    },
+    {
+        "name": "Kimberly Ashmen",
+        "avg_speed": 13.185692679005934,
+        "home_port_id": "5c058e90af5b831becc6a62d",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2f3",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e09f"
+    },
+    {
+        "name": "Stacie Wehner",
+        "avg_speed": 9.630256786495847,
+        "home_port_id": "5c058e90af5b831becc6a65d",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a28e",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0a0"
+    },
+    {
+        "name": "Hattie Verdin",
+        "avg_speed": 19.516867782451698,
+        "home_port_id": "5c058e90af5b831becc6a5cc",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a269",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0a1"
+    },
+    {
+        "name": "Bradley Nickerson",
+        "avg_speed": 20.181790892482837,
+        "home_port_id": "5c058e90af5b831becc6a8e9",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a254",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0a2"
+    },
+    {
+        "name": "David Wilkinson",
+        "avg_speed": 11.271812217434189,
+        "home_port_id": "5c058e90af5b831becc6a4b1",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a287",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0a3"
+    },
+    {
+        "name": "Catherine Lusk",
+        "avg_speed": 10.947110935364812,
+        "home_port_id": "5c058e90af5b831becc6a3f7",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2e0",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0a4"
+    },
+    {
+        "name": "Scott Cano",
+        "avg_speed": 14.881115354348976,
+        "home_port_id": "5c058e90af5b831becc6a71e",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2b3",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0a5"
+    },
+    {
+        "name": "Kate Russell",
+        "avg_speed": 17.2661079473744,
+        "home_port_id": "5c058e90af5b831becc6a5de",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2da",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0a6"
+    },
+    {
+        "name": "Margarita Woock",
+        "avg_speed": 19.695675807944852,
+        "home_port_id": "5c058e90af5b831becc6a639",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a24a",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0a7"
+    },
+    {
+        "name": "Arnold Mccray",
+        "avg_speed": 16.836006651590303,
+        "home_port_id": "5c058e90af5b831becc6a401",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a24c",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0a8"
+    },
+    {
+        "name": "Pablo Spencer",
+        "avg_speed": 10.573092060361295,
+        "home_port_id": "5c058e90af5b831becc6a362",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2fc",
+        "size_type_id": "5c058f38af5b831becc6e08b",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0a9"
+    },
+    {
+        "name": "Susan Jones",
+        "avg_speed": 22.25461348477554,
+        "home_port_id": "5c058e90af5b831becc6a7f1",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2cc",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0aa"
+    },
+    {
+        "name": "Adam Ingram",
+        "avg_speed": 15.736015323048587,
+        "home_port_id": "5c058e90af5b831becc6a63d",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a24b",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0ab"
+    },
+    {
+        "name": "Kevin Ashby",
+        "avg_speed": 16.242779467784942,
+        "home_port_id": "5c058e90af5b831becc6a496",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a27a",
+        "size_type_id": "5c058f38af5b831becc6e087",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0ac"
+    },
+    {
+        "name": "Harvey Parson",
+        "avg_speed": 10.41081551444249,
+        "home_port_id": "5c058e90af5b831becc6a5a8",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a290",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0ad"
+    },
+    {
+        "name": "Barbara Preusser",
+        "avg_speed": 17.017524911002567,
+        "home_port_id": "5c058e90af5b831becc6a3d2",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2b9",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0ae"
+    },
+    {
+        "name": "Elizabeth Johnson",
+        "avg_speed": 20.365931758346512,
+        "home_port_id": "5c058e90af5b831becc6a4a8",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a289",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0af"
+    },
+    {
+        "name": "Joseph Homan",
+        "avg_speed": 17.52005313850264,
+        "home_port_id": "5c058e90af5b831becc6a3e0",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2d6",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0b0"
+    },
+    {
+        "name": "Chris Batchelor",
+        "avg_speed": 13.830172353224429,
+        "home_port_id": "5c058e90af5b831becc6a756",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a316",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0b1"
+    },
+    {
+        "name": "Shirley Shelton",
+        "avg_speed": 17.421498884096266,
+        "home_port_id": "5c058e90af5b831becc6a94a",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a304",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0b2"
+    },
+    {
+        "name": "Larry Evans",
+        "avg_speed": 19.594995499583817,
+        "home_port_id": "5c058e90af5b831becc6a3f8",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2b8",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0b3"
+    },
+    {
+        "name": "Lorene Morris",
+        "avg_speed": 22.841091457776493,
+        "home_port_id": "5c058e90af5b831becc6a5fe",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a318",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0b4"
+    },
+    {
+        "name": "Sylvia Thomas",
+        "avg_speed": 9.817032540578461,
+        "home_port_id": "5c058e90af5b831becc6a51b",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a32b",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0b5"
+    },
+    {
+        "name": "Sherman Schmidt",
+        "avg_speed": 20.70199277619713,
+        "home_port_id": "5c058e90af5b831becc6a951",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a311",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0b6"
+    },
+    {
+        "name": "Daniel Markert",
+        "avg_speed": 10.20431707962404,
+        "home_port_id": "5c058e90af5b831becc6a7f2",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2f2",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0b7"
+    },
+    {
+        "name": "Rose Farris",
+        "avg_speed": 15.678841816540222,
+        "home_port_id": "5c058e90af5b831becc6a3c1",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a281",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0b8"
+    },
+    {
+        "name": "Nelson Lewter",
+        "avg_speed": 19.677999301002522,
+        "home_port_id": "5c058e90af5b831becc6a5d7",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2b0",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0b9"
+    },
+    {
+        "name": "Grace Wilson",
+        "avg_speed": 9.59025293877186,
+        "home_port_id": "5c058e90af5b831becc6a54b",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a279",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0ba"
+    },
+    {
+        "name": "Julio Reichenbach",
+        "avg_speed": 20.41892347840587,
+        "home_port_id": "5c058e90af5b831becc6a33c",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2b1",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0bb"
+    },
+    {
+        "name": "Francisco Lee",
+        "avg_speed": 10.660889368575074,
+        "home_port_id": "5c058e90af5b831becc6a623",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a31c",
+        "size_type_id": "5c058f38af5b831becc6e087",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0bc"
+    },
+    {
+        "name": "Michael Manzanares",
+        "avg_speed": 18.973743503492255,
+        "home_port_id": "5c058e90af5b831becc6a508",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2d3",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0bd"
+    },
+    {
+        "name": "Ben Dalessandro",
+        "avg_speed": 14.571581414707577,
+        "home_port_id": "5c058e90af5b831becc6a4f5",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2cb",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0be"
+    },
+    {
+        "name": "Jose Richards",
+        "avg_speed": 19.509662290960506,
+        "home_port_id": "5c058e90af5b831becc6a809",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2c8",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0bf"
+    },
+    {
+        "name": "Brendon Mcmaster",
+        "avg_speed": 11.034901198603034,
+        "home_port_id": "5c058e90af5b831becc6a524",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a284",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0c0"
+    },
+    {
+        "name": "Kenneth Gunn",
+        "avg_speed": 21.859662403908864,
+        "home_port_id": "5c058e90af5b831becc6a6cd",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a284",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0c1"
+    },
+    {
+        "name": "Suzanne Parker",
+        "avg_speed": 14.031329263356746,
+        "home_port_id": "5c058e90af5b831becc6a6b7",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a269",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0c2"
+    },
+    {
+        "name": "Quinton Kiser",
+        "avg_speed": 8.538041454964139,
+        "home_port_id": "5c058e90af5b831becc6a52e",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a326",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0c3"
+    },
+    {
+        "name": "Roy Hall",
+        "avg_speed": 19.54412091920718,
+        "home_port_id": "5c058e90af5b831becc6a350",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a32b",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0c4"
+    },
+    {
+        "name": "Elaine Pendergrass",
+        "avg_speed": 13.241084336368722,
+        "home_port_id": "5c058e90af5b831becc6a791",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2d1",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0c5"
+    },
+    {
+        "name": "Kristen Davis",
+        "avg_speed": 13.721725316631677,
+        "home_port_id": "5c058e90af5b831becc6a6e8",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a25b",
+        "size_type_id": "5c058f38af5b831becc6e087",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0c6"
+    },
+    {
+        "name": "Clyde Buchanan",
+        "avg_speed": 20.304987666701997,
+        "home_port_id": "5c058e90af5b831becc6a335",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2f6",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0c7"
+    },
+    {
+        "name": "Adell Mansi",
+        "avg_speed": 15.190906847989517,
+        "home_port_id": "5c058e90af5b831becc6a6b1",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2c2",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0c8"
+    },
+    {
+        "name": "Van Midgley",
+        "avg_speed": 11.716229204464227,
+        "home_port_id": "5c058e90af5b831becc6a6fc",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a30a",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0c9"
+    },
+    {
+        "name": "Helen Burke",
+        "avg_speed": 13.546640906441576,
+        "home_port_id": "5c058e90af5b831becc6a458",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a295",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0ca"
+    },
+    {
+        "name": "Frank Balboa",
+        "avg_speed": 17.823066090581072,
+        "home_port_id": "5c058e90af5b831becc6a84b",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2eb",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0cb"
+    },
+    {
+        "name": "Marine Tuttle",
+        "avg_speed": 18.127621545253234,
+        "home_port_id": "5c058e90af5b831becc6a458",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a30e",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0cc"
+    },
+    {
+        "name": "Irene Terry",
+        "avg_speed": 15.627852897850973,
+        "home_port_id": "5c058e90af5b831becc6a783",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a31f",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0cd"
+    },
+    {
+        "name": "Joseph Kirsch",
+        "avg_speed": 21.894939893056332,
+        "home_port_id": "5c058e90af5b831becc6a653",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a316",
+        "size_type_id": "5c058f38af5b831becc6e087",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0ce"
+    },
+    {
+        "name": "Herman Madewell",
+        "avg_speed": 10.358551301281532,
+        "home_port_id": "5c058e90af5b831becc6a603",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a31b",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0cf"
+    },
+    {
+        "name": "Paul Davis",
+        "avg_speed": 19.228253532336545,
+        "home_port_id": "5c058e90af5b831becc6a569",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a27d",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0d0"
+    },
+    {
+        "name": "Richard Tilly",
+        "avg_speed": 15.023181183764384,
+        "home_port_id": "5c058e90af5b831becc6a738",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a25f",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0d1"
+    },
+    {
+        "name": "Antonio Gordon",
+        "avg_speed": 21.819007142137615,
+        "home_port_id": "5c058e90af5b831becc6a687",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2fc",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0d2"
+    },
+    {
+        "name": "Crystal Wright",
+        "avg_speed": 16.417630509114694,
+        "home_port_id": "5c058e90af5b831becc6a50f",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2fb",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0d3"
+    },
+    {
+        "name": "John Montague",
+        "avg_speed": 9.856264908618,
+        "home_port_id": "5c058e90af5b831becc6a6cf",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2ae",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0d4"
+    },
+    {
+        "name": "Sharon Maheu",
+        "avg_speed": 12.087077136292343,
+        "home_port_id": "5c058e90af5b831becc6a872",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2c7",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0d5"
+    },
+    {
+        "name": "Angela Reynoso",
+        "avg_speed": 21.24431519391825,
+        "home_port_id": "5c058e90af5b831becc6a855",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2b8",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0d6"
+    },
+    {
+        "name": "Richard Filley",
+        "avg_speed": 15.83924082055278,
+        "home_port_id": "5c058e90af5b831becc6a3f6",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2c8",
+        "size_type_id": "5c058f38af5b831becc6e087",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0d7"
+    },
+    {
+        "name": "Stacey Stephens",
+        "avg_speed": 14.169781749938934,
+        "home_port_id": "5c058e90af5b831becc6a842",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2ab",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0d8"
+    },
+    {
+        "name": "Susan Martell",
+        "avg_speed": 14.326576009855483,
+        "home_port_id": "5c058e90af5b831becc6a875",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a30e",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0d9"
+    },
+    {
+        "name": "Carmen Briggeman",
+        "avg_speed": 17.718577397991197,
+        "home_port_id": "5c058e90af5b831becc6a3cc",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a28a",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0da"
+    },
+    {
+        "name": "Michael Barth",
+        "avg_speed": 22.54591851077826,
+        "home_port_id": "5c058e90af5b831becc6a943",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a265",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0db"
+    },
+    {
+        "name": "Christopher Swisher",
+        "avg_speed": 20.196878583683933,
+        "home_port_id": "5c058e90af5b831becc6a6ff",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2e7",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0dc"
+    },
+    {
+        "name": "Edna Stacy",
+        "avg_speed": 18.7961560862176,
+        "home_port_id": "5c058e90af5b831becc6a7b2",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2a0",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0dd"
+    },
+    {
+        "name": "Frederick Conner",
+        "avg_speed": 19.18657618018772,
+        "home_port_id": "5c058e90af5b831becc6a3d6",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2c9",
+        "size_type_id": "5c058f38af5b831becc6e087",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0de"
+    },
+    {
+        "name": "Robert Gonzalez",
+        "avg_speed": 16.0191479464482,
+        "home_port_id": "5c058e90af5b831becc6a50a",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2b3",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0df"
+    },
+    {
+        "name": "Dallas Condon",
+        "avg_speed": 8.634352716827019,
+        "home_port_id": "5c058e90af5b831becc6a43c",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a276",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0e0"
+    },
+    {
+        "name": "Cynthia Guerin",
+        "avg_speed": 12.693222862457679,
+        "home_port_id": "5c058e90af5b831becc6a7bb",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a297",
+        "size_type_id": "5c058f38af5b831becc6e08b",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0e1"
+    },
+    {
+        "name": "Walter Hatfield",
+        "avg_speed": 20.249464627862253,
+        "home_port_id": "5c058e90af5b831becc6a607",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a264",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0e2"
+    },
+    {
+        "name": "Nicole Anderson",
+        "avg_speed": 9.674377299317257,
+        "home_port_id": "5c058e90af5b831becc6a7f5",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a292",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0e3"
+    },
+    {
+        "name": "Joe Houle",
+        "avg_speed": 10.443723008094743,
+        "home_port_id": "5c058e90af5b831becc6a6d1",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a298",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0e4"
+    },
+    {
+        "name": "Margie Broadwell",
+        "avg_speed": 10.706261576200358,
+        "home_port_id": "5c058e90af5b831becc6a5cd",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a28a",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0e5"
+    },
+    {
+        "name": "Zachary Hartman",
+        "avg_speed": 8.661030945579533,
+        "home_port_id": "5c058e90af5b831becc6a423",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a290",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0e6"
+    },
+    {
+        "name": "Christina Hargis",
+        "avg_speed": 8.407622889593348,
+        "home_port_id": "5c058e90af5b831becc6a42f",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2d7",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0e7"
+    },
+    {
+        "name": "John Warren",
+        "avg_speed": 20.291442380505142,
+        "home_port_id": "5c058e90af5b831becc6a3f4",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a272",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0e8"
+    },
+    {
+        "name": "Joseph Williams",
+        "avg_speed": 14.227343515349002,
+        "home_port_id": "5c058e90af5b831becc6a6b3",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a30a",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0e9"
+    },
+    {
+        "name": "Reynaldo Zuber",
+        "avg_speed": 8.391103194360886,
+        "home_port_id": "5c058e90af5b831becc6a84a",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a319",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0ea"
+    },
+    {
+        "name": "Ted Hughes",
+        "avg_speed": 13.607869650410585,
+        "home_port_id": "5c058e90af5b831becc6a546",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2c3",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0eb"
+    },
+    {
+        "name": "Nancy Winters",
+        "avg_speed": 8.140005714191332,
+        "home_port_id": "5c058e90af5b831becc6a7fe",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a312",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0ec"
+    },
+    {
+        "name": "Robert Eason",
+        "avg_speed": 18.590116568125403,
+        "home_port_id": "5c058e90af5b831becc6a827",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2e0",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0ed"
+    },
+    {
+        "name": "Ralph Simpson",
+        "avg_speed": 15.968362382653059,
+        "home_port_id": "5c058e90af5b831becc6a5c9",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a258",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0ee"
+    },
+    {
+        "name": "Elena Carrera",
+        "avg_speed": 11.283322899238122,
+        "home_port_id": "5c058e90af5b831becc6a47c",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a30e",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0ef"
+    },
+    {
+        "name": "Lisa Gienger",
+        "avg_speed": 11.785818463002872,
+        "home_port_id": "5c058e90af5b831becc6a6e2",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a258",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0f0"
+    },
+    {
+        "name": "Mary Lopez",
+        "avg_speed": 14.406427894094202,
+        "home_port_id": "5c058e90af5b831becc6a461",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a26f",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0f1"
+    },
+    {
+        "name": "Aubrey Pugh",
+        "avg_speed": 8.095890012694616,
+        "home_port_id": "5c058e90af5b831becc6a75f",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2ae",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0f2"
+    },
+    {
+        "name": "Lora Wilson",
+        "avg_speed": 10.717863699109607,
+        "home_port_id": "5c058e90af5b831becc6a7af",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2df",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0f3"
+    },
+    {
+        "name": "Peter Thomas",
+        "avg_speed": 16.20600689022188,
+        "home_port_id": "5c058e90af5b831becc6a73d",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a270",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0f4"
+    },
+    {
+        "name": "Michael Cheatham",
+        "avg_speed": 17.668170834573246,
+        "home_port_id": "5c058e90af5b831becc6a4fa",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2df",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0f5"
+    },
+    {
+        "name": "Patrick Shaver",
+        "avg_speed": 7.240652315713556,
+        "home_port_id": "5c058e90af5b831becc6a61d",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a26e",
+        "size_type_id": "5c058f38af5b831becc6e08b",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0f6"
+    },
+    {
+        "name": "Anthony Williams",
+        "avg_speed": 21.575686003545528,
+        "home_port_id": "5c058e90af5b831becc6a8f1",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a287",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0f7"
+    },
+    {
+        "name": "Richard Guss",
+        "avg_speed": 14.400741251509462,
+        "home_port_id": "5c058e90af5b831becc6a74e",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a259",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0f8"
+    },
+    {
+        "name": "Henry Hill",
+        "avg_speed": 16.950463019774247,
+        "home_port_id": "5c058e90af5b831becc6a4bf",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a310",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0f9"
+    },
+    {
+        "name": "Daniel Poole",
+        "avg_speed": 17.66659021885203,
+        "home_port_id": "5c058e90af5b831becc6a575",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2e9",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0fa"
+    },
+    {
+        "name": "Russell Angelo",
+        "avg_speed": 17.23558846576557,
+        "home_port_id": "5c058e90af5b831becc6a573",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a26f",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0fb"
+    },
+    {
+        "name": "Linda Jude",
+        "avg_speed": 17.298550626392135,
+        "home_port_id": "5c058e90af5b831becc6a7df",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2bd",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0fc"
+    },
+    {
+        "name": "Anna Leighton",
+        "avg_speed": 18.521009691769088,
+        "home_port_id": "5c058e90af5b831becc6a7e9",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2cb",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0fd"
+    },
+    {
+        "name": "William Ewing",
+        "avg_speed": 13.188899559560786,
+        "home_port_id": "5c058e90af5b831becc6a502",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a25f",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0fe"
+    },
+    {
+        "name": "Jason Ogden",
+        "avg_speed": 15.726791552858248,
+        "home_port_id": "5c058e90af5b831becc6a49b",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2d0",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e0ff"
+    },
+    {
+        "name": "Robert Johnson",
+        "avg_speed": 9.77357819850356,
+        "home_port_id": "5c058e90af5b831becc6a33a",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a257",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e100"
+    },
+    {
+        "name": "Norma Ligget",
+        "avg_speed": 18.910118698158442,
+        "home_port_id": "5c058e90af5b831becc6a6e5",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2bc",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e101"
+    },
+    {
+        "name": "Patrick Fontaine",
+        "avg_speed": 14.489518279217993,
+        "home_port_id": "5c058e90af5b831becc6a92d",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a31c",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e102"
+    },
+    {
+        "name": "Brenda Scheele",
+        "avg_speed": 9.30772029261359,
+        "home_port_id": "5c058e90af5b831becc6a500",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2e1",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e103"
+    },
+    {
+        "name": "Inga Kadi",
+        "avg_speed": 12.433940025647898,
+        "home_port_id": "5c058e90af5b831becc6a455",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2a3",
+        "size_type_id": "5c058f38af5b831becc6e087",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e104"
+    },
+    {
+        "name": "Donald Chavis",
+        "avg_speed": 18.44919359165963,
+        "home_port_id": "5c058e90af5b831becc6a826",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a31b",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e105"
+    },
+    {
+        "name": "Jacqualine Deanda",
+        "avg_speed": 10.051016182361998,
+        "home_port_id": "5c058e90af5b831becc6a3b9",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a264",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e106"
+    },
+    {
+        "name": "Benito Maez",
+        "avg_speed": 13.292701109889007,
+        "home_port_id": "5c058e90af5b831becc6a901",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a259",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e107"
+    },
+    {
+        "name": "Priscilla Strouse",
+        "avg_speed": 15.901974126746396,
+        "home_port_id": "5c058e90af5b831becc6a782",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a26f",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e108"
+    },
+    {
+        "name": "Amy Morris",
+        "avg_speed": 13.198499878842131,
+        "home_port_id": "5c058e90af5b831becc6a581",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a27d",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e109"
+    },
+    {
+        "name": "Andrew Arthur",
+        "avg_speed": 21.699734088060865,
+        "home_port_id": "5c058e90af5b831becc6a43f",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a26f",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e10a"
+    },
+    {
+        "name": "Sylvia Crowley",
+        "avg_speed": 12.022891544776977,
+        "home_port_id": "5c058e90af5b831becc6a3c1",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2a3",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e10b"
+    },
+    {
+        "name": "Donald Knight",
+        "avg_speed": 13.857550285729678,
+        "home_port_id": "5c058e90af5b831becc6a498",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a271",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e10c"
+    },
+    {
+        "name": "Randall Pennington",
+        "avg_speed": 17.70195223470431,
+        "home_port_id": "5c058e90af5b831becc6a8ca",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a24f",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e10d"
+    },
+    {
+        "name": "William Leng",
+        "avg_speed": 20.3665219538957,
+        "home_port_id": "5c058e90af5b831becc6a93d",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2de",
+        "size_type_id": "5c058f38af5b831becc6e087",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e10e"
+    },
+    {
+        "name": "Leon Tiger",
+        "avg_speed": 22.17007681407891,
+        "home_port_id": "5c058e90af5b831becc6a404",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a325",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e10f"
+    },
+    {
+        "name": "Bonnie Fisher",
+        "avg_speed": 13.799730370276137,
+        "home_port_id": "5c058e90af5b831becc6a6f5",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a251",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e110"
+    },
+    {
+        "name": "Clarence Helms",
+        "avg_speed": 22.039059939717177,
+        "home_port_id": "5c058e90af5b831becc6a5ac",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a283",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e111"
+    },
+    {
+        "name": "Jack Ecker",
+        "avg_speed": 10.001072236013274,
+        "home_port_id": "5c058e90af5b831becc6a7e9",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a313",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e112"
+    },
+    {
+        "name": "Christopher Diederich",
+        "avg_speed": 15.332158166229604,
+        "home_port_id": "5c058e90af5b831becc6a590",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a262",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e113"
+    },
+    {
+        "name": "Carissa Vega",
+        "avg_speed": 10.980954758177171,
+        "home_port_id": "5c058e90af5b831becc6a627",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a257",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e114"
+    },
+    {
+        "name": "George Scott",
+        "avg_speed": 12.89535591109759,
+        "home_port_id": "5c058e90af5b831becc6a5b3",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a271",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e115"
+    },
+    {
+        "name": "Steve Buckley",
+        "avg_speed": 22.0448401020793,
+        "home_port_id": "5c058e90af5b831becc6a665",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2ef",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e116"
+    },
+    {
+        "name": "Daryl King",
+        "avg_speed": 18.86173425777465,
+        "home_port_id": "5c058e90af5b831becc6a4a3",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2a1",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e117"
+    },
+    {
+        "name": "Michael Hall",
+        "avg_speed": 16.783713621540755,
+        "home_port_id": "5c058e90af5b831becc6a8ad",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a282",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e118"
+    },
+    {
+        "name": "Theresa Stoviak",
+        "avg_speed": 16.55057902542641,
+        "home_port_id": "5c058e90af5b831becc6a46c",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a30c",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e119"
+    },
+    {
+        "name": "Thomas Leahy",
+        "avg_speed": 19.675619533338754,
+        "home_port_id": "5c058e90af5b831becc6a58d",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2eb",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e11a"
+    },
+    {
+        "name": "Danielle Saunders",
+        "avg_speed": 15.078630062563919,
+        "home_port_id": "5c058e90af5b831becc6a785",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2cc",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e11b"
+    },
+    {
+        "name": "Emma Albritton",
+        "avg_speed": 16.846983446908617,
+        "home_port_id": "5c058e90af5b831becc6a52e",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2d9",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e11c"
+    },
+    {
+        "name": "Terence Montanez",
+        "avg_speed": 19.709262486293085,
+        "home_port_id": "5c058e90af5b831becc6a8fd",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a30a",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e11d"
+    },
+    {
+        "name": "Brenda Lent",
+        "avg_speed": 8.302288887056276,
+        "home_port_id": "5c058e90af5b831becc6a86e",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a291",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e11e"
+    },
+    {
+        "name": "Alan Alford",
+        "avg_speed": 15.199290753398632,
+        "home_port_id": "5c058e90af5b831becc6a4e7",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a24d",
+        "size_type_id": "5c058f38af5b831becc6e087",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e11f"
+    },
+    {
+        "name": "Sharon Tippett",
+        "avg_speed": 15.719712357104662,
+        "home_port_id": "5c058e90af5b831becc6a875",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a27f",
+        "size_type_id": "5c058f38af5b831becc6e087",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e120"
+    },
+    {
+        "name": "Gerald Wirth",
+        "avg_speed": 20.38884608859464,
+        "home_port_id": "5c058e90af5b831becc6a789",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2c1",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e121"
+    },
+    {
+        "name": "Brian Goodlett",
+        "avg_speed": 20.025899617982105,
+        "home_port_id": "5c058e90af5b831becc6a5f1",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a32b",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e122"
+    },
+    {
+        "name": "Deborah Matthews",
+        "avg_speed": 10.223601069312483,
+        "home_port_id": "5c058e90af5b831becc6a8e2",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2d3",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e123"
+    },
+    {
+        "name": "Travis Alday",
+        "avg_speed": 16.869757545217425,
+        "home_port_id": "5c058e90af5b831becc6a403",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a267",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e124"
+    },
+    {
+        "name": "Mary Brown",
+        "avg_speed": 15.262121051966327,
+        "home_port_id": "5c058e90af5b831becc6a927",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a250",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e125"
+    },
+    {
+        "name": "Jack Taylor",
+        "avg_speed": 14.95448346173119,
+        "home_port_id": "5c058e90af5b831becc6a78d",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2fa",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e126"
+    },
+    {
+        "name": "Ginger Golden",
+        "avg_speed": 10.13316568242145,
+        "home_port_id": "5c058e90af5b831becc6a910",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2b0",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e127"
+    },
+    {
+        "name": "Donald Stradley",
+        "avg_speed": 20.432860071271215,
+        "home_port_id": "5c058e90af5b831becc6a78c",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2df",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e128"
+    },
+    {
+        "name": "Jacqueline Etheredge",
+        "avg_speed": 22.49500763755061,
+        "home_port_id": "5c058e90af5b831becc6a347",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a272",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e129"
+    },
+    {
+        "name": "Tammy Perkins",
+        "avg_speed": 12.798426191336977,
+        "home_port_id": "5c058e90af5b831becc6a4e9",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a298",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e12a"
+    },
+    {
+        "name": "Anthony Fischer",
+        "avg_speed": 11.789850891265857,
+        "home_port_id": "5c058e90af5b831becc6a920",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a24e",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e12b"
+    },
+    {
+        "name": "James Bradley",
+        "avg_speed": 12.564232813592742,
+        "home_port_id": "5c058e90af5b831becc6a7b3",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2c2",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e12c"
+    },
+    {
+        "name": "Edward Curran",
+        "avg_speed": 8.421936317753554,
+        "home_port_id": "5c058e90af5b831becc6a438",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2b8",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e12d"
+    },
+    {
+        "name": "Anita Hammons",
+        "avg_speed": 16.009520153656048,
+        "home_port_id": "5c058e90af5b831becc6a930",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a267",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e12e"
+    },
+    {
+        "name": "Judith Jamerson",
+        "avg_speed": 13.76436270511993,
+        "home_port_id": "5c058e90af5b831becc6a6e7",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2b9",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e12f"
+    },
+    {
+        "name": "Michelle Collins",
+        "avg_speed": 18.173263845891405,
+        "home_port_id": "5c058e90af5b831becc6a4f6",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a28f",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e130"
+    },
+    {
+        "name": "Sergio Shiba",
+        "avg_speed": 14.282402929494262,
+        "home_port_id": "5c058e90af5b831becc6a5b6",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2fd",
+        "size_type_id": "5c058f38af5b831becc6e087",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e131"
+    },
+    {
+        "name": "Francis Shupe",
+        "avg_speed": 19.803596648996248,
+        "home_port_id": "5c058e90af5b831becc6a7f9",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a24a",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e132"
+    },
+    {
+        "name": "Melissa Gibbs",
+        "avg_speed": 16.804408290674527,
+        "home_port_id": "5c058e90af5b831becc6a44f",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a254",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e133"
+    },
+    {
+        "name": "Charles Fouts",
+        "avg_speed": 11.898186114869315,
+        "home_port_id": "5c058e90af5b831becc6a46e",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a297",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e134"
+    },
+    {
+        "name": "Todd Smith",
+        "avg_speed": 17.593233441955043,
+        "home_port_id": "5c058e90af5b831becc6a66b",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a316",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e135"
+    },
+    {
+        "name": "Ray Jewell",
+        "avg_speed": 23.516556402752393,
+        "home_port_id": "5c058e90af5b831becc6a5ea",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a31b",
+        "size_type_id": "5c058f38af5b831becc6e087",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e136"
+    },
+    {
+        "name": "Bobbie Plank",
+        "avg_speed": 10.605844684330945,
+        "home_port_id": "5c058e90af5b831becc6a7da",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2d2",
+        "size_type_id": "5c058f38af5b831becc6e087",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e137"
+    },
+    {
+        "name": "Brian Vail",
+        "avg_speed": 12.141059373780607,
+        "home_port_id": "5c058e90af5b831becc6a6e7",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a296",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e138"
+    },
+    {
+        "name": "Josephine Wilson",
+        "avg_speed": 19.244507057164427,
+        "home_port_id": "5c058e90af5b831becc6a72b",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a285",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e139"
+    },
+    {
+        "name": "Edith Austin",
+        "avg_speed": 11.938803610405136,
+        "home_port_id": "5c058e90af5b831becc6a6ae",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2a2",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e13a"
+    },
+    {
+        "name": "George Martinez",
+        "avg_speed": 8.864627517596976,
+        "home_port_id": "5c058e90af5b831becc6a8a6",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2d6",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e13b"
+    },
+    {
+        "name": "Carlos Roberson",
+        "avg_speed": 10.873362743606961,
+        "home_port_id": "5c058e90af5b831becc6a5df",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a266",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e13c"
+    },
+    {
+        "name": "Brian Lew",
+        "avg_speed": 14.353757911421216,
+        "home_port_id": "5c058e90af5b831becc6a851",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a2bc",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e13d"
+    },
+    {
+        "name": "Wilma Monaco",
+        "avg_speed": 20.511290041918166,
+        "home_port_id": "5c058e90af5b831becc6a595",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a263",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e13e"
+    },
+    {
+        "name": "Thomas Chapin",
+        "avg_speed": 12.150992704837256,
+        "home_port_id": "5c058e90af5b831becc6a54b",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a250",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e13f"
+    },
+    {
+        "name": "Krystal Armstrong",
+        "avg_speed": 14.925319115009906,
+        "home_port_id": "5c058e90af5b831becc6a881",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a29f",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e140"
+    },
+    {
+        "name": "Diana Reed",
+        "avg_speed": 20.362656609097836,
+        "home_port_id": "5c058e90af5b831becc6a7f0",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2f9",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e141"
+    },
+    {
+        "name": "Lisa Garcia",
+        "avg_speed": 19.11888989400353,
+        "home_port_id": "5c058e90af5b831becc6a447",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a27c",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e142"
+    },
+    {
+        "name": "Charlotte Davis",
+        "avg_speed": 18.65523583302243,
+        "home_port_id": "5c058e90af5b831becc6a763",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2ce",
+        "size_type_id": "5c058f38af5b831becc6e08b",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e143"
+    },
+    {
+        "name": "Darrell Nicholson",
+        "avg_speed": 13.0941781490133,
+        "home_port_id": "5c058e90af5b831becc6a68e",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a29e",
+        "size_type_id": "5c058f38af5b831becc6e087",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e144"
+    },
+    {
+        "name": "Ronald Crawford",
+        "avg_speed": 20.536100434249995,
+        "home_port_id": "5c058e90af5b831becc6a44f",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a311",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e145"
+    },
+    {
+        "name": "Eleonore Merrow",
+        "avg_speed": 20.1484916868826,
+        "home_port_id": "5c058e90af5b831becc6a592",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a254",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e146"
+    },
+    {
+        "name": "Ernest Walker",
+        "avg_speed": 6.062413828472872,
+        "home_port_id": "5c058e90af5b831becc6a74e",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2c6",
+        "size_type_id": "5c058f38af5b831becc6e08b",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e147"
+    },
+    {
+        "name": "Christopher Syphers",
+        "avg_speed": 10.83143818838709,
+        "home_port_id": "5c058e90af5b831becc6a85a",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2c0",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e148"
+    },
+    {
+        "name": "Alvaro Blunt",
+        "avg_speed": 13.479202672761463,
+        "home_port_id": "5c058e90af5b831becc6a57e",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a32a",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e149"
+    },
+    {
+        "name": "Diana Bullman",
+        "avg_speed": 11.598221007449194,
+        "home_port_id": "5c058e90af5b831becc6a8dc",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2e2",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e14a"
+    },
+    {
+        "name": "Audrey Thomas",
+        "avg_speed": 19.92087426094649,
+        "home_port_id": "5c058e90af5b831becc6a44b",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2f5",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e14b"
+    },
+    {
+        "name": "Christa Ruddy",
+        "avg_speed": 18.64217174465044,
+        "home_port_id": "5c058e90af5b831becc6a364",
+        "ship_type_id": "5c058f38af5b831becc6e084",
+        "flag_id": "5c058e8eaf5b831becc6a2ad",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e14c"
+    },
+    {
+        "name": "George Dyer",
+        "avg_speed": 20.047326399202547,
+        "home_port_id": "5c058e90af5b831becc6a3ca",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a297",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e14d"
+    },
+    {
+        "name": "Karen Betz",
+        "avg_speed": 13.454527662848632,
+        "home_port_id": "5c058e90af5b831becc6a75e",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a30b",
+        "size_type_id": "5c058f38af5b831becc6e089",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e14e"
+    },
+    {
+        "name": "Bridget Shaw",
+        "avg_speed": 11.281474254894665,
+        "home_port_id": "5c058e90af5b831becc6a76d",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2b3",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e14f"
+    },
+    {
+        "name": "Debra Tobon",
+        "avg_speed": 13.737990723188076,
+        "home_port_id": "5c058e90af5b831becc6a4d4",
+        "ship_type_id": "5c058f38af5b831becc6e086",
+        "flag_id": "5c058e8eaf5b831becc6a2dd",
+        "size_type_id": "5c058f38af5b831becc6e087",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e150"
+    },
+    {
+        "name": "Martha Crose",
+        "avg_speed": 7.503704871209597,
+        "home_port_id": "5c058e90af5b831becc6a433",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a280",
+        "size_type_id": "5c058f38af5b831becc6e08a",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e151"
+    },
+    {
+        "name": "Stella Lillard",
+        "avg_speed": 16.533077928612876,
+        "home_port_id": "5c058e90af5b831becc6a933",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a29c",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e152"
+    },
+    {
+        "name": "Thomas Lin",
+        "avg_speed": 12.511644089097237,
+        "home_port_id": "5c058e90af5b831becc6a689",
+        "ship_type_id": "5c058f38af5b831becc6e085",
+        "flag_id": "5c058e8eaf5b831becc6a26c",
+        "size_type_id": "5c058f38af5b831becc6e088",
+        "cargo_amount": 0,
+        "_id": "5c058f3baf5b831becc6e153"
     }
 ]

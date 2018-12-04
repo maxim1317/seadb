@@ -21,7 +21,7 @@ def gen_piers(port_coll, crgo_coll, max_per_port=5):
             k_left  = k / 3
             k_right = k / 10
 
-            pier["port_id"]   = str(port["_id"])
+            pier["port_id"]   = port["_id"]
             pier["pier_type"] = list(crgo_coll.find())[random.randint(0, crgo_coll.count() - 1)]["_id"]
             pier["rate"]      = random.triangular(k_left, k_right, k / 5)
 

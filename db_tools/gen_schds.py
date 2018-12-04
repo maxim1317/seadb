@@ -154,7 +154,7 @@ def gen_rand_schd(db, amount, ship_id):
         start_time = end_time
 
         if (i == amount - 2) and db.good_ports.count_documents({'_id': dep_port}) == 0:
-            print('!!!')
+            pass
         else:
             i += 1
 

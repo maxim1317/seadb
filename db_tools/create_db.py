@@ -1,102 +1,214 @@
 from pymongo import MongoClient
-from tqdm import tqdm
 
-from gen_ports_cntrs_dests import *
-from gen_ships import *
-from gen_piers import *
+from gen_open_data import *
+from gen_consts import *
+from gen_first import *
+from gen_second import *
+from gen_third import *
+from gen_utilities import *
 
 from utils import *
-
-ports_file = "../resources/json/ports.json"
-dests_file = "../resources/json/dests.json"
-cntrs_file = "../resources/json/cntrs.json"
-crgos_file = "../resources/json/crgos.json"
-ships_file = "../resources/json/ships.json"
-sizes_file = "../resources/json/sizes.json"
-piers_file = "../resources/json/piers.json"
 
 
 DB_NAME = 'seadb'
 
 
-def create_coll_ship(db):
-    ports = db["ports"]
-    ports.create_index(["name"], unique=True)
-    return db
+def gen_one(db, gen, amount=None):
+    from termcolor import colored
+
+    gens = {
+        "ships": {
+            "fn"  : gen_ships,
+            "json": "../resources/json/ships.json",
+            "name": "ships"
+        },
+        "countries": {
+            "fn"  : gen_cntrs,
+            "json": "../resources/json/countries.json",
+            "name": "countries"
+        },
+        "ports": {
+            "fn"  : gen_ports,
+            "json": "../resources/json/ports.json",
+            "name": "ports"
+        },
+        "piers": {
+            "fn"  : gen_piers,
+            "json": "../resources/json/piers.json",
+            "name": "piers"
+        },
+        "cargo_types": {
+            "fn"  : gen_crgos,
+            "json": "../resources/json/cargo_types.json",
+            "name": "cargo_types"
+        },
+        "sizes": {
+            "fn"  : gen_sizes,
+            "json": "../resources/json/sizes.json",
+            "name": "sizes"
+        },
+        "destinations": {
+            "fn"  : gen_dests,
+            "json": "../resources/json/destinations.json",
+            "name": "destinations"
+        },
+        "jobs": {
+            "fn"  : gen_jobs,
+            "json": "../resources/json/jobs.json",
+            "name": "jobs"
+        },
+        "statuses": {
+            "fn"  : gen_stats,
+            "json": "../resources/json/statuses.json",
+            "name": "statuses"
+        },
+        "schedules": {
+            "fn"  : gen_schedules,
+            "json": "../resources/json/schedules.json",
+            "name": "schedules"
+        },
+        "anchorages": {
+            "fn"  : gen_anchorages,
+            "json": "../resources/json/anchorages.json",
+            "name": "anchorages"
+        },
+        "ch_dests": {
+            "fn"  : check_dests,
+            "json": "../resources/json/ch_dests.json",
+            "name": "ch_dests"
+        },
+        "ch_ports": {
+            "fn"  : check_ports,
+            "json": "../resources/json/ch_ports.json",
+            "name": "ch_ports"
+        },
+        "utils"   : {
+            "fn"  : gen_utils,
+            "json": "../resources/json/utils.json",
+            "name": "utilities"
+        }
+    }
+    gen_list = []
+
+    out = "Generating " + colored(gens[gen]["name"], 'yellow') + "..."
+    print("\n", out, end=((50 - len(out)) * " " + "[" + colored("  WAIT  ", 'yellow') + "]\n"))
+
+    if amount:
+        gen_list = gens[gen]["fn"](db, amount)
+    else:
+        gen_list = gens[gen]["fn"](db)
+
+    out = "Generating " + colored(gens[gen]["name"], 'yellow') + "..."
+    if len(gen_list):
+        print("", out, end=((50 - len(out)) * " " + "[" + colored("   OK   ", 'green') + "]\n"))
+    else:
+        print("", out, end=((50 - len(out)) * " " + "[" + colored(" FAILED ", 'red') + "]\n"))
+
+    return gen_list
 
 
-def create_db(gen=False):
+def db_generator(groups_to_gen):
     client = MongoClient()
-    db = client.drop_database(DB_NAME)
     db = client[DB_NAME]
 
-    ports = db["ports"]
-    dests = db["destinations"]
-    cntrs = db["countries"]
-    crgos = db["cargo_types"]
-    ships = db["ships"]
-    sizes = db["sizes"]
-    piers = db["piers"]
+    colls = {
+        "open_data": {
+            "threaded" : False,
+            "data"     : [
+                {
+                    "name"   : "countries",
+                    "amount" : None
+                },
+                {
+                    "name"   : "ports",
+                    "amount" : None
+                },
+                {
+                    "name"   : "destinations",
+                    "amount" : None
+                },
+                {
+                    "name"   : "ch_dests",
+                    "amount" : None
+                },
+                {
+                    "name"   : "ch_ports",
+                    "amount" : None
+                }
+            ],
+        },
+        "consts"    : {
+            "threaded" : True,
+            "data"     : [
+                {
+                    "name"   : "sizes",
+                    "amount" : None
+                },
+                {
+                    "name"   : "cargo_types",
+                    "amount" : None
+                },
+                {
+                    "name"   : "jobs",
+                    "amount" : None
+                },
+                {
+                    "name"   : "statuses",
+                    "amount" : None
+                },
+            ]
+        },
+        "first"     : {
+            "threaded" : True,
+            "data"     : [
+                {
+                    "name"   : "piers",
+                    "amount" : 5
+                },
+                {
+                    "name"   : "anchorages",
+                    "amount" : None
+                },
+            ]
+        },
+        "second"    : {
+            "threaded" : True,
+            "data"     : [
+                {
+                    "name"   : "ships",
+                    "amount" : 10000
+                },
+            ]
+        },
+        "third"     : {
+            "threaded" : True,
+            "data"     : [
+                {
+                    "name"   : "schedules",
+                    "amount" : 5
+                },
+            ]
+        },
+        "utils"     : {
+            "threaded" : True,
+            "data"     : [
+                {
+                    "name"   : "utils",
+                    "amount" : None
+                },
+            ]
+        }
+    }
+    for group in groups_to_gen:
+        for coll in colls[group]["data"]:
+            if coll["amount"]:
+                gen_one(db=db, gen=coll["name"], amount=coll["amount"])
+            else:
+                gen_one(db=db, gen=coll["name"])
 
-    if gen:
-        pbar = tqdm(total=7, desc="Generating data ")
-
-        cntr_list = gen_cntrs(db)
-        pbar.update()
-        port_list = gen_ports(db)
-        pbar.update()
-        dest_list = gen_dests(db)
-        pbar.update()
-        crgo_list = gen_crgos(db)
-        pbar.update()
-        size_list = gen_sizes(db)
-        pbar.update()
-        ship_list = gen_ships(db, amount=200)
-        pbar.update()
-
-    else:
-        port_list = json_to_list(ports_file)
-        dest_list = json_to_list(dests_file)
-        cntr_list = json_to_list(cntrs_file)
-        crgo_list = json_to_list(crgos_file)
-        ship_list = json_to_list(ships_file)
-        size_list = json_to_list(sizes_file)
-
-        coll_from_list(ports, port_list)
-        coll_from_list(dests, dest_list)
-        coll_from_list(cntrs, cntr_list)
-        coll_from_list(crgos, crgo_list)
-        coll_from_list(ships, ship_list)
-        coll_from_list(sizes, size_list)
-
-    if gen:
-        pier_list = gen_piers(ports, crgos, max_per_port=10)
-        pbar.update()
-        pbar.close()
-    else:
-        pier_list = json_to_list(piers_file)
-
-    coll_from_list(piers, pier_list)
-
-    print('\n\n\n')
-
-    list_to_json(serealize(port_list), ports_file)
-    print("Ports generated:        ", len(port_list))
-    list_to_json(serealize(cntr_list), cntrs_file)
-    print("Countries generated:    ", len(cntr_list))
-    list_to_json(serealize(dest_list), dests_file)
-    print("Destinations generated: ", len(dest_list))
-    list_to_json(serealize(crgo_list), crgos_file)
-    print("Cargo types generated:  ", len(crgo_list))
-    list_to_json(serealize(ship_list), ships_file)
-    print("Ships generated:        ", len(ship_list))
-    list_to_json(serealize(size_list), sizes_file)
-    print("Size types generated:   ", len(size_list))
-    list_to_json(serealize(pier_list), piers_file)
-    print("Piers generated:        ", len(pier_list))
-
-    return
+    return 0
 
 
-create_db(gen=True)
-# create_db()
+if __name__ == '__main__':
+    to_gen = ["utils"]
+    db_generator(groups_to_gen=to_gen)

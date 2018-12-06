@@ -1,4 +1,5 @@
 from utils import *
+from tqdm import tqdm
 
 
 nav_db = '../resources/PUB151_distances.json'
@@ -25,9 +26,11 @@ def gen_country(country, cntr_list):
 
 
 def gen_cntrs(db):
-    cntr_coll = db.countries
+
+    db.countries.drop()
 
     cntr_list = []
+    cntr_coll = db.countries
 
     off_data = json_to_dict(nav_db)
     for port_name, data in off_data.items():
@@ -43,6 +46,9 @@ def gen_cntrs(db):
 
 
 def gen_ports(db):
+    db.ports.drop()
+
+    port_list = []
     port_coll = db.ports
 
     port_sample = {
@@ -50,7 +56,6 @@ def gen_ports(db):
         "country_id" : 0,
         "location"   : "27°05'37\"N., 13°26'55\"W."
     }
-    port_list = []
 
     off_data = json_to_dict(nav_db)
     for port_name, data in off_data.items():
@@ -71,11 +76,11 @@ def gen_ports(db):
     return port_list
 
 
-
-
-
 def gen_dests(db):
-    from tqdm import tqdm
+
+    db.destinations.drop()
+
+    dest_list = []
     dest_coll = db.destinations
 
     dest_sample = {
@@ -84,11 +89,9 @@ def gen_dests(db):
         "distance"   : 0.0
     }
 
-    dest_list = []
-
     off_data = json_to_dict(nav_db)
 
-    pbar = tqdm(total=len(off_data.keys()), desc="Generating destinations")
+    pbar = tqdm(total=len(off_data.keys()), desc=" Generating destinations")
 
     for port_name, data in off_data.items():
 
@@ -131,3 +134,43 @@ def gen_dests(db):
     coll_from_list(dest_coll, dest_list)
 
     return dest_list
+
+
+def check_dests(db):
+    dests = list(db.destinations.find({}))
+    new = []
+
+    pbar = tqdm(total=len(dests), desc=" Checking destinations")
+    for dest in dests:
+        dep = dest["departure"]
+        des = dest["destination"]
+        dist = dest["distance"]
+        if db.destinations.count_documents({'$and': [
+            {'destination': dep}, {'departure': des}
+        ]}) == 0:
+            doc = {
+                "departure"  : des,
+                "destination": dep,
+                "distance"   : dist
+            }
+            db.destinations.insert_one(doc)
+            new.append(doc.copy())
+        pbar.update()
+    pbar.close()
+    return new
+
+
+def check_ports(db):
+    ports = list(db.ports.find({}))
+    count = 0
+
+    pbar = tqdm(total=len(ports), desc=" Checking ports")
+    for port in ports:
+        _id = port["_id"]
+        if db.destinations.count_documents({'departure': _id}) == 0:
+            db.ports.delete_one({'_id': _id})
+            count += 1
+
+        pbar.update()
+    pbar.close()
+    return [count]

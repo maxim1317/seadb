@@ -2,9 +2,12 @@ from utils import *
 import random
 import datetime as dt
 
+import pprint
+
 schd_sample = {
     "destination_id" : None,
     "pier_id"        : None,
+    "anchorage_id"   : None,
     "started"        : dt.date.today(),
     "estimated_end"  : dt.date.today(),
     "ship_id"        : None,
@@ -28,30 +31,12 @@ def voyage_time(ship_speed, distance, start_time):
     return end_time
 
 
-def gen_stats(db):
-    stat_coll = db.statuses
-    stat_list = [
-        {"status": "FINISHED"   },
-        {"status": "PENDING"    },
-        {"status": "IN_PROGRESS"},
-        {"status": "CANCELED"   },
-        {"status": "ЕГГОГ"      },
-    ]
+def rest_time(start_time):
+    import random
+    end_time = start_time + dt.timedelta(days=round(random.triangular(0, 15, mode=3)))
 
-    coll_from_list(stat_coll, stat_list)
-    return stat_list
+    return end_time
 
-
-def gen_jobs(db):
-    job_coll = db.jobs
-    job_list = [
-        {"job": "VOYAGE"   },
-        {"job": "LOADING"  },
-        {"job": "UNLOADING"},
-    ]
-
-    coll_from_list(job_coll, stat_list)
-    return job_list
 
 # { $lookup: {
 #   from: <collection to join>,
@@ -61,12 +46,13 @@ def gen_jobs(db):
 # } }
 
 
-def gen_rand_schd(db, amount, ship_id):
-    db.fock.drop()
-    db.good_ports.drop()
+def gen_rand_schd(db, amount, ship_id, thread_id, pbar):
+    s_time = thread_id
+
+    db["fock" + str(s_time)].drop()
+    db["good_ports" + str(s_time)].drop()
     schd_list = []
 
-    db.fock.drop()
     start_time = dt.datetime.now() - dt.timedelta(weeks=2) - dt.timedelta(days=random.randint(-6, 6))
     ship = db.ships.find({"_id": ship_id}).limit(1)[0]
     ship_type  = ship["ship_type_id"]
@@ -82,10 +68,11 @@ def gen_rand_schd(db, amount, ship_id):
                 'as'          : 'port_info'
             }
         },
-        {'$out'   : 'fock'}
+        {'$out'   : 'fock' + str(s_time) }
     ])
-    good_ports = list(db.fock.find({'port_info.pier_type': ship_type}))
-    coll_from_list(db.good_ports, good_ports)
+    good_ports = list(db["fock" + str(s_time)].find({'port_info.pier_type': ship_type}))
+    # print(good_ports)
+    coll_from_list(db["good_ports" + str(s_time)], good_ports)
 
     load = random.triangular(
         0,
@@ -108,6 +95,7 @@ def gen_rand_schd(db, amount, ship_id):
 
     schd["destination_id"] = None
     schd["pier_id"]        = load_pier
+    schd["anchorage_id"]   = None
     schd["started"]        = start_time
     schd["ship_id"]        = ship_id
     schd["estimated_end"]  = end_time
@@ -125,6 +113,9 @@ def gen_rand_schd(db, amount, ship_id):
     start_time = end_time
     i = 1
     while i < amount - 1:
+        ##################################################
+        ############          VOYAGE          ############
+        ##################################################
         schd = schd_sample
 
         dests = list(db.destinations.find({'departure': dep_port}))
@@ -137,6 +128,7 @@ def gen_rand_schd(db, amount, ship_id):
         end_time = voyage_time(ship_speed, dest["distance"], start_time)
         schd["destination_id"] = dest["_id"]
         schd["pier_id"]        = None
+        schd["anchorage_id"]   = None
         schd["started"]        = start_time
         schd["ship_id"]        = ship_id
         schd["estimated_end"]  = end_time
@@ -153,7 +145,33 @@ def gen_rand_schd(db, amount, ship_id):
 
         start_time = end_time
 
-        if (i == amount - 2) and db.good_ports.count_documents({'_id': dep_port}) == 0:
+        ##################################################
+        ############           REST           ############
+        ##################################################
+
+        schd = schd_sample
+
+        end_time = rest_time(start_time)
+
+        schd["destination_id"] = None
+        schd["pier_id"]        = None
+        schd["anchorage_id"]   = db.anchorages.find({"port_id": dest["destination"]}).limit(1)[0]["_id"]
+        schd["started"]        = start_time
+        schd["ship_id"]        = ship_id
+        schd["estimated_end"]  = end_time
+        schd["job"]            = db.jobs.find({"job": "RESTING"}).limit(1)[0]["_id"]
+        if start_time > dt.datetime.now():
+            schd["status"]     = db.statuses.find({"status": "PENDING"}).limit(1)[0]["_id"]
+        elif end_time < dt.datetime.now():
+            schd["status"]     = db.statuses.find({"status": "FINISHED"}).limit(1)[0]["_id"]
+        else:
+            schd["status"]     = db.statuses.find({"status": "IN_PROGRESS"}).limit(1)[0]["_id"]
+
+        schd_list.append(schd.copy())
+
+        start_time = end_time
+
+        if (i == amount - 2) and db["good_ports" + str(s_time)].count_documents({'_id': dep_port}) == 0:
             pass
         else:
             i += 1
@@ -185,27 +203,50 @@ def gen_rand_schd(db, amount, ship_id):
     db.ships.update_one({'_id': ship_id}, {'$set': {'cargo_amount': 0}})
     schd_list.append(schd.copy())
 
-    db.fock.drop()
-    db.good_ports.drop()
+    db["fock" + str(s_time)].drop()
+    db["good_ports" + str(s_time)].drop()
+
+    pbar.update(amount)
+    # pp = pprint.PrettyPrinter(indent=4)
+    # pp.pprint(schd_list)
     coll_from_list(db.schedules, schd_list)
     return schd_list
 
 
-def gen_schedules(db, per_ship=5):
+def run_batch(db, amount, ship_list, i, pbar):
+    for j in range(len(ship_list) // 8):
+        gen_rand_schd(db, amount=amount, ship_id=ship_list[i * 8 + j]["_id"], thread_id=i, pbar=pbar)
+    return 0
+
+
+def gen_schedules(db, amount=5):
     from tqdm import tqdm
+    from threading import Thread
 
     db.schedules.drop()
+    for i in range(8):
+        db["fock" + str(i)].drop()
+        db["good_ports" + str(i)].drop()
 
     schd_list = []
 
     ship_list = list(db.ships.find({}))
-    pbar = tqdm(total=len(ship_list) * per_ship, desc="Generating schedules")
+    pbar = tqdm(total=len(ship_list) * amount, desc=" Generating schedules")
 
-    for i in range(len(ship_list)):
-        schd = gen_rand_schd(db, amount=per_ship, ship_id=ship_list[i]["_id"])
+    threads = []
+    for i in range(8):
+        # schd = gen_rand_schd(db, amount=amount, ship_id=ship_list[i]["_id"], pbar=pbar)
+        t = Thread(
+            target=run_batch, args=(db, amount, ship_list, i, pbar)
+        )
+        threads.append(t)
+        t.start()
 
-        pbar.update(per_ship)
-        schd_list.extend(schd.copy())
+        # pbar.update(amount)
+        # schd_list.extend(schd.copy())
+
+    for thread in threads:
+        thread.join()
 
     pbar.close()
 

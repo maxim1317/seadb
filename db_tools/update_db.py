@@ -22,7 +22,8 @@ def update_ship(db):
 
 
 def update_schedules(db):
-    ut = db.util
+    last_upd = db.util.find({}).limit(1)[0]
+
     finished = list(
         db.schedules.find(
             {
@@ -49,6 +50,14 @@ def update_schedules(db):
             "estimated_end": {"$gte": time}
         }
     ).limit(1)[0]
+
+    for s in started:
+        db.schedules.update_one({"_id": s["_id"]}, {"$set": {"status" : db.statuses.find({"status": "IN_PROGRESS"}).limit(1)[0]["_id"]}})
+        cur_job = db.jobs.find("_id": s["job"]).limit(1)[0]["job"]
+        if cur_job == "UNLOADING":
+            db.ships.update_one({"_id": s["ship_id"]}, {"$set": {"cargo_amount": get_random_load()}})
+    for f in finished:
+        db.schedules.update_one({"_id": f["_id"]}, {"$set": {"status" : db.statuses.find({"status": "FINISHED"}).limit(1)[0]["_id"]}})
     return 0
 
 

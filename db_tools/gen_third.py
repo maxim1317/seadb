@@ -200,13 +200,13 @@ def gen_rand_schd(db, amount, ship_id, thread_id, pbar):
     else:
         schd["status"]     = db.statuses.find({"status": "IN_PROGRESS"}).limit(1)[0]["_id"]
 
-    db.ships.update_one({'_id': ship_id}, {'$set': {'cargo_amount': 0}})
+    # db.ships.update_one({'_id': ship_id}, {'$set': {'cargo_amount': 0}})
     schd_list.append(schd.copy())
 
     db["fock" + str(s_time)].drop()
     db["good_ports" + str(s_time)].drop()
 
-    pbar.update(amount)
+    pbar.update()
     # pp = pprint.PrettyPrinter(indent=4)
     # pp.pprint(schd_list)
     coll_from_list(db.schedules, schd_list)
@@ -215,7 +215,9 @@ def gen_rand_schd(db, amount, ship_id, thread_id, pbar):
 
 def run_batch(db, amount, ship_list, i, pbar):
     for j in range(len(ship_list) // 8):
-        gen_rand_schd(db, amount=amount, ship_id=ship_list[i * 8 + j]["_id"], thread_id=i, pbar=pbar)
+        if (i * len(ship_list) + j) >= len(ship_list):
+            break
+        gen_rand_schd(db, amount=amount, ship_id=ship_list[i * len(ship_list) + j]["_id"], thread_id=i, pbar=pbar)
     return 0
 
 
@@ -231,7 +233,7 @@ def gen_schedules(db, amount=5):
     schd_list = []
 
     ship_list = list(db.ships.find({}))
-    pbar = tqdm(total=len(ship_list) * amount, desc=" Generating schedules")
+    pbar = tqdm(total=len(ship_list), desc=" Generating schedules")
 
     threads = []
     for i in range(8):

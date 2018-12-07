@@ -12,11 +12,11 @@ client = MongoClient()
 db = client[DB_NAME]
 
 
-dests = list(db.destinations.find({}))
+def fill_ship_loads(db):
+    unfinished_trips = list(db.schedules.find({"estimated_end": {"$gte": dt.datetime.now()}, "pier_id": {"$ne": None}}))
+    return unfinished_trips
 
-dest = random.choice(dests)
 
 pp = pprint.PrettyPrinter(indent=4)
-pp.pprint(dest)
-pp.pprint(list(db.anchorages.find({"port_id": dest["_id"]}).limit(1)))
+pp.pprint(fill_ship_loads(db))
 # pp.pprint(db.anchorages.find({"port_id": dest["_id"]}).limit(1)[0]["_id"])

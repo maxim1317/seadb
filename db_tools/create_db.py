@@ -210,5 +210,5 @@ def db_generator(groups_to_gen):
 
 
 if __name__ == '__main__':
-    to_gen = ["utils"]
+    to_gen = ["third"]
     db_generator(groups_to_gen=to_gen)

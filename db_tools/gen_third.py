@@ -189,6 +189,7 @@ def gen_rand_schd(db, amount, ship_id, thread_id, pbar):
 
     schd["destination_id"] = None
     schd["pier_id"]        = unload_pier
+    schd["anchorage_id"]   = None
     schd["started"]        = start_time
     schd["ship_id"]        = ship_id
     schd["estimated_end"]  = end_time
@@ -214,7 +215,7 @@ def gen_rand_schd(db, amount, ship_id, thread_id, pbar):
 
 
 def run_batch(db, amount, ship_list, i, pbar):
-    for j in range(len(ship_list) // 8):
+    for j in range(len(ship_list) // 1):
         if (i * len(ship_list) + j) >= len(ship_list):
             break
         gen_rand_schd(db, amount=amount, ship_id=ship_list[i * len(ship_list) + j]["_id"], thread_id=i, pbar=pbar)
@@ -225,18 +226,18 @@ def gen_schedules(db, amount=5):
     from tqdm import tqdm
     from threading import Thread
 
-    db.schedules.drop()
-    for i in range(8):
+    # db.schedules.drop()
+    for i in range(1):
         db["fock" + str(i)].drop()
         db["good_ports" + str(i)].drop()
 
     schd_list = []
 
-    ship_list = list(db.ships.find({}))
+    ship_list = list(db.ships.find({"cargo_amount": 0}))
     pbar = tqdm(total=len(ship_list), desc=" Generating schedules")
 
     threads = []
-    for i in range(8):
+    for i in range(1):
         # schd = gen_rand_schd(db, amount=amount, ship_id=ship_list[i]["_id"], pbar=pbar)
         t = Thread(
             target=run_batch, args=(db, amount, ship_list, i, pbar)

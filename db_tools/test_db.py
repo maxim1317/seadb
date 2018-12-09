@@ -18,5 +18,5 @@ def fill_ship_loads(db):
 
 
 pp = pprint.PrettyPrinter(indent=4)
-pp.pprint(fill_ship_loads(db))
+pp.pprint(db.ships.find({"load": 0}))
 # pp.pprint(db.anchorages.find({"port_id": dest["_id"]}).limit(1)[0]["_id"])

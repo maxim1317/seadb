@@ -287,6 +287,8 @@ QPushButton:pressed {
 QLineEdit {
 	background: transparent;
 	border: 1px solid transparent;
+	border-top: none;
+	border-bottom: 2px solid #80CBC4;
 	color: #546E7A;
 }
 
@@ -471,13 +473,16 @@ QTabWidget::tab-bar {
       <bold>true</bold>
      </font>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::TabFocus</enum>
+    </property>
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
     <property name="currentIndex">
      <number>0</number>
     </property>
-    <widget class="QWidget" name="tab">
+    <widget class="QWidget" name="ships_tab">
      <attribute name="title">
       <string>Vessels</string>
      </attribute>
@@ -487,7 +492,7 @@ QTabWidget::tab-bar {
         <x>0</x>
         <y>190</y>
         <width>1051</width>
-        <height>141</height>
+        <height>145</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -508,10 +513,10 @@ QTabWidget::tab-bar {
         <widget class="QLabel" name="ships_label">
          <property name="font">
           <font>
-           <family>Roboto</family>
-           <pointsize>14</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
+           <family>ABeeZee</family>
+           <pointsize>20</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
           </font>
          </property>
          <property name="layoutDirection">
@@ -554,10 +559,25 @@ QTabWidget::tab-bar {
           </spacer>
          </item>
          <item>
-          <widget class="QLineEdit" name="ships_line_edit"/>
+          <widget class="QLineEdit" name="ships_line_edit">
+           <property name="font">
+            <font>
+             <family>ABeeZee</family>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Enter here...</string>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QPushButton" name="ships_ok">
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
            <property name="text">
             <string>OK</string>
            </property>
@@ -691,6 +711,11 @@ QTabWidget::tab-bar {
            </item>
            <item>
             <widget class="QPushButton" name="ports_ok">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
              <property name="text">
               <string>OK</string>
              </property>
@@ -742,7 +767,7 @@ QTabWidget::tab-bar {
        <item>
         <widget class="Line" name="line">
          <property name="autoFillBackground">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>

@@ -15,8 +15,8 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1051, 672)
         font = QtGui.QFont()
-        font.setFamily("Roboto")
-        font.setPointSize(10)
+        font.setFamily("ABeeZee")
+        font.setPointSize(14)
         MainWindow.setFont(font)
         MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet(
@@ -436,7 +436,10 @@ class Ui_MainWindow(object):
             "    border: 0;\n"
             "}\n"
             "\n"
-            "Line {"
+            "Line {\n"
+            "    background-color: #80CBC4;"
+            "}\n"
+            "\n"
             "/*****************************************************************************\n"
             "Play around with these settings\n"
             "*****************************************************************************/\n"
@@ -451,77 +454,104 @@ class Ui_MainWindow(object):
             "}"
         )
         MainWindow.setTabShape(QtWidgets.QTabWidget.Triangular)
+
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+
         self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
         self.tabWidget.setGeometry(QtCore.QRect(0, 10, 1051, 621))
         font = QtGui.QFont()
-        font.setFamily("Roboto")
+        font.setFamily("ABeeZee")
         font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.tabWidget.setFont(font)
         self.tabWidget.setAutoFillBackground(False)
         self.tabWidget.setObjectName("tabWidget")
+
+        #######################################
+        ############## tab ##############
+        #######################################
+
         self.tab = QtWidgets.QWidget()
         self.tab.setObjectName("tab")
+
         self.verticalLayoutWidget = QtWidgets.QWidget(self.tab)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 190, 1051, 141))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 190, 1051, 181))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
+
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem)
+
         self.ships_label = QtWidgets.QLabel(self.verticalLayoutWidget)
-        font = QtGui.QFont()
-        font.setFamily("ABeeZee")
-        font.setPointSize(20)
-        font.setBold(False)
-        font.setWeight(50)
-        self.ships_label.setFont(font)
-        self.ships_label.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.font_labels = QtGui.QFont()
+        self.font_labels.setFamily("ABeeZee")
+        self.font_labels.setPointSize(10)
+        # font.setBold(True)
+        # font.setWeight(75)
+        self.ships_label.setFont(self.font_labels)
+        # self.ships_label.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.ships_label.setAlignment(QtCore.Qt.AlignCenter)
         self.ships_label.setObjectName("ships_label")
         self.verticalLayout.addWidget(self.ships_label)
+
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem1)
+
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
+
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem2)
-        ship_list = get_ship_list()
-        ships_line_edit = QtWidgets.QLineEdit(self.verticalLayoutWidget)
-        font = QtGui.QFont()
-        font.setFamily("ABeeZee")
-        font.setPointSize(14)
-        self.ships_label.setFont(font)
-        completer = QtWidgets.QCompleter(ship_list, ships_line_edit)
-        ships_line_edit.setCompleter(completer)        # Set QCompleter in the input field
-        ships_line_edit.setObjectName("ships_line_edit")
-        self.horizontalLayout.addWidget(ships_line_edit)
+
+        self.ship_list = get_ship_list()
+        self.ships_line_edit = QtWidgets.QLineEdit(self.verticalLayoutWidget)
+        font_line_edits = QtGui.QFont()
+        font_line_edits.setFamily("ABeeZee")
+        font_line_edits.setPointSize(20)
+        self.ships_label.setFont(font_line_edits)
+        completer = QtWidgets.QCompleter(self.ship_list, self.ships_line_edit)
+        self.ships_line_edit.setCompleter(completer)        # Set QCompleter in the input field
+        self.ships_line_edit.setObjectName("ships_line_edit")
+        self.horizontalLayout.addWidget(self.ships_line_edit)
+
         self.ships_ok = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.ships_ok.clicked.connect(self.ships_ok_call)
         font = QtGui.QFont()
         font.setPointSize(14)
         self.ships_ok.setFont(font)
         self.ships_ok.setObjectName("ships_ok")
         self.horizontalLayout.addWidget(self.ships_ok)
+
         spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem3)
         self.verticalLayout.addLayout(self.horizontalLayout)
+
         spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem4)
+
+        #######################################
+        ############## ports_tab ##############
+        #######################################
+
         self.tabWidget.addTab(self.tab, "")
         self.ports_tab = QtWidgets.QWidget()
         self.ports_tab.setObjectName("ports_tab")
+
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(self.ports_tab)
         self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(-1, -1, 1051, 591))
         self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
+
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+
+        spacerItem5 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem5)
+
         self.verticalLayout_5 = QtWidgets.QVBoxLayout()
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         spacerItem6 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
@@ -535,48 +565,63 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.addWidget(self.ports_label)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        spacerItem7 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_3.addItem(spacerItem7)
+
+        # spacerItem7 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        # self.horizontalLayout_3.addItem(spacerItem7)
+
+        self.port_list = get_port_list()
         self.ports_line_edit = QtWidgets.QLineEdit(self.horizontalLayoutWidget_2)
         font = QtGui.QFont()
-        font.setFamily("DejaVu Sans")
+        font.setFamily("ABeeZee")
         font.setPointSize(14)
         self.ports_line_edit.setFont(font)
-        self.ports_line_edit.setObjectName("ports_line_edit")
+        completer = QtWidgets.QCompleter(self.port_list, self.ports_line_edit)
+        self.ports_line_edit.setCompleter(completer)        # Set QCompleter in the input field
+        self.ports_line_edit.setObjectName("self.ports_line_edit")
         self.horizontalLayout_3.addWidget(self.ports_line_edit)
-        spacerItem8 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_3.addItem(spacerItem8)
+
+        # spacerItem8 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        # self.horizontalLayout_3.addItem(spacerItem8)
+
         self.ports_ok = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
+        self.ports_ok.clicked.connect(self.ports_ok_call)
         font = QtGui.QFont()
         font.setPointSize(14)
         self.ports_ok.setFont(font)
         self.ports_ok.setObjectName("ports_ok")
         self.horizontalLayout_3.addWidget(self.ports_ok)
-        spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_3.addItem(spacerItem9)
+
+        # spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        # self.horizontalLayout_3.addItem(spacerItem9)
         self.verticalLayout_5.addLayout(self.horizontalLayout_3)
         spacerItem10 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_5.addItem(spacerItem10)
         self.horizontalLayout_2.addLayout(self.verticalLayout_5)
-        spacerItem11 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem11 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem11)
+
         self.line = QtWidgets.QFrame(self.horizontalLayoutWidget_2)
-        self.line.setAutoFillBackground(True)
-        self.line.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.line.setLineWidth(1)
+        self.line.setAutoFillBackground(False)
+        # self.line.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.line.setLineWidth(2)
+        self.line.setStyleSheet("color: #80CBC4;")
         self.line.setFrameShape(QtWidgets.QFrame.VLine)
         self.line.setObjectName("line")
         self.horizontalLayout_2.addWidget(self.line)
+
         self.verticalLayout_4 = QtWidgets.QVBoxLayout()
         self.verticalLayout_4.setObjectName("verticalLayout_4")
+
         self.ports_label_top_10 = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
         font = QtGui.QFont()
-        font.setFamily("DejaVu Sans")
-        font.setPointSize(14)
+        font.setFamily("ABeeZee")
+        font.setPointSize(25)
+        font.setWeight(75)
         self.ports_label_top_10.setFont(font)
         self.ports_label_top_10.setAlignment(QtCore.Qt.AlignCenter)
         self.ports_label_top_10.setObjectName("ports_label_top_10")
         self.verticalLayout_4.addWidget(self.ports_label_top_10)
+
         self.ports_top_10_list = QtWidgets.QListWidget(self.horizontalLayoutWidget_2)
         self.ports_top_10_list.setLineWidth(-7)
         self.ports_top_10_list.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
@@ -585,11 +630,20 @@ class Ui_MainWindow(object):
         self.ports_top_10_list.setAutoScroll(False)
         self.ports_top_10_list.setAutoScrollMargin(21)
         self.ports_top_10_list.setObjectName("ports_top_10_list")
+
+        top_10 = get_top_10_items()
+        for top in top_10:
+            self.ports_top_10_list.addItem(top)
+
         self.verticalLayout_4.addWidget(self.ports_top_10_list)
+
         spacerItem12 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_4.addItem(spacerItem12)
+
         self.horizontalLayout_2.addLayout(self.verticalLayout_4)
+
         self.tabWidget.addTab(self.ports_tab, "")
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -599,6 +653,22 @@ class Ui_MainWindow(object):
         self.tabWidget.setCurrentIndex(0)
         self.ports_top_10_list.setCurrentRow(-1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def ports_ok_call(self):
+        p_name = self.ports_line_edit.text()
+        print('Port name: ' + self.ports_line_edit.text())
+        if p_name not in self.port_list:
+            self.ports_line_edit.setStyleSheet("border-bottom: 2px solid #D72638;")
+        else:
+            self.ports_line_edit.setStyleSheet("border-bottom: 2px solid #53DD6C;")
+
+    def ships_ok_call(self):
+        p_name = self.ships_line_edit.text()
+        print('ship name: ' + self.ships_line_edit.text())
+        if p_name not in self.ship_list:
+            self.ships_line_edit.setStyleSheet("border-bottom: 2px solid #D72638;")
+        else:
+            self.ships_line_edit.setStyleSheet("border-bottom: 2px solid #53DD6C;")
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

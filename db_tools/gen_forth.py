@@ -1,34 +1,70 @@
 from utils import *
 
-def gen_journals(db, amount=5):
+port_journal_sample = {
+    "date"     : None,
+    "port_id"  : None,
+    "pier_id"  : None,
+    "ship_id"  : None,
+    "operation": None
+}
+
+
+def gen_port_journals(db, amount=5):
+    import datetime as dt
     from tqdm import tqdm
-    from threading import Thread
 
-    db.journals.drop()
-    for i in range(8):
-        db["fock" + str(i)].drop()
-        db["good_ports" + str(i)].drop()
+    db.port_journals.drop()
 
-    schd_list = []
+    ptjn_list = []
 
-    stops_list = list(db.schedules.find({}))
-    pbar = tqdm(total=len(ship_list) * amount, desc=" Generating journals")
+    start_date = db.schedules.find_one(sort=[("started", 1)])["started"]
+    end_date   = db.schedules.find_one(sort=[("estimated_end", -1)])["estimated_end"]
 
-    threads = []
-    for i in range(8):
-        # schd = gen_rand_schd(db, amount=amount, ship_id=ship_list[i]["_id"], pbar=pbar)
-        t = Thread(
-            target=run_batch, args=(db, amount, ship_list, i, pbar)
-        )
-        threads.append(t)
-        t.start()
+    delta = end_date - start_date
 
-        # pbar.update(amount)
-        # schd_list.extend(schd.copy())
+    pbar = tqdm(total=delta.days + 1, desc=" Generating port journals")
 
-    for thread in threads:
-        thread.join()
+    date = start_date
+    while date <= end_date + dt.timedelta(days=1):
+        date_list = []
+        get_events = list(db.schedules.find(
+            {
+                "$and": [
+                    {"destination_id" : None},
+                    {"started"        : {"$lte": date}},
+                    {"estimated_end"  : {"$gte": date}},
+                ]
+            }
+        ))
+        if len(get_events) == 0:
+            date += dt.timedelta(days=1)
+            pbar.update()
+            continue
+
+        for event in get_events:
+            pj = port_journal_sample
+
+            if event["pier_id"]:
+                port_id = db.piers.find_one({"_id": event["pier_id"]})["port_id"]
+            else:
+                port_id = db.anchorages.find_one({"_id": event["anchorage_id"]})["port_id"]
+
+            pj = {
+                "date"          : date,
+                "port_id"       : port_id,
+                "pier_id"       : event["pier_id"],
+                "anchorage_id"  : event["anchorage_id"],
+                "ship_id"       : event["ship_id"],
+                "operation"     : event["job"]
+            }
+
+            date_list.append(pj.copy())
+        coll_from_list(db.port_journals, date_list)
+
+        ptjn_list.extend(date_list.copy())
+        date += dt.timedelta(days=1)
+        pbar.update()
 
     pbar.close()
 
-    return schd_list
+    return ptjn_list

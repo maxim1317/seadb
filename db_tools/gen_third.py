@@ -226,7 +226,7 @@ def gen_schedules(db, amount=5):
     from tqdm import tqdm
     from threading import Thread
 
-    # db.schedules.drop()
+    db.schedules.drop()
     for i in range(1):
         db["fock" + str(i)].drop()
         db["good_ports" + str(i)].drop()

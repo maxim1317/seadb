@@ -5,6 +5,7 @@ from gen_consts import *
 from gen_first import *
 from gen_second import *
 from gen_third import *
+from gen_forth import *
 from gen_utilities import *
 
 from utils import *
@@ -71,6 +72,11 @@ def gen_one(db, gen, amount=None):
             "fn"  : gen_anchorages,
             "json": "../resources/json/anchorages.json",
             "name": "anchorages"
+        },
+        "port_journals": {
+            "fn"  : gen_port_journals,
+            "json": "../resources/json/port_journals.json",
+            "name": "port journals"
         },
         "ch_dests": {
             "fn"  : check_dests,
@@ -189,6 +195,15 @@ def db_generator(groups_to_gen):
                 },
             ]
         },
+        "forth"     : {
+            "threaded" : True,
+            "data"     : [
+                {
+                    "name"   : "port_journals",
+                    "amount" : None
+                },
+            ]
+        },
         "utils"     : {
             "threaded" : True,
             "data"     : [
@@ -210,5 +225,5 @@ def db_generator(groups_to_gen):
 
 
 if __name__ == '__main__':
-    to_gen = ["third"]
+    to_gen = ["forth"]
     db_generator(groups_to_gen=to_gen)

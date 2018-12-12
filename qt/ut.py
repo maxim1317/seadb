@@ -48,7 +48,7 @@ def get_login_list(auth):
 
 
 def try_login(login, password):
-    try: 
+    try:
         client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
         db = client[DB_NAME]
         try:
@@ -63,21 +63,40 @@ def try_login(login, password):
             return 0
 
 
-def get_top_10_dict(auth):
+# def get_top_10_dict(auth):
+#     login, password = auth
+#     client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
+#     db = client[DB_NAME]
+
+#     return top_10
+
+
+# def get_top_10_items(auth):
+#     login, password = auth
+#     client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
+#     top_10_items = []
+
+#     return top_10_items
+
+
+def collect_ship_info(name, auth):
     login, password = auth
     client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
     db = client[DB_NAME]
 
-    return top_10
+    ship = db.ships.find_one({"name": name})
 
+    info = {
+        "name"         : name,
+        "avg_speed"    : ship["avg_speed"],
+        "home_port"    : db.ports.find_one({"_id": ship["home_port_id"]})["name"],
+        "ship_type_id" : db.ports.find_one({"_id": ship["home_port_id"]})["name"],
+        "flag_id"      : db.ports.find_one({"_id": ship["home_port_id"]})["name"],
+        "size_type_id" : db.ports.find_one({"_id": ship["home_port_id"]})["name"],
+        "cargo_amount" : db.ports.find_one({"_id": ship["home_port_id"]})["name"]
+    }
 
-def get_top_10_items(auth):
-    login, password = auth
-    client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
-    top_10_items = []
-
-    return top_10_items
-
+    return info
 
 
 def center(wid):

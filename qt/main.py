@@ -9,6 +9,7 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import loginwindow as lw
 import mainwindow as mw
+import vesselwindow as vw
 import sys
 from ut import *
 
@@ -18,11 +19,18 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__(parent)
         self.uiLogin = lw.LoginWindow()
         self.uiMain = mw.MainWindow()
+        self.uiVessel = vw.VesselWindow()
         self.startLogin()
 
     def startMain(self, auth):
         self.uiMain.setupUi(self, auth)
+        self.uiMain.ports_ok.clicked.connect(self.checkPort)
+        self.uiMain.ships_ok.clicked.connect(self.checkVessel)
         self.show()
+
+    def startVessel(self, auth):
+        self.uiVessel.setupUi(self, auth)
+        self.show
 
     def startLogin(self):
 
@@ -31,19 +39,36 @@ class MainWindow(QMainWindow):
         self.show()
 
     def checkLogin(self):
-        from time import sleep
+        # from time import sleep
 
-        login = self.uiLogin.loginLE.text()
-        pwd = self.uiLogin.pwdLE.text()
+        self.login = self.uiLogin.loginLE.text()
+        self.pwd = self.uiLogin.pwdLE.text()
 
-        if try_login(login=login, password=pwd):
+        if try_login(login=self.login, password=self.pwd):
             self.uiLogin.loginLE.setStyleSheet("border-bottom: 2px solid #53DD6C;")
             self.uiLogin.pwdLE.setStyleSheet("border-bottom: 2px solid #53DD6C;")
             # sleep(1)
-            self.startMain(auth=(login, pwd))
+            self.startMain(auth=(self.login, self.pwd))
         else:
             self.uiLogin.loginLE.setStyleSheet("border-bottom: 2px solid #D72638;")
             self.uiLogin.pwdLE.setStyleSheet("border-bottom: 2px solid #D72638;")
+
+    def checkPort(self):
+        p_name = self.uiMain.ports_line_edit.text()
+        print('Port name: ' + self.uiMain.ports_line_edit.text())
+        if p_name not in self.uiMain.port_list:
+            self.uiMain.ports_line_edit.setStyleSheet("border-bottom: 2px solid #D72638;")
+        else:
+            self.uiMain.ports_line_edit.setStyleSheet("border-bottom: 2px solid #53DD6C;")
+
+    def checkVessel(self):
+        p_name = self.uiMain.ships_line_edit.text()
+        print('ship name: ' + self.uiMain.ships_line_edit.text())
+        if p_name not in self.uiMain.ship_list:
+            self.uiMain.ships_line_edit.setStyleSheet("border-bottom: 2px solid #D72638;")
+        else:
+            self.uiMain.ships_line_edit.setStyleSheet("border-bottom: 2px solid #53DD6C;")
+            self.startVessel(auth=(self.login, self.pwd))
 
 
 if __name__ == '__main__':

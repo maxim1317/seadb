@@ -1,10 +1,11 @@
-from pymongo import MongoClient
+from pymongo import MongoClient, errors
 
 DB_NAME = 'seadb'
 
 
-def get_ship_list():
-    client = MongoClient()
+def get_ship_list(auth):
+    login, password = auth
+    client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
     db = client[DB_NAME]
 
     ship_list = []
@@ -17,8 +18,9 @@ def get_ship_list():
     return ship_list
 
 
-def get_port_list():
-    client = MongoClient()
+def get_port_list(auth):
+    login, password = auth
+    client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
     db = client[DB_NAME]
 
     port_list = []
@@ -31,17 +33,63 @@ def get_port_list():
     return port_list
 
 
-def get_top_10_dict():
-    client = MongoClient()
+def get_login_list(auth):
+    login, password = auth
+    client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
     db = client[DB_NAME]
 
+    login_list = []
+    all_logins = list(db.logins.find({}))
 
+    for login in all_logins:
+        login_list.append(login["login"])
+
+    return login_list
+
+
+def try_login(login, password):
+    try: 
+        client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
+        db = client[DB_NAME]
+        try:
+            db.countries.find_one({})
+            # print(db.countries.find_one({}))
+            return 1
+        except errors.OperationFailure:
+            print("Authentication failed")
+            return 0
+    except (errors.OperationFailure, errors.ConfigurationError, errors.InvalidURI):
+            print("Authentication failed")
+            return 0
+
+
+def get_top_10_dict(auth):
+    login, password = auth
+    client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
+    db = client[DB_NAME]
 
     return top_10
 
 
-def get_top_10_items():
+def get_top_10_items(auth):
+    login, password = auth
+    client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
     top_10_items = []
 
     return top_10_items
 
+
+
+def center(wid):
+    from PyQt5.QtWidgets import QDesktopWidget
+    # geometry of the main window
+    qr = wid.frameGeometry()
+
+    # center point of screen
+    cp = QDesktopWidget().availableGeometry().center()
+
+    # move rectangle's center point to screen's center point
+    qr.moveCenter(cp)
+
+    # top left of rectangle becomes top left of window centering it
+    wid.move(qr.topLeft())

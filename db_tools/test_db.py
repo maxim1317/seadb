@@ -12,11 +12,20 @@ client = MongoClient()
 db = client[DB_NAME]
 
 
-def fill_ship_loads(db):
-    unfinished_trips = list(db.schedules.find({"estimated_end": {"$gte": dt.datetime.now()}, "pier_id": {"$ne": None}}))
-    return unfinished_trips
+def fill_logins(db):
+    db.logins.drop()
+    import hashlib as h
+    login_list = [
+        {"login": "admin"   , "password": h.md5("admin".encode("utf-8")).hexdigest()    , "role": "admin"  },
+        {"login": "oberon"  , "password": h.md5("Worms1317".encode("utf-8")).hexdigest(), "role": "admin"  },
+        {"login": "user"    , "password": h.md5("user".encode("utf-8")).hexdigest()     , "role": "user"   },
+        {"login": "manager" , "password": h.md5("manager".encode("utf-8")).hexdigest()  , "role": "manager"}
+    ]
+    coll_from_list(db.logins, login_list)
+    return login_list
 
 
 pp = pprint.PrettyPrinter(indent=4)
-pp.pprint(db.ships.find({"load": 0}))
+fill_logins(db)
+# pp.pprint(db.ships.find({"load": 0}))
 # pp.pprint(db.anchorages.find({"port_id": dest["_id"]}).limit(1)[0]["_id"])

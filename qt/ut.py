@@ -78,6 +78,23 @@ def try_login(login, password):
 
 #     return top_10_items
 
+def get_top_10(auth):
+    login, password = auth
+    client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
+    db = client[DB_NAME]
+
+    top_10 = []
+
+    week_list = list(db.week_ports_load.find({}).sort([("amount", -1), ("name", 1)]).limit(10))
+
+    for i in range(0, 10):
+        top_10.append({
+            "name"  : week_list[i]["name"],
+            "amount": str(week_list[i]["amount"])
+        })
+
+    return top_10
+
 
 def collect_ship_info(name, auth):
     login, password = auth

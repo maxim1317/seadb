@@ -464,6 +464,7 @@ class VesselWindow(object):
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
         self.verticalLayout_2.setObjectName("verticalLayout_2")
+
         self.journal_label = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
         font = QtGui.QFont()
         font.setPointSize(18)
@@ -507,6 +508,22 @@ class VesselWindow(object):
         self.delPB.setObjectName("delPB")
         self.horizontalLayout_3.addWidget(self.delPB)
         self.verticalLayout_2.addLayout(self.horizontalLayout_3)
+
+        self.backHL = QtWidgets.QHBoxLayout()
+
+        self.backPB = QtWidgets.QPushButton()
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.backPB.setFont(font)
+        self.backPB.setText("Back")
+
+        self.backHL.addWidget(self.backPB)
+
+        SI = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.backHL.addItem(SI)
+
+        self.verticalLayout_2.addLayout(self.backHL)
+
         self.horizontalLayout_2.addLayout(self.verticalLayout_2)
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")

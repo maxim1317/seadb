@@ -5,7 +5,8 @@ from ut import *
 class MainWindow(object):
 
     def setupUi(self, MainWindow, auth):
-        MainWindow.setObjectName("MainWindow")
+        self.auth = auth
+        MainWindow.setObjectName("alpha 0.6")
         MainWindow.resize(1051, 672)
         center(MainWindow)
         font = QtGui.QFont()
@@ -535,11 +536,13 @@ class MainWindow(object):
         self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
 
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
-        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_2.setContentsMargins(10, 10, 10, 10)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
 
-        spacerItem5 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_2.addItem(spacerItem5)
+        # spacerItem5 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        # self.horizontalLayout_2.addItem(spacerItem5)
+        spacerLabel = QtWidgets.QLabel()
+        self.horizontalLayout_2.addWidget(spacerLabel)
 
         self.verticalLayout_5 = QtWidgets.QVBoxLayout()
         self.verticalLayout_5.setObjectName("verticalLayout_5")
@@ -584,8 +587,9 @@ class MainWindow(object):
         spacerItem10 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_5.addItem(spacerItem10)
         self.horizontalLayout_2.addLayout(self.verticalLayout_5)
-        spacerItem11 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_2.addItem(spacerItem11)
+        # spacerItem11 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        # self.horizontalLayout_2.addItem(spacerItem11)
+        self.horizontalLayout_2.addWidget(spacerLabel)
 
         self.line = QtWidgets.QFrame(self.horizontalLayoutWidget_2)
         self.line.setAutoFillBackground(False)
@@ -617,14 +621,12 @@ class MainWindow(object):
         self.ports_top_10_list.setAutoScrollMargin(21)
         self.ports_top_10_list.setObjectName("ports_top_10_list")
 
-        top_10 = get_top_10_items(auth=auth)
-        for top in top_10:
-            self.ports_top_10_list.addItem(top)
+        self.add_top_10()
 
         self.verticalLayout_4.addWidget(self.ports_top_10_list)
 
-        spacerItem12 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_4.addItem(spacerItem12)
+        # spacerItem12 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        # self.verticalLayout_4.addItem(spacerItem12)
 
         self.horizontalLayout_2.addLayout(self.verticalLayout_4)
 
@@ -650,3 +652,44 @@ class MainWindow(object):
         self.ports_ok.setText(_translate("MainWindow", "OK"))
         self.ports_label_top_10.setText(_translate("MainWindow", "Busiest ports"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.ports_tab), _translate("MainWindow", "Ports"))
+
+    def add_top_10(self):
+
+        font = QtGui.QFont()
+        font.setPointSize(14)
+
+        it = []
+        wd = []
+        hl = []
+        pb = []
+        lb = []
+
+        for i in range(0, 10):
+            it.append(QtWidgets.QListWidgetItem())
+            wd.append(QtWidgets.QWidget())
+            hl.append(QtWidgets.QHBoxLayout())
+            pb.append(QtWidgets.QPushButton())
+            lb.append(QtWidgets.QLabel())
+
+        top_10 = get_top_10(auth=self.auth)
+
+        for i in range(0, 10):
+            pb[i].setFont(font)
+            lb[i].setFont(font)
+
+            pb[i].setText(top_10[i]["name"])
+            lb[i].setText(top_10[i]["amount"])
+            sp = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+
+            hl[i].addWidget(pb[i])
+            hl[i].addItem(sp)
+            hl[i].addWidget(lb[i])
+            # hl[i].addStretch()
+
+            wd[i].setLayout(hl[i])
+            it[i].setSizeHint(wd[i].sizeHint())
+
+            self.ports_top_10_list.addItem(it[i])
+            self.ports_top_10_list.setItemWidget(it[i], wd[i])
+
+        return

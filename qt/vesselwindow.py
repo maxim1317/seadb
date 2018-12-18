@@ -477,22 +477,23 @@ class VesselWindow(object):
         self.journal_label.setAlignment(QtCore.Qt.AlignCenter)
         self.journal_label.setObjectName("journal_label")
         self.verticalLayout_2.addWidget(self.journal_label)
-        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_2.addItem(spacerItem)
-        self.journal_list = QtWidgets.Qjournal_list(self.horizontalLayoutWidget_2)
+        # spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        # self.verticalLayout_2.addItem(spacerItem)
+
+        self.journal_table = QtWidgets.QTableWidget(self.horizontalLayoutWidget_2)
         font = QtGui.QFont()
         font.setPointSize(18)
-        self.journal_list.setFont(font)
-        self.journal_list.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.journal_list.setResizeMode(QtWidgets.QListView.Adjust)
-        self.journal_list.setWordWrap(True)
-        self.journal_list.setObjectName("journal_list")
+        self.journal_table.setFont(font)
+        # self.journal_table.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        # self.journal_table.setResizeMode(QtWidgets.QTableView.Adjust)
+        self.journal_table.setWordWrap(True)
+        self.journal_table.setObjectName("journal_table")
 
         self.buildJournal()
 
-        self.verticalLayout_2.addWidget(self.journal_list)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_2.addItem(spacerItem1)
+        self.verticalLayout_2.addWidget(self.journal_table)
+        # spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        # self.verticalLayout_2.addItem(spacerItem1)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.okPB = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
@@ -697,7 +698,7 @@ class VesselWindow(object):
         _translate = QtCore.QCoreApplication.translate
         VesselWindow.setWindowTitle(_translate("VesselWindow", "Vessel"))
         self.journal_label.setText(_translate("VesselWindow", "Journal"))
-        self.journal_list.setSortingEnabled(False)
+        self.journal_table.setSortingEnabled(False)
         self.okPB.setText(_translate("VesselWindow", "OK"))
         self.addPB.setText(_translate("VesselWindow", "Add"))
         self.delPB.setText(_translate("VesselWindow", "Delete"))
@@ -719,46 +720,52 @@ class VesselWindow(object):
         self.vs_status_label.setText(_translate("VesselWindow", "Current status"))
         self.label_16_form.setText(_translate("VesselWindow"  , self.info["status"]))
 
-    def buildJournal():
+    def buildJournal(self):
+        # self.journal_table.
+        self.journal_table.setColumnCount(3)
+        self.journal_table.setHorizontalHeaderLabels(["From", "To", "Job"])
+        # self.journal_table.horizontalHeaderItem().setTextAlignment(Qt.AlignHCenter)
 
-        font = QtGui.QFont()
-        font.setPointSize(14)
+        # font = QtGui.QFont()
+        # font.setPointSize(14)
 
-        self.topPBs = []
+        # self.topPBs = []
 
-        it = []
-        wd = []
-        hl = []
-        pb = []
-        lb = []
+        # it = []
+        # wd = []
+        # hl = []
+        # pb = []
+        # lb = []
 
-        for i in range(0, 10):
-            it.append(QtWidgets.QListWidgetItem())
-            wd.append(QtWidgets.QWidget())
-            hl.append(QtWidgets.QHBoxLayout())
-            pb.append(QtWidgets.QPushButton())
-            lb.append(QtWidgets.QLabel())
+        # for i in range(0, 10):
+        #     it.append(QtWidgets.QListWidgetItem())
+        #     wd.append(QtWidgets.QWidget())
+        #     hl.append(QtWidgets.QHBoxLayout())
+        #     pb.append(QtWidgets.QPushButton())
+        #     lb.append(QtWidgets.QLabel())
 
-        top_10 = get_top_10(auth=self.auth)
+        # top_10 = get_top_10(auth=self.auth)
 
-        for i in range(0, 10):
-            pb[i].setFont(font)
-            lb[i].setFont(font)
+        # for i in range(0, 10):
+        #     pb[i].setFont(font)
+        #     lb[i].setFont(font)
 
-            pb[i].setText(top_10[i]["name"])
-            self.topPBs.append(pb[i])
-            lb[i].setText(top_10[i]["amount"])
-            sp = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        #     pb[i].setText(top_10[i]["name"])
+        #     self.topPBs.append(pb[i])
+        #     lb[i].setText(top_10[i]["amount"])
+        #     sp = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
 
-            hl[i].addWidget(pb[i])
-            hl[i].addItem(sp)
-            hl[i].addWidget(lb[i])
-            # hl[i].addStretch()
+        #     hl[i].addWidget(pb[i])
+        #     hl[i].addItem(sp)
+        #     hl[i].addWidget(lb[i])
+        #     # hl[i].addStretch()
 
-            wd[i].setLayout(hl[i])
-            it[i].setSizeHint(wd[i].sizeHint())
+        #     wd[i].setLayout(hl[i])
+        #     it[i].setSizeHint(wd[i].sizeHint())
 
-            self.ports_top_10_list.addItem(it[i])
-            self.ports_top_10_list.setItemWidget(it[i], wd[i])
+        #     self.journal_table.addItem(it[i])
+        #     self.journal_table.setItemWidget(it[i], wd[i])
+
+        return
 
 import images_rc

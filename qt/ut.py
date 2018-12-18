@@ -116,7 +116,7 @@ def get_vessel_info(auth, name):
     if cur_task is None:
         status = "RESTING"
     else:
-        status = db.jobs.find_one({"_id": cur_task["job_id"]})["name"]
+        status = db.jobs.find_one({"_id": cur_task["job"]})["job"]
 
     info = {
         "name"         : name,

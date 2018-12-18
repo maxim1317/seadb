@@ -61,7 +61,7 @@ class MainWindow(QMainWindow):
         if p_name not in self.uiMain.port_list:
             self.uiMain.ports_line_edit.setStyleSheet("border-bottom: 2px solid #D72638;")
         else:
-            plot_map(auth=(self.login, self.pwd), port_name=p_name)
+            point_map = plot_map(auth=(self.login, self.pwd), port_name=p_name)
             self.uiMain.ports_line_edit.setStyleSheet("border-bottom: 2px solid #53DD6C;")
 
     def checkVessel(self):
@@ -78,6 +78,7 @@ class MainWindow(QMainWindow):
 
     def portFromTop(self):
         print('Port name: ' + self.sender().text())
+        point_map = plot_map(auth=(self.login, self.pwd), port_name=self.sender().text())
 
 
 if __name__ == '__main__':

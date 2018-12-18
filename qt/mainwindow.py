@@ -6,7 +6,7 @@ class MainWindow(object):
 
     def setupUi(self, MainWindow, auth):
         self.auth = auth
-        MainWindow.setObjectName("alpha 0.6")
+        MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1051, 672)
         center(MainWindow)
         font = QtGui.QFont()
@@ -510,6 +510,7 @@ class MainWindow(object):
         self.horizontalLayout.addWidget(self.ships_line_edit)
 
         self.ships_ok = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.ships_line_edit.returnPressed.connect(self.ships_ok.click)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.ships_ok.setFont(font)
@@ -575,6 +576,7 @@ class MainWindow(object):
         # self.horizontalLayout_3.addItem(spacerItem8)
 
         self.ports_ok = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
+        self.ports_line_edit.returnPressed.connect(self.ports_ok.click)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.ports_ok.setFont(font)
@@ -644,7 +646,7 @@ class MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "alpha 0.6"))
         self.ships_label.setText(_translate("MainWindow", "Enter vessel name"))
         self.ships_ok.setText(_translate("MainWindow", "OK"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Vessels"))
@@ -657,6 +659,8 @@ class MainWindow(object):
 
         font = QtGui.QFont()
         font.setPointSize(14)
+
+        self.topPBs = []
 
         it = []
         wd = []
@@ -678,6 +682,7 @@ class MainWindow(object):
             lb[i].setFont(font)
 
             pb[i].setText(top_10[i]["name"])
+            self.topPBs.append(pb[i])
             lb[i].setText(top_10[i]["amount"])
             sp = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
 
@@ -691,5 +696,8 @@ class MainWindow(object):
 
             self.ports_top_10_list.addItem(it[i])
             self.ports_top_10_list.setItemWidget(it[i], wd[i])
+
+        # for pb in self.topPBs:
+        #     print(pb.text())
 
         return

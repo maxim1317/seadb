@@ -12,7 +12,7 @@ from ut import *
 
 
 class LoginWindow(QtWidgets.QWidget):
-    
+
 
     def setupUi(self, LoginWindow):
         LoginWindow.setObjectName("LoginWindow")
@@ -514,13 +514,17 @@ class LoginWindow(QtWidgets.QWidget):
         self.pwdLE.setObjectName("pwdLE")
         self.verticalLayout_2.addWidget(self.pwdLE)
         self.horizontalLayout.addLayout(self.verticalLayout_2)
+
         self.okPB = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.loginLE.returnPressed.connect(self.okPB.click)
+        self.pwdLE.returnPressed.connect(self.okPB.click)
         # self.okPB.clicked.connect(self.ok_call)
         font = QtGui.QFont()
         font.setPointSize(23)
         self.okPB.setFont(font)
         self.okPB.setObjectName("okPB")
         self.horizontalLayout.addWidget(self.okPB)
+
         self.verticalLayout.addLayout(self.horizontalLayout)
         spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem2)

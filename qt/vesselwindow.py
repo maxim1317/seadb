@@ -3,7 +3,12 @@ from ut import *
 
 
 class VesselWindow(object):
-    def setupUi(self, VesselWindow, auth):
+    def setupUi(self, VesselWindow, auth, name):
+        self.auth = auth
+        self.name = name
+
+        self.info = get_vessel_info(auth, name)
+
         VesselWindow.setObjectName("VesselWindow")
         VesselWindow.resize(1272, 868)
         center(VesselWindow)
@@ -474,15 +479,18 @@ class VesselWindow(object):
         self.verticalLayout_2.addWidget(self.journal_label)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_2.addItem(spacerItem)
-        self.listWidget = QtWidgets.QListWidget(self.horizontalLayoutWidget_2)
+        self.journal_list = QtWidgets.Qjournal_list(self.horizontalLayoutWidget_2)
         font = QtGui.QFont()
         font.setPointSize(18)
-        self.listWidget.setFont(font)
-        self.listWidget.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.listWidget.setResizeMode(QtWidgets.QListView.Adjust)
-        self.listWidget.setWordWrap(True)
-        self.listWidget.setObjectName("listWidget")
-        self.verticalLayout_2.addWidget(self.listWidget)
+        self.journal_list.setFont(font)
+        self.journal_list.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.journal_list.setResizeMode(QtWidgets.QListView.Adjust)
+        self.journal_list.setWordWrap(True)
+        self.journal_list.setObjectName("journal_list")
+
+        self.buildJournal()
+
+        self.verticalLayout_2.addWidget(self.journal_list)
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_2.addItem(spacerItem1)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
@@ -516,6 +524,7 @@ class VesselWindow(object):
         font.setPointSize(18)
         self.backPB.setFont(font)
         self.backPB.setText("Back")
+        self.backPB.setStyleSheet("color: #D72638;")
 
         self.backHL.addWidget(self.backPB)
 
@@ -673,29 +682,83 @@ class VesselWindow(object):
         QtCore.QMetaObject.connectSlotsByName(VesselWindow)
 
     def retranslateUi(self, VesselWindow):
+
+        # info = {
+        #     "name"         : name,
+        #     "avg_speed"    : int(ship["avg_speed"]),
+        #     "home_port"    : db.ports.find_one({"_id": ship["home_port_id"]})["name"],
+        #     "load"         : int(ship["cargo_amount"]),
+        #     "flag"         : db.countries.find_one({"_id": ship["flag_id"]})["name"],
+        #     "class"        : db.sizes.find_one({"_id": ship["size_type_id"]})["name"],
+        #     "cargo_type"   : db.cargo_types.find_one({"_id": ship["ship_type_id"]})["name"],
+        #     "status"       : db.jobs.find_one({"_id": ship["job_id"]})["name"]
+        # }
+
         _translate = QtCore.QCoreApplication.translate
         VesselWindow.setWindowTitle(_translate("VesselWindow", "Vessel"))
         self.journal_label.setText(_translate("VesselWindow", "Journal"))
-        self.listWidget.setSortingEnabled(False)
+        self.journal_list.setSortingEnabled(False)
         self.okPB.setText(_translate("VesselWindow", "OK"))
         self.addPB.setText(_translate("VesselWindow", "Add"))
         self.delPB.setText(_translate("VesselWindow", "Delete"))
         self.ship_name_label.setText(_translate("VesselWindow", "Vessel"))
-        self.vs_name_label.setText(_translate("VesselWindow", "Name"))
-        self.vs_name_field.setText(_translate("VesselWindow", "somename"))
-        self.vs_home_label.setText(_translate("VesselWindow", "Home port"))
-        self.vs_home_field.setText(_translate("VesselWindow", "TextLabel"))
-        self.vs_flag_label.setText(_translate("VesselWindow", "Flag"))
-        self.vs_flag_form.setText(_translate("VesselWindow", "TextLabel"))
-        self.vs_class_label.setText(_translate("VesselWindow", "Class"))
-        self.vs_class_form.setText(_translate("VesselWindow", "TextLabel"))
-        self.vs_cargo_label.setText(_translate("VesselWindow", "Cargo"))
-        self.vs_cargo_form.setText(_translate("VesselWindow", "TextLabel"))
-        self.vs_speed_label.setText(_translate("VesselWindow", "Avg. speed"))
-        self.vs_speed_form.setText(_translate("VesselWindow", "TextLabel"))
-        self.vs_load_label.setText(_translate("VesselWindow", "Load"))
-        self.vs_load_form.setText(_translate("VesselWindow", "TextLabel"))
+        self.vs_name_label.setText(_translate("VesselWindow"  , "Name"))
+        self.vs_name_field.setText(_translate("VesselWindow"  , self.info["name"]))
+        self.vs_home_label.setText(_translate("VesselWindow"  , "Home port"))
+        self.vs_home_field.setText(_translate("VesselWindow"  , self.info["home_port"]))
+        self.vs_flag_label.setText(_translate("VesselWindow"  , "Flag"))
+        self.vs_flag_form.setText(_translate("VesselWindow"   , self.info["flag"]))
+        self.vs_class_label.setText(_translate("VesselWindow" , "Class"))
+        self.vs_class_form.setText(_translate("VesselWindow"  , self.info["class"]))
+        self.vs_cargo_label.setText(_translate("VesselWindow" , "Cargo"))
+        self.vs_cargo_form.setText(_translate("VesselWindow"  , self.info["cargo_type"]))
+        self.vs_speed_label.setText(_translate("VesselWindow" , "Avg. speed"))
+        self.vs_speed_form.setText(_translate("VesselWindow"  , self.info["avg_speed"]))
+        self.vs_load_label.setText(_translate("VesselWindow"  , "Load"))
+        self.vs_load_form.setText(_translate("VesselWindow"   , self.info["load"]))
         self.vs_status_label.setText(_translate("VesselWindow", "Current status"))
-        self.label_16_form.setText(_translate("VesselWindow", "TextLabel"))
+        self.label_16_form.setText(_translate("VesselWindow"  , self.info["status"]))
+
+    def buildJournal():
+
+        font = QtGui.QFont()
+        font.setPointSize(14)
+
+        self.topPBs = []
+
+        it = []
+        wd = []
+        hl = []
+        pb = []
+        lb = []
+
+        for i in range(0, 10):
+            it.append(QtWidgets.QListWidgetItem())
+            wd.append(QtWidgets.QWidget())
+            hl.append(QtWidgets.QHBoxLayout())
+            pb.append(QtWidgets.QPushButton())
+            lb.append(QtWidgets.QLabel())
+
+        top_10 = get_top_10(auth=self.auth)
+
+        for i in range(0, 10):
+            pb[i].setFont(font)
+            lb[i].setFont(font)
+
+            pb[i].setText(top_10[i]["name"])
+            self.topPBs.append(pb[i])
+            lb[i].setText(top_10[i]["amount"])
+            sp = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+
+            hl[i].addWidget(pb[i])
+            hl[i].addItem(sp)
+            hl[i].addWidget(lb[i])
+            # hl[i].addStretch()
+
+            wd[i].setLayout(hl[i])
+            it[i].setSizeHint(wd[i].sizeHint())
+
+            self.ports_top_10_list.addItem(it[i])
+            self.ports_top_10_list.setItemWidget(it[i], wd[i])
 
 import images_rc

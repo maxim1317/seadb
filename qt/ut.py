@@ -96,21 +96,37 @@ def get_top_10(auth):
     return top_10
 
 
-def collect_ship_info(name, auth):
+def get_vessel_info(auth, name):
+    import datetime as dt
     login, password = auth
     client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
     db = client[DB_NAME]
 
     ship = db.ships.find_one({"name": name})
 
+    date = dt.datetime.now()
+
+    cur_task = db.schedules.find_one({
+        "$and": [
+            {"ship_id"        : ship["_id"]},
+            {"started"        : {"$lte": date}},
+            {"estimated_end"  : {"$gte": date}},
+        ]
+    })
+    if cur_task is None:
+        status = "RESTING"
+    else:
+        status = db.jobs.find_one({"_id": cur_task["job_id"]})["name"]
+
     info = {
         "name"         : name,
-        "avg_speed"    : ship["avg_speed"],
+        "avg_speed"    : str(int(ship["avg_speed"])),
         "home_port"    : db.ports.find_one({"_id": ship["home_port_id"]})["name"],
-        "ship_type_id" : db.ports.find_one({"_id": ship["home_port_id"]})["name"],
-        "flag_id"      : db.ports.find_one({"_id": ship["home_port_id"]})["name"],
-        "size_type_id" : db.ports.find_one({"_id": ship["home_port_id"]})["name"],
-        "cargo_amount" : db.ports.find_one({"_id": ship["home_port_id"]})["name"]
+        "load"         : str(int(ship["cargo_amount"])),
+        "flag"         : db.countries.find_one({"_id": ship["flag_id"]})["name"],
+        "class"        : db.sizes.find_one({"_id": ship["size_type_id"]})["name"],
+        "cargo_type"   : db.cargo_types.find_one({"_id": ship["ship_type_id"]})["type"],
+        "status"       : status
     }
 
     return info

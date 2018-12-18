@@ -721,9 +721,62 @@ class VesselWindow(object):
         self.label_16_form.setText(_translate("VesselWindow"  , self.info["status"]))
 
     def buildJournal(self):
-        # self.journal_table.
-        self.journal_table.setColumnCount(3)
-        self.journal_table.setHorizontalHeaderLabels(["From", "To", "Job"])
+        # self.journal_table
+        schedule = self.info["schedule"]
+
+        login, password = self.auth
+        client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
+        db = client[DB_NAME]
+
+        self.journal_table.setColumnCount(5)
+        self.journal_table.setRowCount(len(schedule))
+        # self.journal_table.setColumnWidth(0, self.verticalLayout_2.sizeHint().width() // 3)
+        # self.journal_table.setColumnWidth(1, self.verticalLayout_2.sizeHint().width() // 3)
+        # self.journal_table.setColumnWidth(2, self.verticalLayout_2.sizeHint().width() // 3)
+        self.journal_table.setHorizontalHeaderLabels(["From", "To", "Begins", "Ends", "Job"])
+
+        for i in range(0, len(schedule)):
+            font = QtGui.QFont()
+            font.setPointSize(10)
+
+            if schedule[i]["destination_id"] is not None:
+                __from = db.ports.find_one({
+                    "_id": db.destinations.find_one({"_id": schedule[i]["destination_id"]})["departure"]
+                })["name"]
+                __to   = db.ports.find_one({
+                    "_id": db.destinations.find_one({"_id": schedule[i]["destination_id"]})["destination"]
+                })["name"]
+
+            elif schedule[i]["anchorage_id"] is not None:
+                __from = db.ports.find_one({
+                    "_id": db.destinations.find_one({"_id": schedule[i]["anchorage_id"]})["port_id"]
+                })["name"]
+                __to   = __from
+            elif schedule[i]["pier_id"] is not None:
+                __from = db.ports.find_one({
+                    "_id": db.destinations.find_one({"_id": schedule[i]["pier_id"]})["port_id"]
+                })["name"]
+                __to   = __from
+            else:
+                __from = "None"
+                __to   = "None"
+
+            _from  = QtWidgets.QTableWidgetItem(__from)
+            _from.setFont(font)
+            _to    = QtWidgets.QTableWidgetItem(__to)
+            _to.setFont(font)
+            _begin = QtWidgets.QTableWidgetItem(str(schedule[i]["started"].date()))
+            _begin.setFont(font)
+            _end   = QtWidgets.QTableWidgetItem(str(schedule[i]["estimated_end"].date()))
+            _end.setFont(font)
+            _job   = QtWidgets.QTableWidgetItem(db.jobs.find_one({"_id": schedule[i]["job"]})["job"])
+            _job.setFont(font)
+            self.journal_table.setItem(i, 0, _from )
+            self.journal_table.setItem(i, 1, _to   )
+            self.journal_table.setItem(i, 2, _begin)
+            self.journal_table.setItem(i, 3, _end  )
+            self.journal_table.setItem(i, 4, _job  )
+
         # self.journal_table.horizontalHeaderItem().setTextAlignment(Qt.AlignHCenter)
 
         # font = QtGui.QFont()

@@ -506,6 +506,7 @@ class MainWindow(object):
         self.ships_line_edit.setFont(font)
         completer = QtWidgets.QCompleter(self.ship_list, self.ships_line_edit)
         self.ships_line_edit.setCompleter(completer)        # Set QCompleter in the input field
+        self.ships_line_edit.setFocus()
         self.ships_line_edit.setObjectName("ships_line_edit")
         self.horizontalLayout.addWidget(self.ships_line_edit)
 

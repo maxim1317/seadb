@@ -115,18 +115,22 @@ def get_vessel_info(auth, name):
     })
     if cur_task is None:
         status = "RESTING"
+        load  = "0"
     else:
         status = db.jobs.find_one({"_id": cur_task["job"]})["job"]
+        load   = str(int(ship["cargo_amount"]))
 
     info = {
+        "_id"          : ship['_id'],
         "name"         : name,
         "avg_speed"    : str(int(ship["avg_speed"])),
         "home_port"    : db.ports.find_one({"_id": ship["home_port_id"]})["name"],
-        "load"         : str(int(ship["cargo_amount"])),
+        "load"         : load,
         "flag"         : db.countries.find_one({"_id": ship["flag_id"]})["name"],
         "class"        : db.sizes.find_one({"_id": ship["size_type_id"]})["name"],
         "cargo_type"   : db.cargo_types.find_one({"_id": ship["ship_type_id"]})["type"],
-        "status"       : status
+        "status"       : status,
+        "schedule"     : list(db.schedules.find({"ship_id": ship["_id"]}))
     }
 
     return info

@@ -1,15 +1,8 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'main.ui'
-#
-# Created by: PyQt5 UI code generator 5.11.3
-#
-# WARNING! All changes made in this file will be lost!
-
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import loginwindow as lw
 import mainwindow as mw
 import vesselwindow as vw
+import portwindow as pw
 import sys
 from ut import *
 
@@ -20,6 +13,7 @@ class MainWindow(QMainWindow):
         self.uiLogin = lw.LoginWindow()
         self.uiMain = mw.MainWindow()
         self.uiVessel = vw.VesselWindow()
+        self.uiPort = pw.PortWindow()
         self.startLogin()
 
     def startMain(self, auth):
@@ -30,13 +24,17 @@ class MainWindow(QMainWindow):
             PB.clicked.connect(self.portFromTop)
         self.show()
 
+    def startPort(self, auth, name, img):
+        self.uiPort.setupUi(self, auth, name, img)
+        # self.uiPort.backPB.clicked.connect(self.gotoMain)
+        self.show()
+
     def startVessel(self, auth, name):
         self.uiVessel.setupUi(self, auth, name)
         self.uiVessel.backPB.clicked.connect(self.gotoMain)
-        self.show
+        self.show()
 
     def startLogin(self):
-
         self.uiLogin.setupUi(self)
         self.uiLogin.okPB.clicked.connect(self.checkLogin)
         self.show()
@@ -63,6 +61,7 @@ class MainWindow(QMainWindow):
         else:
             point_map = plot_map(auth=(self.login, self.pwd), port_name=p_name)
             self.uiMain.ports_line_edit.setStyleSheet("border-bottom: 2px solid #53DD6C;")
+            self.startPort(auth=(self.login, self.pwd), name=self.uiMain.ports_line_edit.text(), img=point_map)
 
     def checkVessel(self):
         p_name = self.uiMain.ships_line_edit.text()
@@ -79,6 +78,7 @@ class MainWindow(QMainWindow):
     def portFromTop(self):
         print('Port name: ' + self.sender().text())
         point_map = plot_map(auth=(self.login, self.pwd), port_name=self.sender().text())
+        self.startPort(auth=(self.login, self.pwd), name=self.sender().text(), img=point_map)
 
 
 if __name__ == '__main__':

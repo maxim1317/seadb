@@ -23,6 +23,13 @@ class VesselWindow(object):
         VesselWindow.setFont(font)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/images/icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+
+        self.aframax_img = "\":/images/tanker_aframax.svg\""
+        self.panamax_img = "\":/images/tanker_panamax.svg\""
+        self.suezmax_img = "\":/images/tanker_suezmax.svg\""
+        self.VLCC_img    = "\":/images/tanker_vlcc.svg\""
+        self.ULCC_img    = "\":/images/tanker_ulcc.svg\""
+
         VesselWindow.setWindowIcon(icon)
         VesselWindow.setAutoFillBackground(False)
         VesselWindow.setStyleSheet(
@@ -477,8 +484,8 @@ class VesselWindow(object):
         self.journal_label.setAlignment(QtCore.Qt.AlignCenter)
         self.journal_label.setObjectName("journal_label")
         self.verticalLayout_2.addWidget(self.journal_label)
-        # spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        # self.verticalLayout_2.addItem(spacerItem)
+        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_2.addItem(spacerItem)
 
         self.journal_table = QtWidgets.QTableWidget(self.horizontalLayoutWidget_2)
         font = QtGui.QFont()
@@ -492,8 +499,9 @@ class VesselWindow(object):
         self.buildJournal()
 
         self.verticalLayout_2.addWidget(self.journal_table)
-        # spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        # self.verticalLayout_2.addItem(spacerItem1)
+
+        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_2.addItem(spacerItem1)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.okPB = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
@@ -548,9 +556,24 @@ class VesselWindow(object):
         font = QtGui.QFont()
         font.setPointSize(18)
         self.ship_view_label.setFont(font)
-        self.ship_view_label.setText("")
+
+        if self.info["class"] == "LR1":
+            ship_img = self.aframax_img
+        elif self.info["class"] == "Aframax":
+            ship_img = self.panamax_img
+        elif self.info["class"] == "Suezmax":
+            ship_img = self.suezmax_img
+        elif self.info["class"] == "VLCC":
+            ship_img = self.VLCC_img
+        elif self.info["class"] == "ULCC":
+            ship_img = self.ULCC_img
+        else:
+            print(self.info["class"])
+
+        self.ship_view_label.setText("<html><head/><body><p><img src=" + ship_img + "/></p></body></html>")
         self.ship_view_label.setAlignment(QtCore.Qt.AlignCenter)
         self.ship_view_label.setObjectName("ship_view_label")
+
         self.verticalLayout.addWidget(self.ship_view_label)
         self.line = QtWidgets.QFrame(self.horizontalLayoutWidget_2)
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
@@ -559,9 +582,11 @@ class VesselWindow(object):
         self.line.setLineWidth(2)
         self.line.setStyleSheet("color: #80CBC4;")
         self.verticalLayout.addWidget(self.line)
+
         self.label_18 = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
         self.label_18.setText("")
         self.label_18.setObjectName("label_18")
+
         self.verticalLayout.addWidget(self.label_18)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
@@ -702,6 +727,13 @@ class VesselWindow(object):
         self.okPB.setText(_translate("VesselWindow", "OK"))
         self.addPB.setText(_translate("VesselWindow", "Add"))
         self.delPB.setText(_translate("VesselWindow", "Delete"))
+        if self.auth[0] not in ["admin", "oberon", "manager"]:
+            self.okPB.hide()
+            self.addPB.hide()
+            self.delPB.hide()
+        elif self.auth[0] == "manager":
+            self.delPB.hide()
+
         self.ship_name_label.setText(_translate("VesselWindow", "Vessel"))
         self.vs_name_label.setText(_translate("VesselWindow"  , "Name"))
         self.vs_name_field.setText(_translate("VesselWindow"  , self.info["name"]))
@@ -721,23 +753,58 @@ class VesselWindow(object):
         self.label_16_form.setText(_translate("VesselWindow"  , self.info["status"]))
 
     def buildJournal(self):
-        # self.journal_table
+        self.journal_table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.journal_table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.journal_table.setFocusPolicy(QtCore.Qt.NoFocus)
+
         schedule = self.info["schedule"]
 
         login, password = self.auth
         client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
         db = client[DB_NAME]
 
+        font = QtGui.QFont()
+        font.setFamily("Roboto")
+        font.setPointSize(12)
+
         self.journal_table.setColumnCount(5)
         self.journal_table.setRowCount(len(schedule))
-        # self.journal_table.setColumnWidth(0, self.verticalLayout_2.sizeHint().width() // 3)
-        # self.journal_table.setColumnWidth(1, self.verticalLayout_2.sizeHint().width() // 3)
-        # self.journal_table.setColumnWidth(2, self.verticalLayout_2.sizeHint().width() // 3)
+        # self.journal_table.setColumnWidth(0, self.journal_table.sizeHint().width() // 5)
+        # self.journal_table.setColumnWidth(1, self.journal_table.sizeHint().width() // 5)
+        # self.journal_table.setColumnWidth(2, self.journal_table.sizeHint().width() // 5)
+        # self.journal_table.setColumnWidth(3, self.journal_table.sizeHint().width() // 5)
+        # self.journal_table.setColumnWidth(4, self.journal_table.sizeHint().width() // 5)
+        # self.journal_table.setStyleSheet("background: transparent; color: #CFD8DC;")
+        stylesheet = "QTableView{          \
+                background: transparent;   \
+                background-color: #263238; \
+                color: #546E7A;            \
+            };                             \
+            QHeaderView::section{          \
+                background: transparent;   \
+                background-color: #263238; \
+                color: #80CBC4;            \
+                font-size: 12;             \
+            }                              \
+        "
+        self.journal_table.setStyleSheet(stylesheet)
+
+        self.journal_table.verticalHeader().hide()
+        header = self.journal_table.horizontalHeader()
+        header.setStyleSheet("background-color: #263238; color: #80CBC4;")
+        header.setFont(font)
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(3, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(4, QtWidgets.QHeaderView.ResizeToContents)
+
         self.journal_table.setHorizontalHeaderLabels(["From", "To", "Begins", "Ends", "Job"])
 
+        font.setPointSize(14)
         for i in range(0, len(schedule)):
-            font = QtGui.QFont()
-            font.setPointSize(10)
+
+            # print(schedule[i]["pier_id"])
 
             if schedule[i]["destination_id"] is not None:
                 __from = db.ports.find_one({
@@ -749,12 +816,12 @@ class VesselWindow(object):
 
             elif schedule[i]["anchorage_id"] is not None:
                 __from = db.ports.find_one({
-                    "_id": db.destinations.find_one({"_id": schedule[i]["anchorage_id"]})["port_id"]
+                    "_id": db.anchorages.find_one({"_id": schedule[i]["anchorage_id"]})["port_id"]
                 })["name"]
                 __to   = __from
             elif schedule[i]["pier_id"] is not None:
                 __from = db.ports.find_one({
-                    "_id": db.destinations.find_one({"_id": schedule[i]["pier_id"]})["port_id"]
+                    "_id": db.piers.find_one({"_id": schedule[i]["pier_id"]})["port_id"]
                 })["name"]
                 __to   = __from
             else:

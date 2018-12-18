@@ -13,7 +13,6 @@ from ut import *
 
 class LoginWindow(QtWidgets.QWidget):
 
-
     def setupUi(self, LoginWindow):
         LoginWindow.setObjectName("LoginWindow")
         LoginWindow.resize(680, 448)

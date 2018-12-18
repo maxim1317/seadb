@@ -1,4 +1,7 @@
 from pymongo import MongoClient, errors
+import matplotlib.pyplot as plt
+from mpl_toolkits.basemap import Basemap
+import re
 
 DB_NAME = 'seadb'
 
@@ -149,3 +152,53 @@ def center(wid):
 
     # top left of rectangle becomes top left of window centering it
     wid.move(qr.topLeft())
+
+
+def plot_map(auth, port_name):
+    login, password = auth
+    client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
+    db = client[DB_NAME]
+
+    _lat, _lon = db.ports.find_one({"name": port_name})["location"].split(", ")
+    # _lat, _lon = "36°46'50\"N., 3°04'11\"E.".split(", ")
+    # print(parse_dms(_lat), parse_dms(_lon))
+
+    lat = parse_dms(_lat)
+    lon = parse_dms(_lon)
+
+    fig = plt.figure(figsize=(3, 3))
+    m = Basemap(projection='lcc', resolution=None,
+                width=8E6, height=8E6,
+                lat_0=(lat + 10) % 180, lon_0=(lon + 20) % 180,)
+    m.etopo(scale=0.5, alpha=0.5)
+
+    # Map (long, lat) to (x, y) for plotting
+    x, y = m(lon, lat)
+    plt.plot(x, y, 'ok', markersize=5)
+    plt.text(x, y, port_name, fontsize=12)
+
+    plt.show()
+
+
+# Used to convert GPS from degrees to decimal
+def dms2dd(degrees, minutes, seconds, direction):
+    dd = float(degrees) + float(minutes) / 60 + float(seconds) / 3600
+    if direction == 'S' or direction == 'W':
+        dd *= -1
+    return dd
+
+
+def dd2dms(deg):
+    d = int(deg)
+    md = abs(deg - d) * 60
+    m = int(md)
+    sd = (md - m) * 60
+    return [d, m, sd]
+
+
+def parse_dms(dms):
+    parts = re.split('[°\'\"\.]', dms)
+    print(parts)
+    lat = dms2dd(parts[0], parts[1], parts[2], parts[3])
+    return lat
+# End of GPS convert

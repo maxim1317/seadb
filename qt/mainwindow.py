@@ -6,6 +6,7 @@ class MainWindow(object):
 
     def setupUi(self, MainWindow, auth):
         self.auth = auth
+        login, _  = auth
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1051, 672)
         center(MainWindow)
@@ -77,6 +78,10 @@ class MainWindow(object):
             "    border: 0px solid transparent;\n"
             "    border-bottom: 2px solid #80CBC4;\n"
             "    color: #AFBDC4;\n"
+            "}\n"
+            "\n"
+            "QTabBar::tab::disabled {\n"
+            "    width: 0; height: 0; margin: 0; padding: 0; border: none;\n"
             "}\n"
             "\n"
             "QTabBar::tab:selected {\n"
@@ -634,6 +639,10 @@ class MainWindow(object):
         self.horizontalLayout_2.addLayout(self.verticalLayout_4)
 
         self.tabWidget.addTab(self.ports_tab, "")
+
+        if login not in ["admin", "oberon", "manager"]:
+            self.tabWidget.setTabEnabled(1, False)
+            # self.tab.hide()
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)

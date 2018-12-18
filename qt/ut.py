@@ -155,6 +155,12 @@ def center(wid):
 
 
 def plot_map(auth, port_name):
+    import os.path
+    filename = "images/ports/" + port_name + ".png"
+
+    if os.path.exists(filename):
+        return filename
+
     login, password = auth
     client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
     db = client[DB_NAME]
@@ -167,9 +173,12 @@ def plot_map(auth, port_name):
     lon = parse_dms(_lon)
 
     fig = plt.figure(figsize=(3, 3))
-    m = Basemap(projection='lcc', resolution=None,
-                width=8E6, height=8E6,
-                lat_0=(lat + 10) % 180, lon_0=(lon + 20) % 180,)
+    m = Basemap(
+        projection='lcc', resolution=None,
+        width=8E6, height=8E6,
+        lat_0=(180 + lat + 10 * lat / abs(lat)) % 360 - 180,
+        lon_0=(180 + lon + 20 * lat / abs(lat)) % 360 - 180,
+    )
     m.etopo(scale=0.5, alpha=0.5)
 
     # Map (long, lat) to (x, y) for plotting
@@ -177,7 +186,9 @@ def plot_map(auth, port_name):
     plt.plot(x, y, 'ok', markersize=5)
     plt.text(x, y, port_name, fontsize=12)
 
-    plt.show()
+    # plt.show()
+    plt.savefig(filename)
+    return filename
 
 
 # Used to convert GPS from degrees to decimal

@@ -139,6 +139,46 @@ def get_vessel_info(auth, name):
     return info
 
 
+def get_port_info(auth, name, img):
+    import datetime as dt
+    login, password = auth
+    client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
+    db = client[DB_NAME]
+
+    port = db.ports.find_one({"name": name})
+
+    date = dt.datetime.now()
+
+    cur_task = db.schedules.find_one({
+        "$and": [
+            {"port_id"        : port["_id"]},
+            {"started"        : {"$lte": date}},
+            {"estimated_end"  : {"$gte": date}},
+        ]
+    })
+    if cur_task is None:
+        status = "RESTING"
+        load  = "0"
+    else:
+        status = db.jobs.find_one({"_id": cur_task["job"]})["job"]
+        load   = str(int(port["cargo_amount"]))
+
+    info = {
+        "_id"          : port['_id'],
+        "name"         : name,
+        "avg_speed"    : str(int(port["avg_speed"])),
+        "home_port"    : db.ports.find_one({"_id": port["home_port_id"]})["name"],
+        "load"         : load,
+        "flag"         : db.countries.find_one({"_id": port["flag_id"]})["name"],
+        "class"        : db.sizes.find_one({"_id": port["size_type_id"]})["name"],
+        "cargo_type"   : db.cargo_types.find_one({"_id": port["port_type_id"]})["type"],
+        "status"       : status,
+        "schedule"     : list(db.schedules.find({"port_id": port["_id"]}))
+    }
+
+    return info
+
+
 def center(wid):
     from PyQt5.QtWidgets import QDesktopWidget
     # geometry of the main window
@@ -154,7 +194,7 @@ def center(wid):
     wid.move(qr.topLeft())
 
 
-def plot_map(auth, port_name):
+def plot_map(auth=("admin", "admin"), port_name="Alicante"):
     import os.path
     filename = "images/ports/" + port_name + ".png"
 
@@ -209,7 +249,7 @@ def dd2dms(deg):
 
 def parse_dms(dms):
     parts = re.split('[°\'\"\.]', dms)
-    print(parts)
+    # print(parts)
     lat = dms2dd(parts[0], parts[1], parts[2], parts[3])
     return lat
 # End of GPS convert

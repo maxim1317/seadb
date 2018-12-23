@@ -1,4 +1,6 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow, QSplashScreen
+from PyQt5.QtGui import QPixmap
+from PyQt5.QtCore import Qt
 import loginwindow as lw
 import mainwindow as mw
 import vesselwindow as vw
@@ -9,7 +11,13 @@ from ut import *
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
+        splash_pix = QPixmap('images/icon.png')
+        self.splash = QSplashScreen(splash_pix, Qt.WindowStaysOnTopHint)
+        self.splash.setMask(splash_pix.mask())
+        self.splash.show()
+        app.processEvents()
         super(MainWindow, self).__init__(parent)
+
         self.uiLogin = lw.LoginWindow()
         self.uiMain = mw.MainWindow()
         self.uiVessel = vw.VesselWindow()
@@ -28,16 +36,22 @@ class MainWindow(QMainWindow):
         self.uiPort.setupUi(self, auth, name, img)
         self.uiPort.backPB.clicked.connect(self.gotoMain)
         self.show()
+        self.splash.finish(self)
+        app.exec_()
 
     def startVessel(self, auth, name):
         self.uiVessel.setupUi(self, auth, name)
         self.uiVessel.backPB.clicked.connect(self.gotoMain)
         self.show()
+        self.splash.finish(self)
+        app.exec_()
 
     def startLogin(self):
         self.uiLogin.setupUi(self)
         self.uiLogin.okPB.clicked.connect(self.checkLogin)
         self.show()
+        self.splash.finish(self)
+        app.exec_()
 
     def checkLogin(self):
         # from time import sleep
@@ -55,6 +69,8 @@ class MainWindow(QMainWindow):
             self.uiLogin.pwdLE.setStyleSheet("border-bottom: 2px solid #D72638;")
 
     def checkPort(self):
+        self.splash.show()
+        app.processEvents()
         p_name = self.uiMain.ports_line_edit.text()
         if p_name not in self.uiMain.port_list:
             self.uiMain.ports_line_edit.setStyleSheet("border-bottom: 2px solid #D72638;")
@@ -64,6 +80,8 @@ class MainWindow(QMainWindow):
             self.startPort(auth=(self.login, self.pwd), name=self.uiMain.ports_line_edit.text(), img=point_map)
 
     def checkVessel(self):
+        self.splash.show()
+        app.processEvents()
         p_name = self.uiMain.ships_line_edit.text()
         print('Ship name: ' + self.uiMain.ships_line_edit.text())
         if p_name not in self.uiMain.ship_list:

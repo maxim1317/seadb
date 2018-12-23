@@ -721,7 +721,7 @@ class PortWindow(object):
         header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
         header.setSectionResizeMode(3, QtWidgets.QHeaderView.ResizeToContents)
 
-        self.journal_table.setHorizontalHeaderLabels(["Date", "Ship", "Cargo amount", "Job"])
+        self.journal_table.setHorizontalHeaderLabels(["Date", "Ship", "Cargo Amount", "Job"])
 
         prev_ships = set([])
 

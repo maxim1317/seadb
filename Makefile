@@ -10,3 +10,7 @@ gen:
 server:
 	@mongod --dbpath ~/db/seadb/db
 
+clean_plots:
+	rm -rf app/images/plots
+	mkdir app/images/plots
+

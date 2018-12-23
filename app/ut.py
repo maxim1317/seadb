@@ -163,9 +163,9 @@ def get_port_info(auth, name):
         cp        = db.piers.count_documents({"port_id": port["_id"], "pier_type": container})
 
         pier_str = \
-            "bulk:      x" + str(bp) + "\n" + \
-            "liquid:    x" + str(lp) + "\n" + \
-            "container: x" + str(cp)
+            "Bulk x" + str(bp) + "\n" + \
+            "Liquid x" + str(lp) + "\n" + \
+            "Container x" + str(cp)
         return pier_str
 
     def form_ship_count():
@@ -266,15 +266,22 @@ def plot_map(auth=("admin", "admin"), port_name="Alicante"):
         lat_0=(180 + lat + 10 * lat / abs(lat)) % 360 - 180,
         lon_0=(180 + lon + 20 * lat / abs(lat)) % 360 - 180,
     )
-    m.etopo(scale=0.5, alpha=0.5)
+    # m.etopo(scale=0.5, alpha=0.5)
+    # m.drawlsmask(land_color='#80CBC4', ocean_color='#546E7A', lakes=True)
+    m.drawlsmask(land_color='#80CBC4', ocean_color='#263238', lakes=True)
 
     # Map (long, lat) to (x, y) for plotting
     x, y = m(lon, lat)
-    plt.plot(x, y, 'ok', markersize=5)
-    plt.text(x, y, port_name, fontsize=12)
+    plt.plot(x, y, 'ok', markersize=3, color="#FFFFFF")
+    plt.text(x + 5, y + 5, port_name, fontsize=12, color="#FFFFFF")
 
     # plt.show()
-    plt.savefig(filename)
+    plt.savefig(
+        filename,
+        transparent=True,
+        frameon=False,
+    )
+    plt.close()
     return filename
 
 

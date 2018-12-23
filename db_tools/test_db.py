@@ -12,20 +12,34 @@ client = MongoClient()
 db = client[DB_NAME]
 
 
-def fill_logins(db):
-    db.logins.drop()
-    import hashlib as h
-    login_list = [
-        {"login": "admin"   , "password": h.md5("admin".encode("utf-8")).hexdigest()    , "role": "admin"  },
-        {"login": "oberon"  , "password": h.md5("Worms1317".encode("utf-8")).hexdigest(), "role": "admin"  },
-        {"login": "user"    , "password": h.md5("user".encode("utf-8")).hexdigest()     , "role": "user"   },
-        {"login": "manager" , "password": h.md5("manager".encode("utf-8")).hexdigest()  , "role": "manager"}
-    ]
-    coll_from_list(db.logins, login_list)
-    return login_list
+# def port_graph(db):
+#     import networkx as nx
+
+#     G = nx.Graph()
+#     dests = []
+
+#     dests_raw = list(db.destinations.find({}))
+
+#     for d in dests_raw:
+#         dest = {
+#             "from": db.ports.find_one({"_id": d["departure"]})["name"],
+#             "to"  : db.ports.find_one({"_id": d["destination"]})["name"],
+#             "dist": d["distance"]
+#         }
+#         dests.append(dest)
+
+#     for d in dests:
+#         G.add_edge(d["from"], d["to"], weight=d["dist"])
+
+#     nx.write_yaml(G, "../app/images/graph.yaml")
+
+def draw_graph(db):
+    import networkx as nx
+
+    G = nx.read_yaml("../app/images/graph.yaml")
 
 
 pp = pprint.PrettyPrinter(indent=4)
-fill_logins(db)
+draw_graph(db)
 # pp.pprint(db.ships.find({"load": 0}))
 # pp.pprint(db.anchorages.find({"port_id": dest["_id"]}).limit(1)[0]["_id"])

@@ -26,7 +26,7 @@ class MainWindow(QMainWindow):
 
     def startPort(self, auth, name, img):
         self.uiPort.setupUi(self, auth, name, img)
-        # self.uiPort.backPB.clicked.connect(self.gotoMain)
+        self.uiPort.backPB.clicked.connect(self.gotoMain)
         self.show()
 
     def startVessel(self, auth, name):

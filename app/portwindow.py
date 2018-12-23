@@ -8,6 +8,8 @@ class PortWindow(object):
         self.name = name
         self.img  = img
 
+        self.info = get_port_info(auth, name)
+
         PortWindow.setObjectName("PortWindow")
         PortWindow.resize(1272, 868)
         center(PortWindow)
@@ -477,23 +479,48 @@ class PortWindow(object):
         self.verticalLayout_2.addWidget(self.label_17)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_2.addItem(spacerItem)
-        self.tableWidget = QtWidgets.QTableWidget(self.horizontalLayoutWidget_2)
-        self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(0)
-        self.tableWidget.setRowCount(0)
-        self.verticalLayout_2.addWidget(self.tableWidget)
+
+        self.journal_table = QtWidgets.QTableWidget(self.horizontalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.journal_table.setFont(font)
+        self.journal_table.setWordWrap(True)
+        self.journal_table.setObjectName("journal_table")
+
+        self.buildJournal()
+
+        self.verticalLayout_2.addWidget(self.journal_table)
+
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_2.addItem(spacerItem1)
+
+        self.backHL = QtWidgets.QHBoxLayout()
+
+        self.backPB = QtWidgets.QPushButton()
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.backPB.setFont(font)
+        self.backPB.setText("Back")
+        self.backPB.setStyleSheet("color: #D72638;")
+        self.backHL.addWidget(self.backPB)
+
+        SI = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.backHL.addItem(SI)
+
+        self.verticalLayout_2.addLayout(self.backHL)
+
         self.horizontalLayout_2.addLayout(self.verticalLayout_2)
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
-        self.port_name_label = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
+
+        self.pn_label = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
         font = QtGui.QFont()
         font.setPointSize(18)
-        self.port_name_label.setFont(font)
-        self.port_name_label.setAlignment(QtCore.Qt.AlignCenter)
-        self.port_name_label.setObjectName("port_name_label")
-        self.verticalLayout.addWidget(self.port_name_label)
+        self.pn_label.setFont(font)
+        self.pn_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.pn_label.setObjectName("pn_label")
+        self.verticalLayout.addWidget(self.pn_label)
+
         self.port_view_label = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
         font = QtGui.QFont()
         font.setPointSize(18)
@@ -502,21 +529,30 @@ class PortWindow(object):
         self.port_view_label.setAlignment(QtCore.Qt.AlignCenter)
         self.port_view_label.setObjectName("port_view_label")
         self.verticalLayout.addWidget(self.port_view_label)
+
         self.line = QtWidgets.QFrame(self.horizontalLayoutWidget_2)
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        # self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line.setLineWidth(2)
+        self.line.setStyleSheet("color: #80CBC4;")
         self.line.setObjectName("line")
         self.verticalLayout.addWidget(self.line)
+
         self.label_18 = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
-        self.label_18.setText("")
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.label_18.setFont(font)
+        self.label_18.setText("<html><head/><body><p><img src='" + self.img + "'/></p></body></html>")
+        self.label_18.setAlignment(QtCore.Qt.AlignCenter)
         self.label_18.setObjectName("label_18")
         self.verticalLayout.addWidget(self.label_18)
+
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem2)
         self.formLayout_2 = QtWidgets.QFormLayout()
-        self.formLayout_2.setFormAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
+        self.formLayout_2.setFormAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignTop)
         self.formLayout_2.setSpacing(20)
         self.formLayout_2.setObjectName("formLayout_2")
         self.label = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
@@ -608,20 +644,104 @@ class PortWindow(object):
 
     def retranslateUi(self, PortWindow):
         _translate = QtCore.QCoreApplication.translate
-        PortWindow.setWindowTitle(_translate("PortWindow", "PortWindow"))
-        self.label_17.setText(_translate("PortWindow", "Journal"))
-        self.port_name_label.setText(_translate("PortWindow", "Port"))
-        self.label.setText(_translate("PortWindow", "Name"))
-        self.label_3.setText(_translate("PortWindow", "TextLabel"))
-        self.label_2.setText(_translate("PortWindow", "Country"))
-        self.label_10.setText(_translate("PortWindow", "TextLabel"))
-        self.label_4.setText(_translate("PortWindow", "Location"))
-        self.label_11.setText(_translate("PortWindow", "TextLabel"))
-        self.label_5.setText(_translate("PortWindow", "Piers"))
-        self.label_12.setText(_translate("PortWindow", "TextLabel"))
-        self.label_6.setText(_translate("PortWindow", "Last week turnover"))
-        self.label_13.setText(_translate("PortWindow", "TextLabel"))
-        self.label_7.setText(_translate("PortWindow", "Ships in port"))
-        self.label_14.setText(_translate("PortWindow", "TextLabel"))
+        PortWindow.setWindowTitle(_translate("PortWindow", self.name + " port"))
+        self.label_17.setText(_translate("PortWindow"    , "Journal"))
+        self.pn_label.setText(_translate("PortWindow"    , "Port info"))
+
+        self.label.setText(_translate("PortWindow"       , "Name"))
+        self.label_3.setText(_translate("PortWindow"     , self.name))
+
+        self.label_2.setText(_translate("PortWindow"     , "Country"))
+        self.label_10.setText(_translate("PortWindow"    , self.info["country"]))
+
+        self.label_4.setText(_translate("PortWindow"     , "Location"))
+        self.label_11.setText(_translate("PortWindow"    , self.info["location"]))
+
+        self.label_5.setText(_translate("PortWindow"     , "Piers"))
+        self.label_12.setText(_translate("PortWindow"    , self.info["piers"]))
+
+        self.label_6.setText(_translate("PortWindow"     , "Last week turnover"))
+        self.label_13.setText(_translate("PortWindow"    , str(self.info["turnover"])))
+
+        self.label_7.setText(_translate("PortWindow"     , "Ships in port"))
+        self.label_14.setText(_translate("PortWindow"    , str(self.info["ships_in_port"])))
+
+    def buildJournal(self):
+        from random import triangular
+
+        self.journal_table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.journal_table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.journal_table.setFocusPolicy(QtCore.Qt.NoFocus)
+
+        journal = self.info["journal"]
+
+        login, password = self.auth
+        client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
+        db = client[DB_NAME]
+
+        font = QtGui.QFont()
+        font.setFamily("Roboto")
+        font.setPointSize(12)
+
+        self.journal_table.setColumnCount(4)
+        self.journal_table.setRowCount(len(journal))
+
+        stylesheet = "QTableView{          \
+                background: transparent;   \
+                background-color: #263238; \
+                color: #546E7A;            \
+            };                             \
+            QHeaderView::section{          \
+                background: transparent;   \
+                background-color: #263238; \
+                color: #80CBC4;            \
+                font-size: 12;             \
+            }                              \
+        "
+        self.journal_table.setStyleSheet(stylesheet)
+
+        self.journal_table.verticalHeader().hide()
+        header = self.journal_table.horizontalHeader()
+        header.setStyleSheet("background-color: #263238; color: #80CBC4;")
+        header.setFont(font)
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(3, QtWidgets.QHeaderView.ResizeToContents)
+
+        self.journal_table.setHorizontalHeaderLabels(["Date", "Ship", "Cargo amount", "Job"])
+
+        font.setPointSize(14)
+        for i in range(0, len(journal)):
+            ship   = db.ships.find_one({"_id": journal[i]["ship_id"]})
+
+            _date  = QtWidgets.QTableWidgetItem(str(journal[i]["date"].date()))
+            _date.setFont(font)
+            _ship  = QtWidgets.QTableWidgetItem(ship["name"])
+            _ship.setFont(font)
+            _job   = QtWidgets.QTableWidgetItem(db.jobs.find_one({"_id": journal[i]["operation"]})["job"])
+            if _job.text() == "LOADING":
+                _job.setForeground(QtGui.QColor("#53DD6C"))
+            if _job.text() == "UNLOADING":
+                _job.setForeground(QtGui.QColor("#D72638"))
+            _job.setFont(font)
+
+            amnt = ship["cargo_amount"]
+            if amnt == 0 and _job.text != "RESTING":
+                size_type = ship["size_type_id"]
+                amnt = triangular(
+                    0,
+                    db.sizes.find({"_id": size_type}).limit(1)[0]["max_amount"],
+                    db.sizes.find({"_id": size_type}).limit(1)[0]["max_amount"] - 100000.0
+                )
+            _amnt  = QtWidgets.QTableWidgetItem(str(int(amnt)))
+            _amnt.setFont(font)
+
+            self.journal_table.setItem(i, 0, _date)
+            self.journal_table.setItem(i, 1, _ship)
+            self.journal_table.setItem(i, 2, _amnt)
+            self.journal_table.setItem(i, 3, _job )
+
+        return
 
 import images_rc

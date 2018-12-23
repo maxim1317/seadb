@@ -139,41 +139,88 @@ def get_vessel_info(auth, name):
     return info
 
 
-def get_port_info(auth, name, img):
+def get_port_info(auth, name):
     import datetime as dt
+    from bson import ObjectId
+
     login, password = auth
     client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
     db = client[DB_NAME]
 
     port = db.ports.find_one({"name": name})
 
-    date = dt.datetime.now()
+    date = dt.datetime.now().date()
+    # print(port)
 
-    cur_task = db.schedules.find_one({
-        "$and": [
-            {"port_id"        : port["_id"]},
-            {"started"        : {"$lte": date}},
-            {"estimated_end"  : {"$gte": date}},
-        ]
-    })
-    if cur_task is None:
-        status = "RESTING"
-        load  = "0"
-    else:
-        status = db.jobs.find_one({"_id": cur_task["job"]})["job"]
-        load   = str(int(port["cargo_amount"]))
+    journal = list(db.port_journals.find({"port_id": port["_id"]}))
+
+    def form_piers():
+        container = ObjectId('5c094ca3af5b83063185f786')
+        liquid    = ObjectId('5c094ca3af5b83063185f787')
+        bulk      = ObjectId('5c094ca3af5b83063185f788')
+        bp        = db.piers.count_documents({"port_id": port["_id"], "pier_type": bulk})
+        lp        = db.piers.count_documents({"port_id": port["_id"], "pier_type": liquid})
+        cp        = db.piers.count_documents({"port_id": port["_id"], "pier_type": container})
+
+        pier_str = \
+            "bulk:      x" + str(bp) + "\n" + \
+            "liquid:    x" + str(lp) + "\n" + \
+            "container: x" + str(cp)
+        return pier_str
+
+    def form_ship_count():
+        count = 0
+        # print(journal)
+        for j in journal:
+            if j["date"].date() == date:
+                count += 1
+        return count
+
+    def form_turnover():
+        turnover  = 0
+
+        _date = dt.datetime.now()
+        week = _date - dt.timedelta(weeks=1)
+
+        loading   = ObjectId('5c094ca3af5b83063185f78b')
+        unloading = ObjectId('5c094ca3af5b83063185f78c')
+        _id       = port["_id"]
+        listing   = list(
+            db.port_journals.find({
+                "port_id"  : _id,
+                "operation": {
+                    "$in"  : [loading, unloading]
+                },
+                "date"     : {
+                    "$gte" : week,
+                    "$lt"  : _date,
+                }
+            })
+        )
+
+        ship_ids = []
+
+        for l in listing:
+            ship_ids.append(l["ship_id"])
+
+        ship_ids = list(set(ship_ids))
+
+        ships = db.ships.find({"_id": {"$in": ship_ids}})
+
+        for ship in ships:
+            turnover += (ship["cargo_amount"])
+
+        return int(turnover / 7.33)
 
     info = {
         "_id"          : port['_id'],
         "name"         : name,
-        "avg_speed"    : str(int(port["avg_speed"])),
-        "home_port"    : db.ports.find_one({"_id": port["home_port_id"]})["name"],
-        "load"         : load,
-        "flag"         : db.countries.find_one({"_id": port["flag_id"]})["name"],
-        "class"        : db.sizes.find_one({"_id": port["size_type_id"]})["name"],
-        "cargo_type"   : db.cargo_types.find_one({"_id": port["port_type_id"]})["type"],
-        "status"       : status,
-        "schedule"     : list(db.schedules.find({"port_id": port["_id"]}))
+        "country"      : db.countries.find_one({"_id": port["country_id"]})["name"],
+        "location"     : port['location'],
+        "piers"        : form_piers(),
+        "turnover"     : form_turnover(),
+        "ships_in_port": form_ship_count(),
+        "journal"      : list(db.port_journals.find({"port_id": port["_id"]}))
     }
 
     return info

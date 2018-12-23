@@ -534,7 +534,6 @@ class VesselWindow(object):
         self.backPB.setFont(font)
         self.backPB.setText("Back")
         self.backPB.setStyleSheet("color: #D72638;")
-
         self.backHL.addWidget(self.backPB)
 
         SI = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -843,48 +842,6 @@ class VesselWindow(object):
             self.journal_table.setItem(i, 2, _begin)
             self.journal_table.setItem(i, 3, _end  )
             self.journal_table.setItem(i, 4, _job  )
-
-        # self.journal_table.horizontalHeaderItem().setTextAlignment(Qt.AlignHCenter)
-
-        # font = QtGui.QFont()
-        # font.setPointSize(14)
-
-        # self.topPBs = []
-
-        # it = []
-        # wd = []
-        # hl = []
-        # pb = []
-        # lb = []
-
-        # for i in range(0, 10):
-        #     it.append(QtWidgets.QListWidgetItem())
-        #     wd.append(QtWidgets.QWidget())
-        #     hl.append(QtWidgets.QHBoxLayout())
-        #     pb.append(QtWidgets.QPushButton())
-        #     lb.append(QtWidgets.QLabel())
-
-        # top_10 = get_top_10(auth=self.auth)
-
-        # for i in range(0, 10):
-        #     pb[i].setFont(font)
-        #     lb[i].setFont(font)
-
-        #     pb[i].setText(top_10[i]["name"])
-        #     self.topPBs.append(pb[i])
-        #     lb[i].setText(top_10[i]["amount"])
-        #     sp = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-
-        #     hl[i].addWidget(pb[i])
-        #     hl[i].addItem(sp)
-        #     hl[i].addWidget(lb[i])
-        #     # hl[i].addStretch()
-
-        #     wd[i].setLayout(hl[i])
-        #     it[i].setSizeHint(wd[i].sizeHint())
-
-        #     self.journal_table.addItem(it[i])
-        #     self.journal_table.setItemWidget(it[i], wd[i])
 
         return
 

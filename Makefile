@@ -1,7 +1,7 @@
 all: gui
 
 gui:
-	cd qt; \
+	cd app; \
 	python3 main.py
 
 gen:

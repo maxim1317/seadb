@@ -480,6 +480,14 @@ class PortWindow(object):
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_2.addItem(spacerItem)
 
+        self.plot_space = QtWidgets.QLabel(self.horizontalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.plot_space.setFont(font)
+        self.plot_space.setAlignment(QtCore.Qt.AlignCenter)
+        self.plot_space.setObjectName("plot_space")
+        self.verticalLayout_2.addWidget(self.plot_space)
+
         self.journal_table = QtWidgets.QTableWidget(self.horizontalLayoutWidget_2)
         font = QtGui.QFont()
         font.setPointSize(18)
@@ -488,6 +496,8 @@ class PortWindow(object):
         self.journal_table.setObjectName("journal_table")
 
         self.buildJournal()
+        self.plot = self.plot_turnover()
+        self.plot_space.setText("<html><head/><body><p><img src='" + self.plot + "'/></p></body></html>")
 
         self.verticalLayout_2.addWidget(self.journal_table)
 
@@ -669,6 +679,8 @@ class PortWindow(object):
     def buildJournal(self):
         from random import triangular
 
+        self.dates_plot = {}
+
         self.journal_table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
         self.journal_table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.journal_table.setFocusPolicy(QtCore.Qt.NoFocus)
@@ -711,6 +723,8 @@ class PortWindow(object):
 
         self.journal_table.setHorizontalHeaderLabels(["Date", "Ship", "Cargo amount", "Job"])
 
+        prev_ships = set([])
+
         font.setPointSize(14)
         for i in range(0, len(journal)):
             ship   = db.ships.find_one({"_id": journal[i]["ship_id"]})
@@ -727,15 +741,21 @@ class PortWindow(object):
             _job.setFont(font)
 
             amnt = ship["cargo_amount"]
-            if amnt == 0 and _job.text != "RESTING":
+            if amnt == 0 and _job.text() != "RESTING":
                 size_type = ship["size_type_id"]
                 amnt = triangular(
                     0,
                     db.sizes.find({"_id": size_type}).limit(1)[0]["max_amount"],
                     db.sizes.find({"_id": size_type}).limit(1)[0]["max_amount"] - 100000.0
                 )
+            if _job.text() == "RESTING":
+                amnt = 0
             _amnt  = QtWidgets.QTableWidgetItem(str(int(amnt)))
             _amnt.setFont(font)
+
+            if ship["_id"] not in prev_ships:
+                self.dates_plot[journal[i]["date"].date()] = self.dates_plot.get(journal[i]["date"].date(), 0) + round(amnt) / 5
+                # prev_ships.add(ship["_id"])
 
             self.journal_table.setItem(i, 0, _date)
             self.journal_table.setItem(i, 1, _ship)
@@ -743,5 +763,36 @@ class PortWindow(object):
             self.journal_table.setItem(i, 3, _job )
 
         return
+
+    def plot_turnover(self):
+        import matplotlib.pyplot as plt
+        import matplotlib.dates as mdates
+        import os.path
+
+        path = "images/plots/" + self.name.replace(" ", "") + ".png"
+
+        if os.path.exists(path):
+            return path
+
+        x = list(self.dates_plot.keys())
+        y = list(self.dates_plot.values())
+
+        plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%m.%Y'))
+        plt.gca().xaxis.set_major_locator(mdates.MonthLocator())
+        plt.ylabel("Turnover", color="#80CBC4")
+        plt.plot(x, y, color="#80CBC4")
+        plt.gcf().autofmt_xdate()
+        [i.set_color("#546E7A") for i in plt.gca().get_xticklabels()]
+        [i.set_color("#546E7A") for i in plt.gca().get_yticklabels()]
+        plt.savefig(
+            path,
+            transparent=True,
+            frameon=False,
+            figsize=(600 / 96, 300 / 96),
+            dpi=96
+        )
+        plt.close()
+        return path
+
 
 import images_rc

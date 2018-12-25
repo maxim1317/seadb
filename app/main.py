@@ -37,21 +37,18 @@ class MainWindow(QMainWindow):
         self.uiPort.backPB.clicked.connect(self.gotoMain)
         self.show()
         self.splash.finish(self)
-        app.exec_()
 
     def startVessel(self, auth, name):
         self.uiVessel.setupUi(self, auth, name)
         self.uiVessel.backPB.clicked.connect(self.gotoMain)
         self.show()
         self.splash.finish(self)
-        app.exec_()
 
     def startLogin(self):
         self.uiLogin.setupUi(self)
         self.uiLogin.okPB.clicked.connect(self.checkLogin)
         self.show()
         self.splash.finish(self)
-        app.exec_()
 
     def checkLogin(self):
         # from time import sleep

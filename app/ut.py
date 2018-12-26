@@ -50,6 +50,20 @@ def get_login_list(auth):
     return login_list
 
 
+def get_good_ports(auth, pier_type):
+    login, password = auth
+    client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
+    db = client[DB_NAME]
+
+    good_piers = list(db.piers.find({"pier_type": pier_type}))
+
+    good_piers_ids = [i["port_id"] for i in good_piers]
+
+    good_ports = list(db.ports.find({"_id": {"$in": good_piers_ids}}))
+
+    return good_ports
+
+
 def try_login(login, password):
     try:
         client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")

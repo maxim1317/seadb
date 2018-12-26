@@ -54,7 +54,7 @@ class MainWindow(QMainWindow):
         self.splash.finish(self)
 
     def startAdd(self, auth, name):
-        self.uiAdd.setupUi(self, auth, name)
+        self.uiAdd.setupUi(self, auth, name, self.uiVessel.last_port)
         self.uiAdd.cancelPB.clicked.connect(self.cancelAdd)
         self.uiAdd.savePB.clicked.connect(self.saveAdd)
         self.show()

@@ -843,6 +843,8 @@ class VesselWindow(object):
             self.journal_table.setItem(i, 3, _end  )
             self.journal_table.setItem(i, 4, _job  )
 
+            self.last_port = _to
+
         return
 
 import images_rc

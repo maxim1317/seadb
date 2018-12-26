@@ -1,10 +1,27 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
+from ut import *
 
 
 class AddWindow(object):
-    def setupUi(self, AddWindow, auth, name):
+    def setupUi(self, AddWindow, auth, name, prev_port):
+        self.auth = auth
+
+        login, password = auth
+        client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
+        db = client[DB_NAME]
+
         AddWindow.setObjectName("AddWindow")
         AddWindow.resize(1342, 880)
+
+        center(AddWindow)
+
+        self.vessel = db.ships.find_one({"name": name})
+
+        self.prev_port  = prev_port
+        self.good_ports = get_good_ports(auth, self.vessel["ship_type_id"])
+
+        self.good_ports_names = [i["name"] for i in self.good_ports]
+
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -449,27 +466,36 @@ class AddWindow(object):
             "}"
         )
         AddWindow.setTabShape(QtWidgets.QTabWidget.Triangular)
+
         self.centralwidget = QtWidgets.QWidget(AddWindow)
         self.centralwidget.setObjectName("centralwidget")
+
         self.verticalLayoutWidget_3 = QtWidgets.QWidget(self.centralwidget)
         self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(30, 30, 1281, 801))
         self.verticalLayoutWidget_3.setObjectName("verticalLayoutWidget_3")
+
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_3)
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
+
         self.label_3 = QtWidgets.QLabel(self.verticalLayoutWidget_3)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.label_3.setFont(font)
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
+
         self.verticalLayout_3.addWidget(self.label_3)
+
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
+
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
+
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem)
+
         self.label = QtWidgets.QLabel(self.verticalLayoutWidget_3)
         font = QtGui.QFont()
         font.setPointSize(18)
@@ -477,84 +503,108 @@ class AddWindow(object):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.verticalLayout.addWidget(self.label)
+
         self.line_2 = QtWidgets.QFrame(self.verticalLayoutWidget_3)
         self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_2.setObjectName("line_2")
         self.verticalLayout.addWidget(self.line_2)
+
         self.load_img = QtWidgets.QLabel(self.verticalLayoutWidget_3)
         self.load_img.setAlignment(QtCore.Qt.AlignCenter)
         self.load_img.setObjectName("load_img")
         self.verticalLayout.addWidget(self.load_img)
+
         self.formLayout = QtWidgets.QFormLayout()
         self.formLayout.setObjectName("formLayout")
+
         self.load_from = QtWidgets.QLabel(self.verticalLayoutWidget_3)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.load_from.setFont(font)
         self.load_from.setObjectName("load_from")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.load_from)
+
         self.load_from_edit = QtWidgets.QLineEdit(self.verticalLayoutWidget_3)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.load_from_edit.setFont(font)
+        completer = QtWidgets.QCompleter(self.good_ports_names, self.load_from_edit)
+        self.load_from_edit.setCompleter(completer)        # Set QCompleter in the input field
         self.load_from_edit.setObjectName("load_from_edit")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.load_from_edit)
-        self.load_to = QtWidgets.QLabel(self.verticalLayoutWidget_3)
-        font = QtGui.QFont()
-        font.setPointSize(18)
-        self.load_to.setFont(font)
-        self.load_to.setObjectName("load_to")
-        self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.load_to)
-        self.load_to_edit = QtWidgets.QLineEdit(self.verticalLayoutWidget_3)
-        font = QtGui.QFont()
-        font.setPointSize(18)
-        self.load_to_edit.setFont(font)
-        self.load_to_edit.setObjectName("load_to_edit")
-        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.load_to_edit)
+
+        # self.load_to = QtWidgets.QLabel(self.verticalLayoutWidget_3)
+        # font = QtGui.QFont()
+        # font.setPointSize(18)
+        # self.load_to.setFont(font)
+        # self.load_to.setObjectName("load_to")
+        # self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.load_to)
+
+        # self.load_to_edit = QtWidgets.QLineEdit(self.verticalLayoutWidget_3)
+        # font = QtGui.QFont()
+        # font.setPointSize(18)
+        # self.load_to_edit.setFont(font)
+        # self.load_to_edit.setObjectName("load_to_edit")
+        # self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.load_to_edit)
+
         self.load_starts = QtWidgets.QLabel(self.verticalLayoutWidget_3)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.load_starts.setFont(font)
         self.load_starts.setObjectName("load_starts")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.load_starts)
+
         self.load_starts_edit = QtWidgets.QDateEdit(self.verticalLayoutWidget_3)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.load_starts_edit.setFont(font)
         self.load_starts_edit.setObjectName("load_starts_edit")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.load_starts_edit)
-        self.load_ends = QtWidgets.QLabel(self.verticalLayoutWidget_3)
-        font = QtGui.QFont()
-        font.setPointSize(18)
-        self.load_ends.setFont(font)
-        self.load_ends.setObjectName("load_ends")
-        self.formLayout.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.load_ends)
-        self.load_ends_edit = QtWidgets.QLabel(self.verticalLayoutWidget_3)
-        font = QtGui.QFont()
-        font.setPointSize(18)
-        self.load_ends_edit.setFont(font)
-        self.load_ends_edit.setObjectName("load_ends_edit")
-        self.formLayout.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.load_ends_edit)
+
+        # self.load_ends = QtWidgets.QLabel(self.verticalLayoutWidget_3)
+        # font = QtGui.QFont()
+        # font.setPointSize(18)
+        # self.load_ends.setFont(font)
+        # self.load_ends.setObjectName("load_ends")
+        # self.formLayout.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.load_ends)
+
+        # self.load_ends_edit = QtWidgets.QLabel(self.verticalLayoutWidget_3)
+        # font = QtGui.QFont()
+        # font.setPointSize(18)
+        # self.load_ends_edit.setFont(font)
+        # self.load_ends_edit.setObjectName("load_ends_edit")
+        # self.formLayout.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.load_ends_edit)
+
         self.verticalLayout.addLayout(self.formLayout)
+
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_4.addItem(spacerItem1)
-        self.pushButton = QtWidgets.QPushButton(self.verticalLayoutWidget_3)
+
+        self.load_okPB = QtWidgets.QPushButton(self.verticalLayoutWidget_3)
         font = QtGui.QFont()
         font.setPointSize(18)
-        self.pushButton.setFont(font)
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_4.addWidget(self.pushButton)
+        self.load_okPB.setFont(font)
+        self.load_okPB.setObjectName("pushButton")
+        self.load_okPB.clicked.connect(self.checkLoad)
+        self.horizontalLayout_4.addWidget(self.load_okPB)
+
         self.verticalLayout.addLayout(self.horizontalLayout_4)
+
         spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem2)
+
         self.horizontalLayout.addLayout(self.verticalLayout)
+
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
         self.verticalLayout_2.setObjectName("verticalLayout_2")
+
         spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_2.addItem(spacerItem3)
+
         self.label_2 = QtWidgets.QLabel(self.verticalLayoutWidget_3)
         font = QtGui.QFont()
         font.setPointSize(18)
@@ -573,48 +623,58 @@ class AddWindow(object):
         self.verticalLayout_2.addWidget(self.label_5)
         self.formLayout_2 = QtWidgets.QFormLayout()
         self.formLayout_2.setObjectName("formLayout_2")
-        self.unload_from = QtWidgets.QLabel(self.verticalLayoutWidget_3)
-        font = QtGui.QFont()
-        font.setPointSize(18)
-        self.unload_from.setFont(font)
-        self.unload_from.setObjectName("unload_from")
-        self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.unload_from)
-        self.unload_from_edit = QtWidgets.QLineEdit(self.verticalLayoutWidget_3)
-        font = QtGui.QFont()
-        font.setPointSize(18)
-        self.unload_from_edit.setFont(font)
-        self.unload_from_edit.setObjectName("unload_from_edit")
-        self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.unload_from_edit)
+
+        # self.unload_from = QtWidgets.QLabel(self.verticalLayoutWidget_3)
+        # font = QtGui.QFont()
+        # font.setPointSize(18)
+        # self.unload_from.setFont(font)
+        # self.unload_from.setObjectName("unload_from")
+        # self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.unload_from)
+
+        # self.unload_from_edit = QtWidgets.QLineEdit(self.verticalLayoutWidget_3)
+        # font = QtGui.QFont()
+        # font.setPointSize(18)
+        # self.unload_from_edit.setFont(font)
+        # self.unload_from_edit.setObjectName("unload_from_edit")
+        # self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.unload_from_edit)
+
         self.unload_to = QtWidgets.QLabel(self.verticalLayoutWidget_3)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.unload_to.setFont(font)
         self.unload_to.setObjectName("unload_to")
         self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.unload_to)
+
         self.unload_to_edit = QtWidgets.QLineEdit(self.verticalLayoutWidget_3)
         font = QtGui.QFont()
         font.setPointSize(18)
+        completer = QtWidgets.QCompleter(self.good_ports_names, self.unload_to_edit)
+        self.unload_to_edit.setCompleter(completer)        # Set QCompleter in the input field
         self.unload_to_edit.setFont(font)
         self.unload_to_edit.setObjectName("unload_to_edit")
         self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.unload_to_edit)
-        self.unload_starts = QtWidgets.QLabel(self.verticalLayoutWidget_3)
-        font = QtGui.QFont()
-        font.setPointSize(18)
-        self.unload_starts.setFont(font)
-        self.unload_starts.setObjectName("unload_starts")
-        self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.unload_starts)
+
+        # self.unload_starts = QtWidgets.QLabel(self.verticalLayoutWidget_3)
+        # font = QtGui.QFont()
+        # font.setPointSize(18)
+        # self.unload_starts.setFont(font)
+        # self.unload_starts.setObjectName("unload_starts")
+        # self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.unload_starts)
+
+        # self.unload_starts_edit = QtWidgets.QDateEdit(self.verticalLayoutWidget_3)
+        # font = QtGui.QFont()
+        # font.setPointSize(18)
+        # self.unload_starts_edit.setFont(font)
+        # self.unload_starts_edit.setObjectName("unload_starts_edit")
+        # self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.unload_starts_edit)
+
         self.unload_ends = QtWidgets.QLabel(self.verticalLayoutWidget_3)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.unload_ends.setFont(font)
         self.unload_ends.setObjectName("unload_ends")
         self.formLayout_2.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.unload_ends)
-        self.unload_starts_edit = QtWidgets.QDateEdit(self.verticalLayoutWidget_3)
-        font = QtGui.QFont()
-        font.setPointSize(18)
-        self.unload_starts_edit.setFont(font)
-        self.unload_starts_edit.setObjectName("unload_starts_edit")
-        self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.unload_starts_edit)
+
         self.unload_ends_edit = QtWidgets.QLabel(self.verticalLayoutWidget_3)
         font = QtGui.QFont()
         font.setPointSize(18)
@@ -674,7 +734,7 @@ class AddWindow(object):
         spacerItem8 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem8)
         self.formLayout_3 = QtWidgets.QFormLayout()
-        self.formLayout_3.setFormAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.formLayout_3.setFormAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.formLayout_3.setObjectName("formLayout_3")
         self.label_4 = QtWidgets.QLabel(self.verticalLayoutWidget_3)
         font = QtGui.QFont()
@@ -735,6 +795,9 @@ class AddWindow(object):
         self.retranslateUi(AddWindow)
         QtCore.QMetaObject.connectSlotsByName(AddWindow)
 
+    def checkLoad(self):
+        return
+
     def retranslateUi(self, AddWindow):
         _translate = QtCore.QCoreApplication.translate
         AddWindow.setWindowTitle(_translate("AddWindow", "AddWindow"))
@@ -742,16 +805,16 @@ class AddWindow(object):
         self.label.setText(_translate("AddWindow", "Load"))
         self.load_img.setText(_translate("AddWindow", "<html><head/><body><p><img src=\":/images/icon.png\"/></p></body></html>"))
         self.load_from.setText(_translate("AddWindow", "From"))
-        self.load_to.setText(_translate("AddWindow", "To"))
+        # self.load_to.setText(_translate("AddWindow", "To"))
         self.load_starts.setText(_translate("AddWindow", "Starts on"))
-        self.load_ends.setText(_translate("AddWindow", "Ends on"))
-        self.load_ends_edit.setText(_translate("AddWindow", "TextLabel"))
-        self.pushButton.setText(_translate("AddWindow", "OK"))
+        # self.load_ends.setText(_translate("AddWindow", "Ends on"))
+        # self.load_ends_edit.setText(_translate("AddWindow", "TextLabel"))
+        self.load_okPB.setText(_translate("AddWindow", "OK"))
         self.label_2.setText(_translate("AddWindow", "Unload"))
         self.label_5.setText(_translate("AddWindow", "<html><head/><body><p><img src=\":/images/icon.png\"/></p></body></html>"))
-        self.unload_from.setText(_translate("AddWindow", "From"))
+        # self.unload_from.setText(_translate("AddWindow", "From"))
         self.unload_to.setText(_translate("AddWindow", "To"))
-        self.unload_starts.setText(_translate("AddWindow", "Starts on"))
+        # self.unload_starts.setText(_translate("AddWindow", "Starts on"))
         self.unload_ends.setText(_translate("AddWindow", "Ends on"))
         self.unload_ends_edit.setText(_translate("AddWindow", "TextLabel"))
         self.pushButton_2.setText(_translate("AddWindow", "OK"))

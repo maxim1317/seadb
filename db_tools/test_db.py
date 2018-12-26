@@ -37,6 +37,7 @@ def draw_graph(db):
     import networkx as nx
 
     G = nx.read_yaml("../app/images/graph.yaml")
+    print(nx.dijkstra_path(G, "Alicante", "Los Angeles"))
 
 
 pp = pprint.PrettyPrinter(indent=4)

@@ -5,6 +5,7 @@ import loginwindow as lw
 import mainwindow as mw
 import vesselwindow as vw
 import portwindow as pw
+import addwindow as aw
 import sys
 from ut import *
 
@@ -16,13 +17,25 @@ class MainWindow(QMainWindow):
         self.splash.setMask(splash_pix.mask())
         self.splash.show()
         app.processEvents()
+
         super(MainWindow, self).__init__(parent)
 
         self.uiLogin = lw.LoginWindow()
+
         self.uiMain = mw.MainWindow()
+
         self.uiVessel = vw.VesselWindow()
         self.uiPort = pw.PortWindow()
+
+        self.uiAdd = aw.AddWindow()
+
         self.startLogin()
+
+    def startLogin(self):
+        self.uiLogin.setupUi(self)
+        self.uiLogin.okPB.clicked.connect(self.checkLogin)
+        self.show()
+        self.splash.finish(self)
 
     def startMain(self, auth):
         self.uiMain.setupUi(self, auth)
@@ -32,29 +45,42 @@ class MainWindow(QMainWindow):
             PB.clicked.connect(self.portFromTop)
         self.show()
 
+    def startVessel(self, auth, name):
+        self.tmp_name = name
+        self.uiVessel.setupUi(self, auth, name)
+        self.uiVessel.backPB.clicked.connect(self.gotoMain)
+        self.uiVessel.addPB.clicked.connect(self.gotoAdd)
+        self.show()
+        self.splash.finish(self)
+
+    def startAdd(self, auth, name):
+        self.uiAdd.setupUi(self, auth, name)
+        self.uiAdd.cancelPB.clicked.connect(self.cancelAdd)
+        self.uiAdd.savePB.clicked.connect(self.saveAdd)
+        self.show()
+
     def startPort(self, auth, name, img):
         self.uiPort.setupUi(self, auth, name, img)
         self.uiPort.backPB.clicked.connect(self.gotoMain)
         self.show()
         self.splash.finish(self)
 
-    def startVessel(self, auth, name):
-        self.uiVessel.setupUi(self, auth, name)
-        self.uiVessel.backPB.clicked.connect(self.gotoMain)
-        self.show()
-        self.splash.finish(self)
+    def gotoAdd(self):
+        self.startAdd(self.auth, self.tmp_name)
 
-    def startLogin(self):
-        self.uiLogin.setupUi(self)
-        self.uiLogin.okPB.clicked.connect(self.checkLogin)
-        self.show()
-        self.splash.finish(self)
+    def cancelAdd(self):
+        self.startVessel(self.auth, self.tmp_name)
+
+    def saveAdd(self):
+        self.startVessel(self.auth, self.tmp_name)  # TEMP
 
     def checkLogin(self):
         # from time import sleep
 
         self.login = self.uiLogin.loginLE.text()
         self.pwd = self.uiLogin.pwdLE.text()
+
+        self.auth = (self.login, self.pwd)
 
         if try_login(login=self.login, password=self.pwd):
             self.uiLogin.loginLE.setStyleSheet("border-bottom: 2px solid #53DD6C;")
@@ -88,7 +114,8 @@ class MainWindow(QMainWindow):
             self.startVessel(auth=(self.login, self.pwd), name=self.uiMain.ships_line_edit.text())
 
     def gotoMain(self):
-        self.startMain(auth=(self.login, self.pwd))
+        self.auth = (self.login, self.pwd)
+        self.startMain(auth=self.auth)
 
     def portFromTop(self):
         print('Port name: ' + self.sender().text())

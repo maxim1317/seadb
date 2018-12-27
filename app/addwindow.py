@@ -1,9 +1,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
+import datetime as dt
+import networkx as nx
 from ut import *
 
 
 class AddWindow(object):
-    def setupUi(self, AddWindow, auth, name, prev_port):
+    def setupUi(self, AddWindow, auth, graph, name, prev_port, prev_date):
         self.auth = auth
 
         login, password = auth
@@ -17,10 +19,14 @@ class AddWindow(object):
 
         self.vessel = db.ships.find_one({"name": name})
 
+        self.prev_date = prev_date
         self.prev_port  = prev_port
         self.good_ports = get_good_ports(auth, self.vessel["ship_type_id"])
 
         self.good_ports_names = [i["name"] for i in self.good_ports]
+
+        self.graph = graph
+        self.name  = name
 
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -561,6 +567,9 @@ class AddWindow(object):
         self.load_starts_edit.setFont(font)
         self.load_starts_edit.setObjectName("load_starts_edit")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.load_starts_edit)
+        self.load_starts_edit.setCalendarPopup(False)
+        self.load_starts_edit.setDisplayFormat("dd.MM.yyyy")
+        self.load_starts_edit.setMinimumDate(self.prev_date)
 
         # self.load_ends = QtWidgets.QLabel(self.verticalLayoutWidget_3)
         # font = QtGui.QFont()
@@ -686,15 +695,23 @@ class AddWindow(object):
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_5.addItem(spacerItem4)
-        self.pushButton_2 = QtWidgets.QPushButton(self.verticalLayoutWidget_3)
+
+        self.unload_okPB = QtWidgets.QPushButton(self.verticalLayoutWidget_3)
         font = QtGui.QFont()
         font.setPointSize(18)
-        self.pushButton_2.setFont(font)
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.horizontalLayout_5.addWidget(self.pushButton_2)
+        self.unload_okPB.setFont(font)
+        self.unload_okPB.setObjectName("unload_okPB")
+        self.horizontalLayout_5.addWidget(self.unload_okPB)
+
+        self.unload_to_edit.setEnabled(False)
+        self.unload_okPB.setEnabled(False)
+
         self.verticalLayout_2.addLayout(self.horizontalLayout_5)
         spacerItem5 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_2.addItem(spacerItem5)
+
+        # self.verticalLayout_2.setEnabled(False)
+
         self.horizontalLayout.addLayout(self.verticalLayout_2)
         self.line = QtWidgets.QFrame(self.verticalLayoutWidget_3)
         self.line.setFrameShape(QtWidgets.QFrame.VLine)
@@ -717,14 +734,14 @@ class AddWindow(object):
         self.line_4.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_4.setObjectName("line_4")
         self.verticalLayout_4.addWidget(self.line_4)
-        self.tableWidget = QtWidgets.QTableWidget(self.verticalLayoutWidget_3)
+        self.journal_table = QtWidgets.QTableWidget(self.verticalLayoutWidget_3)
         font = QtGui.QFont()
         font.setPointSize(18)
-        self.tableWidget.setFont(font)
-        self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(0)
-        self.tableWidget.setRowCount(0)
-        self.verticalLayout_4.addWidget(self.tableWidget)
+        self.journal_table.setFont(font)
+        self.journal_table.setObjectName("journal_table")
+        self.journal_table.setColumnCount(0)
+        self.journal_table.setRowCount(0)
+        self.verticalLayout_4.addWidget(self.journal_table)
         spacerItem7 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_4.addItem(spacerItem7)
         self.horizontalLayout.addLayout(self.verticalLayout_4)
@@ -742,17 +759,17 @@ class AddWindow(object):
         self.label_4.setFont(font)
         self.label_4.setObjectName("label_4")
         self.formLayout_3.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_4)
-        self.label_6 = QtWidgets.QLabel(self.verticalLayoutWidget_3)
+        self.path_length_label = QtWidgets.QLabel(self.verticalLayoutWidget_3)
         font = QtGui.QFont()
         font.setPointSize(18)
-        self.label_6.setFont(font)
-        self.label_6.setObjectName("label_6")
-        self.formLayout_3.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.label_6)
+        self.path_length_label.setFont(font)
+        self.path_length_label.setObjectName("path_length_label")
+        self.formLayout_3.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.path_length_label)
         self.horizontalLayout_3.addLayout(self.formLayout_3)
         spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem9)
         self.formLayout_4 = QtWidgets.QFormLayout()
-        self.formLayout_4.setFormAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.formLayout_4.setFormAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.formLayout_4.setObjectName("formLayout_4")
         self.label_7 = QtWidgets.QLabel(self.verticalLayoutWidget_3)
         font = QtGui.QFont()
@@ -796,6 +813,116 @@ class AddWindow(object):
         QtCore.QMetaObject.connectSlotsByName(AddWindow)
 
     def checkLoad(self):
+        self.port_from = self.load_from_edit.text()
+        if self.port_from not in self.good_ports_names:
+            self.load_from_edit.setStyleSheet("border-bottom: 2px solid #D72638;")
+            return
+
+        self.load_from_edit.setStyleSheet("border-bottom: 2px solid #53DD6C;")
+
+        img = "images/ports/" + self.port_from + ".png"
+        self.load_img.setText("<html><head/><body><p><img src=\"" + img + "\"/></p></body></html>")
+        self.path_from = self.find_path(self.prev_port, self.port_from)
+
+        self.path_length_label.setText(str(len(self.path_from)) + " ports")
+        self.buildJournal()
+        return
+
+    def find_path(self, port_from, port_to):
+        return nx.dijkstra_path(self.graph, port_from, port_to)
+
+    def buildJournal(self):
+        self.journal_table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.journal_table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.journal_table.setFocusPolicy(QtCore.Qt.NoFocus)
+
+        schedule = gen_load_schedule(self.auth, self.name, self.path_from, self.load_starts_edit.date().toPyDate())
+
+        login, password = self.auth
+        client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
+        db = client[DB_NAME]
+
+        font = QtGui.QFont()
+        font.setFamily("Roboto")
+        font.setPointSize(12)
+
+        self.journal_table.setColumnCount(5)
+        self.journal_table.setRowCount(len(schedule))
+        stylesheet = "QTableView{          \
+                background: transparent;   \
+                background-color: #263238; \
+                color: #546E7A;            \
+            };                             \
+            QHeaderView::section{          \
+                background: transparent;   \
+                background-color: #263238; \
+                color: #80CBC4;            \
+                font-size: 12;             \
+            }                              \
+        "
+        self.journal_table.setStyleSheet(stylesheet)
+
+        self.journal_table.verticalHeader().hide()
+        header = self.journal_table.horizontalHeader()
+        header.setStyleSheet("background-color: #263238; color: #80CBC4;")
+        header.setFont(font)
+        header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
+        header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(3, QtWidgets.QHeaderView.ResizeToContents)
+        header.setSectionResizeMode(4, QtWidgets.QHeaderView.ResizeToContents)
+
+        self.journal_table.setHorizontalHeaderLabels(["From", "To", "Begins", "Ends", "Job"])
+
+        font.setPointSize(14)
+        for i in range(0, len(schedule)):
+
+            # print(schedule[i]["pier_id"])
+
+            if schedule[i]["destination_id"] is not None:
+                print(schedule[i]["destination_id"])
+                __from = db.ports.find_one({
+                    "_id": db.destinations.find_one({"_id": schedule[i]["destination_id"]})["departure"]
+                })["name"]
+                __to   = db.ports.find_one({
+                    "_id": db.destinations.find_one({"_id": schedule[i]["destination_id"]})["destination"]
+                })["name"]
+
+            elif schedule[i]["anchorage_id"] is not None:
+                __from = db.ports.find_one({
+                    "_id": db.anchorages.find_one({"_id": schedule[i]["anchorage_id"]})["port_id"]
+                })["name"]
+                __to   = __from
+            elif schedule[i]["pier_id"] is not None:
+                __from = db.ports.find_one({
+                    "_id": db.piers.find_one({"_id": schedule[i]["pier_id"]})["port_id"]
+                })["name"]
+                __to   = __from
+            else:
+                __from = "None"
+                __to   = "None"
+
+            __end = schedule[i]["estimated_end"].date()
+
+            _from  = QtWidgets.QTableWidgetItem(__from)
+            _from.setFont(font)
+            _to    = QtWidgets.QTableWidgetItem(__to)
+            _to.setFont(font)
+            _begin = QtWidgets.QTableWidgetItem(str(schedule[i]["started"].date()))
+            _begin.setFont(font)
+            _end   = QtWidgets.QTableWidgetItem(str(__end))
+            _end.setFont(font)
+            _job   = QtWidgets.QTableWidgetItem(db.jobs.find_one({"_id": schedule[i]["job"]})["job"])
+            _job.setFont(font)
+            self.journal_table.setItem(i, 0, _from )
+            self.journal_table.setItem(i, 1, _to   )
+            self.journal_table.setItem(i, 2, _begin)
+            self.journal_table.setItem(i, 3, _end  )
+            self.journal_table.setItem(i, 4, _job  )
+
+            self.last_port = __to
+            self.last_date = __end
+
         return
 
     def retranslateUi(self, AddWindow):
@@ -817,10 +944,10 @@ class AddWindow(object):
         # self.unload_starts.setText(_translate("AddWindow", "Starts on"))
         self.unload_ends.setText(_translate("AddWindow", "Ends on"))
         self.unload_ends_edit.setText(_translate("AddWindow", "TextLabel"))
-        self.pushButton_2.setText(_translate("AddWindow", "OK"))
+        self.unload_okPB.setText(_translate("AddWindow", "OK"))
         self.label_9.setText(_translate("AddWindow", "Voyage Plan"))
         self.label_4.setText(_translate("AddWindow", "Ship will visit"))
-        self.label_6.setText(_translate("AddWindow", "0 ports"))
+        self.path_length_label.setText(_translate("AddWindow", "0 ports"))
         self.label_7.setText(_translate("AddWindow", "The task will take"))
         self.label_8.setText(_translate("AddWindow", "0 days"))
         self.cancelPB.setText(_translate("AddWindow", "Cancel"))

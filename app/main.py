@@ -7,6 +7,7 @@ import vesselwindow as vw
 import portwindow as pw
 import addwindow as aw
 import sys
+import networkx as nx
 from ut import *
 
 
@@ -19,6 +20,8 @@ class MainWindow(QMainWindow):
         app.processEvents()
 
         super(MainWindow, self).__init__(parent)
+
+        self.graph = nx.read_yaml("images/graph.yaml")
 
         self.uiLogin = lw.LoginWindow()
 
@@ -54,7 +57,14 @@ class MainWindow(QMainWindow):
         self.splash.finish(self)
 
     def startAdd(self, auth, name):
-        self.uiAdd.setupUi(self, auth, name, self.uiVessel.last_port)
+        self.uiAdd.setupUi(
+            self,
+            auth,
+            self.graph,
+            name,
+            self.uiVessel.last_port,
+            self.uiVessel.last_date
+        )
         self.uiAdd.cancelPB.clicked.connect(self.cancelAdd)
         self.uiAdd.savePB.clicked.connect(self.saveAdd)
         self.show()

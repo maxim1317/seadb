@@ -827,13 +827,15 @@ class VesselWindow(object):
                 __from = "None"
                 __to   = "None"
 
+            __end = schedule[i]["estimated_end"].date()
+
             _from  = QtWidgets.QTableWidgetItem(__from)
             _from.setFont(font)
             _to    = QtWidgets.QTableWidgetItem(__to)
             _to.setFont(font)
             _begin = QtWidgets.QTableWidgetItem(str(schedule[i]["started"].date()))
             _begin.setFont(font)
-            _end   = QtWidgets.QTableWidgetItem(str(schedule[i]["estimated_end"].date()))
+            _end   = QtWidgets.QTableWidgetItem(str(__end))
             _end.setFont(font)
             _job   = QtWidgets.QTableWidgetItem(db.jobs.find_one({"_id": schedule[i]["job"]})["job"])
             _job.setFont(font)
@@ -843,7 +845,8 @@ class VesselWindow(object):
             self.journal_table.setItem(i, 3, _end  )
             self.journal_table.setItem(i, 4, _job  )
 
-            self.last_port = _to
+            self.last_port = __to
+            self.last_date = __end
 
         return
 

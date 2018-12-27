@@ -6,6 +6,7 @@ import mainwindow as mw
 import vesselwindow as vw
 import portwindow as pw
 import addwindow as aw
+import delwindow as dw
 import sys
 import networkx as nx
 from ut import *
@@ -31,6 +32,7 @@ class MainWindow(QMainWindow):
         self.uiPort = pw.PortWindow()
 
         self.uiAdd = aw.AddWindow()
+        self.uiDel = dw.DelWindow()
 
         self.startLogin()
 
@@ -53,6 +55,7 @@ class MainWindow(QMainWindow):
         self.uiVessel.setupUi(self, auth, name)
         self.uiVessel.backPB.clicked.connect(self.gotoMain)
         self.uiVessel.addPB.clicked.connect(self.gotoAdd)
+        self.uiVessel.delPB.clicked.connect(self.gotoDel)
         self.show()
         self.splash.finish(self)
 
@@ -67,6 +70,12 @@ class MainWindow(QMainWindow):
         )
         self.uiAdd.cancelPB.clicked.connect(self.cancelAdd)
         self.uiAdd.savePB.clicked.connect(self.saveAdd)
+
+        self.uiAdd.clearPB.clicked.connect(self.gotoAdd)
+        self.show()
+
+    def startDel(self, auth, name):
+        self.uiDel.setupUi(self, auth, name)
         self.show()
 
     def startPort(self, auth, name, img):
@@ -78,10 +87,16 @@ class MainWindow(QMainWindow):
     def gotoAdd(self):
         self.startAdd(self.auth, self.tmp_name)
 
+    def gotoDel(self):
+        self.startDel(self.auth, self.tmp_name)
+
     def cancelAdd(self):
         self.startVessel(self.auth, self.tmp_name)
 
     def saveAdd(self):
+        print(self.uiAdd.schedule)
+        self.uiAdd.db.schedules.insert_many(self.uiAdd.schedule)
+        self.uiAdd.db.tasks.insert_one(self.uiAdd.task)
         self.startVessel(self.auth, self.tmp_name)  # TEMP
 
     def checkLogin(self):

@@ -351,7 +351,7 @@ def gen_load_schedule(auth, ship_name, path, started):
     ship_type  = ship["ship_type_id"]
     ship_speed = ship["avg_speed"]
 
-    print(size_type)
+    # print(size_type)
 
     load = random.triangular(
         0,
@@ -408,7 +408,7 @@ def gen_load_schedule(auth, ship_name, path, started):
 
     starts = ends
 
-    for i in range(1, len(ports) - 2):
+    for i in range(1, len(ports) - 1):
         schd = schd_sample
 
         dest = db.destinations.find_one({"departure": ports[i - 1]["_id"], "destination": ports[i]["_id"]})
@@ -466,6 +466,161 @@ def gen_load_schedule(auth, ship_name, path, started):
     schd["ship_id"]        = ship_id
     schd["estimated_end"]  = ends
     schd["job"]            = jobs["load"]
+    if starts > dt.datetime.now():
+        schd["status"]     = statuses["pen"]
+    elif ends < dt.datetime.now():
+        schd["status"]     = statuses["fin"]
+    else:
+        schd["status"]     = statuses["prg"]
+
+    schedule.append(schd.copy())
+
+    return schedule
+
+
+def gen_unload_schedule(auth, ship_name, path, started):
+    import datetime as dt
+    import random
+
+    def load_unload(pier_id, load, start_time):
+        rate = db.piers.find({'_id': pier_id}).limit(1)[0]['rate']
+        end_time = start_time + dt.timedelta(hours=load / rate)
+
+        return end_time
+
+    def voyage_time(ship_speed, distance, start_time):
+        end_time = start_time + dt.timedelta(hours=distance / ship_speed)
+        return end_time
+
+    def rest_time(start_time):
+        end_time = start_time + dt.timedelta(days=round(random.triangular(0, 10, mode=2)))
+        return end_time
+
+    login, password = auth
+    client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
+    db = client[DB_NAME]
+
+    ship = db.ships.find({"name": ship_name}).limit(1)[0]
+    ship_id    = ship["_id"]
+    size_type  = ship["size_type_id"]
+    ship_type  = ship["ship_type_id"]
+    ship_speed = ship["avg_speed"]
+
+    # print(size_type)
+
+    load = random.triangular(
+        0,
+        db.sizes.find_one({"_id": size_type})["max_amount"],
+        db.sizes.find_one({"_id": size_type})["max_amount"] - 100000.0
+    )
+    schedule = []
+
+    schd_sample = {
+        "destination_id" : None,
+        "pier_id"        : None,
+        "anchorage_id"   : None,
+        "started"        : dt.date.today(),
+        "estimated_end"  : dt.date.today(),
+        "ship_id"        : None,
+        "status"         : None
+    }
+
+    jobs = {
+        "rest"  : db.jobs.find({"job": "RESTING"}).limit(1)[0]["_id"],
+        "load"  : db.jobs.find({"job": "LOADING"}).limit(1)[0]["_id"],
+        "unload": db.jobs.find({"job": "UNLOADING"}).limit(1)[0]["_id"],
+        "voyage": db.jobs.find({"job": "VOYAGE"}).limit(1)[0]["_id"],
+    }
+
+    statuses = {
+        "pen" : db.statuses.find({"status": "PENDING"}).limit(1)[0]["_id"],
+        "fin" : db.statuses.find({"status": "FINISHED"}).limit(1)[0]["_id"],
+        "prg" : db.statuses.find({"status": "IN_PROGRESS"}).limit(1)[0]["_id"]
+    }
+
+    ports = [db.ports.find_one({"name": p}) for p in path]
+
+    schd = schd_sample
+
+    starts = dt.datetime.combine(started, dt.datetime.min.time())
+    ends   = rest_time(starts)
+
+    schd["destination_id"] = None
+    schd["pier_id"]        = None
+    schd["anchorage_id"]   = db.anchorages.find_one({"port_id": ports[0]["_id"]})["_id"]
+    schd["started"]        = starts
+    schd["ship_id"]        = ship_id
+    schd["estimated_end"]  = ends
+    schd["job"]            = jobs["rest"]
+    if starts > dt.datetime.now():
+        schd["status"]     = statuses["pen"]
+    elif ends < dt.datetime.now():
+        schd["status"]     = statuses["fin"]
+    else:
+        schd["status"]     = statuses["prg"]
+
+    schedule.append(schd.copy())
+
+    starts = ends
+
+    for i in range(1, len(ports) - 1):
+        schd = schd_sample
+
+        dest = db.destinations.find_one({"departure": ports[i - 1]["_id"], "destination": ports[i]["_id"]})
+        ends = voyage_time(ship_speed, dest["distance"], starts)
+
+        schd["destination_id"] = dest["_id"]
+        schd["pier_id"]        = None
+        schd["anchorage_id"]   = None
+        schd["started"]        = starts
+        schd["ship_id"]        = ship_id
+        schd["estimated_end"]  = ends
+        schd["job"]            = jobs["voyage"]
+        if starts > dt.datetime.now():
+            schd["status"]     = statuses["pen"]
+        elif ends < dt.datetime.now():
+            schd["status"]     = statuses["fin"]
+        else:
+            schd["status"]     = statuses["prg"]
+
+        schedule.append(schd.copy())
+
+        starts = ends
+
+        schd = schd_sample
+
+        ends = rest_time(starts)
+
+        schd["destination_id"] = None
+        schd["pier_id"]        = None
+        schd["anchorage_id"]   = db.anchorages.find_one({"port_id": ports[i + 1]["_id"]})["_id"]
+        schd["started"]        = starts
+        schd["ship_id"]        = ship_id
+        schd["estimated_end"]  = ends
+        schd["job"]            = jobs["rest"]
+        if starts > dt.datetime.now():
+            schd["status"]     = statuses["pen"]
+        elif ends < dt.datetime.now():
+            schd["status"]     = statuses["fin"]
+        else:
+            schd["status"]     = statuses["prg"]
+
+        schedule.append(schd.copy())
+
+        starts = ends
+
+    schd = schd_sample
+
+    pier_id = db.piers.find_one({"port_id": ports[len(ports) - 1]["_id"], "pier_type": ship_type})["_id"]
+    ends = load_unload(pier_id, load, starts)
+
+    schd["destination_id"] = None
+    schd["pier_id"]        = pier_id
+    schd["anchorage_id"]   = None
+    schd["started"]        = starts
+    schd["ship_id"]        = ship_id
+    schd["estimated_end"]  = ends
+    schd["job"]            = jobs["unload"]
     if starts > dt.datetime.now():
         schd["status"]     = statuses["pen"]
     elif ends < dt.datetime.now():

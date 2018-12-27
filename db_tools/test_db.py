@@ -3,6 +3,7 @@ from pymongo import MongoClient
 from utils import *
 import random
 import datetime as dt
+from tqdm import tqdm
 import pprint
 
 
@@ -33,14 +34,25 @@ db = client[DB_NAME]
 
 #     nx.write_yaml(G, "../app/images/graph.yaml")
 
-def draw_graph(db):
-    import networkx as nx
+def create_tasks(db):
+    ships = list(db.ships.find({}))
 
-    G = nx.read_yaml("../app/images/graph.yaml")
-    print(nx.dijkstra_path(G, "Alicante", "Los Angeles"))
+    tasks = []
 
+    pbar = tqdm(total=len(ships))
+    for ship in ships:
+        sched = list(db.schedules.find({"ship_id": ship["_id"]}))
+        task = {
+            "name": "Base",
+            "ship_id": ship["_id"],
+            "schedule": [i["_id"] for i in sched]
+        }
+        tasks.append(task.copy())
+        db.tasks.insert(task)
+        pbar.update()
+    pbar.close()
 
 pp = pprint.PrettyPrinter(indent=4)
-draw_graph(db)
+create_tasks(db)
 # pp.pprint(db.ships.find({"load": 0}))
 # pp.pprint(db.anchorages.find({"port_id": dest["_id"]}).limit(1)[0]["_id"])

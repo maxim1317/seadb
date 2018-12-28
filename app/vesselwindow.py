@@ -508,6 +508,7 @@ class VesselWindow(object):
         font = QtGui.QFont()
         font.setPointSize(18)
         self.okPB.setFont(font)
+        self.okPB.hide()
         self.okPB.setObjectName("pushButton")
         self.horizontalLayout_3.addWidget(self.okPB)
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -518,12 +519,15 @@ class VesselWindow(object):
         self.addPB.setFont(font)
         self.addPB.setObjectName("addPB")
         self.horizontalLayout_3.addWidget(self.addPB)
+
         self.delPB = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.delPB.setFont(font)
         self.delPB.setObjectName("delPB")
+        self.delPB.hide()
         self.horizontalLayout_3.addWidget(self.delPB)
+
         self.verticalLayout_2.addLayout(self.horizontalLayout_3)
 
         self.backHL = QtWidgets.QHBoxLayout()

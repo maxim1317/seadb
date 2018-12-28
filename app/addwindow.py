@@ -511,8 +511,9 @@ class AddWindow(object):
 
         self.line_2 = QtWidgets.QFrame(self.verticalLayoutWidget_3)
         self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
+
         self.line_2.setObjectName("line_2")
+        self.line_2.setStyleSheet("color: #80CBC4;")
         self.verticalLayout.addWidget(self.line_2)
 
         self.load_img = QtWidgets.QLabel(self.verticalLayoutWidget_3)
@@ -572,7 +573,13 @@ class AddWindow(object):
         self.load_starts_edit.setCalendarPopup(False)
         self.load_starts_edit.setDisplayFormat("dd.MM.yyyy")
         self.load_starts_edit.setMinimumDate(self.prev_date)
-
+        self.load_starts_edit.setStyleSheet(
+            "    background: transparent;\n"
+            "    border: 1px solid transparent;\n"
+            "    border-top: none;\n"
+            "    border-bottom: 2px solid #80CBC4;\n"
+            "    color: #546E7A;\n"
+        )
         # self.load_ends = QtWidgets.QLabel(self.verticalLayoutWidget_3)
         # font = QtGui.QFont()
         # font.setPointSize(18)
@@ -623,8 +630,9 @@ class AddWindow(object):
 
         self.line_3 = QtWidgets.QFrame(self.verticalLayoutWidget_3)
         self.line_3.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_3.setFrameShadow(QtWidgets.QFrame.Sunken)
+
         self.line_3.setObjectName("line_3")
+        self.line_3.setStyleSheet("color: #80CBC4;")
         self.verticalLayout_2.addWidget(self.line_3)
 
         self.unload_img = QtWidgets.QLabel(self.verticalLayoutWidget_3)
@@ -720,8 +728,9 @@ class AddWindow(object):
         self.horizontalLayout.addLayout(self.verticalLayout_2)
         self.line = QtWidgets.QFrame(self.verticalLayoutWidget_3)
         self.line.setFrameShape(QtWidgets.QFrame.VLine)
-        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+
         self.line.setObjectName("line")
+        self.line.setStyleSheet("color: #80CBC4;")
         self.horizontalLayout.addWidget(self.line)
         self.verticalLayout_4 = QtWidgets.QVBoxLayout()
         self.verticalLayout_4.setObjectName("verticalLayout_4")
@@ -734,7 +743,8 @@ class AddWindow(object):
         self.verticalLayout_4.addWidget(self.label_9)
         self.line_4 = QtWidgets.QFrame(self.verticalLayoutWidget_3)
         self.line_4.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_4.setFrameShadow(QtWidgets.QFrame.Sunken)
+
+        self.line_4.setStyleSheet("color: #80CBC4;")
         self.line_4.setObjectName("line_4")
         self.verticalLayout_4.addWidget(self.line_4)
 

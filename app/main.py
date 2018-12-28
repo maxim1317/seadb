@@ -117,24 +117,24 @@ class MainWindow(QMainWindow):
             self.uiLogin.pwdLE.setStyleSheet("border-bottom: 2px solid #D72638;")
 
     def checkPort(self):
-        self.splash.show()
-        app.processEvents()
         p_name = self.uiMain.ports_line_edit.text()
         if p_name not in self.uiMain.port_list:
             self.uiMain.ports_line_edit.setStyleSheet("border-bottom: 2px solid #D72638;")
         else:
+            self.splash.show()
+            app.processEvents()
             point_map = plot_map(auth=(self.login, self.pwd), port_name=p_name)
             self.uiMain.ports_line_edit.setStyleSheet("border-bottom: 2px solid #53DD6C;")
             self.startPort(auth=(self.login, self.pwd), name=self.uiMain.ports_line_edit.text(), img=point_map)
 
     def checkVessel(self):
-        self.splash.show()
-        app.processEvents()
         p_name = self.uiMain.ships_line_edit.text()
         print('Ship name: ' + self.uiMain.ships_line_edit.text())
         if p_name not in self.uiMain.ship_list:
             self.uiMain.ships_line_edit.setStyleSheet("border-bottom: 2px solid #D72638;")
         else:
+            self.splash.show()
+            app.processEvents()
             self.uiMain.ships_line_edit.setStyleSheet("border-bottom: 2px solid #53DD6C;")
             self.startVessel(auth=(self.login, self.pwd), name=self.uiMain.ships_line_edit.text())
 

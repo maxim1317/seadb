@@ -1,6 +1,7 @@
 from pymongo import MongoClient, errors
 import matplotlib.pyplot as plt
 from mpl_toolkits.basemap import Basemap
+from style import Theme
 import re
 
 DB_NAME = 'seadb'
@@ -232,7 +233,7 @@ def get_port_info(auth, name):
         "country"      : db.countries.find_one({"_id": port["country_id"]})["name"],
         "location"     : port['location'],
         "piers"        : form_piers(),
-        "turnover"     : form_turnover(),
+        "turnover"     : form_turnover() / 1000000,
         "ships_in_port": form_ship_count(),
         "journal"      : list(db.port_journals.find({"port_id": port["_id"]}))
     }
@@ -255,12 +256,12 @@ def center(wid):
     wid.move(qr.topLeft())
 
 
-def plot_map(auth=("admin", "admin"), port_name="Alicante"):
+def plot_map(auth=("admin", "admin"), port_name="Alicante", theme=Theme(dark=False)):
     import os.path
-    filename = "images/ports/" + port_name + ".png"
+    filename = "images/ports/" + port_name + '_' + theme.name + ".png"
 
-    if os.path.exists(filename):
-        return filename
+    # if os.path.exists(filename):
+    #     return filename
 
     login, password = auth
     client = MongoClient("mongodb://" + login + ":" + password + "@127.0.0.1:27017/seadb")
@@ -282,12 +283,12 @@ def plot_map(auth=("admin", "admin"), port_name="Alicante"):
     )
     # m.etopo(scale=0.5, alpha=0.5)
     # m.drawlsmask(land_color='#80CBC4', ocean_color='#546E7A', lakes=True)
-    m.drawlsmask(land_color='#80CBC4', ocean_color='#263238', lakes=True)
+    m.drawlsmask(land_color=theme.accent, ocean_color=theme.bg, lakes=True)
 
     # Map (long, lat) to (x, y) for plotting
     x, y = m(lon, lat)
-    plt.plot(x, y, 'ok', markersize=3, color="#FFFFFF")
-    plt.text(x + 5, y + 5, port_name, fontsize=12, color="#FFFFFF")
+    plt.plot(x, y, 'ok', markersize=3, color=theme.orange)
+    plt.text(x + 5, y + 5, port_name, fontsize=14, color=theme.orange)
 
     # plt.show()
     plt.savefig(
@@ -297,6 +298,31 @@ def plot_map(auth=("admin", "admin"), port_name="Alicante"):
     )
     plt.close()
     return filename
+
+
+# def recolor_img(path, color):
+#     from PIL import Image, ImageColor
+
+#     old_rgb = list(ImageColor.getrgb('#546E7A'))
+#     old_rgb.append(1)
+#     new_rgb = list(ImageColor.getrgb(color))
+#     new_rgb.append(1)
+
+#     # Open image
+#     img = Image.open(path).convert('RGBA')
+#     pixdata = img.load()
+
+#     for y in range(img.size[1]):
+#         for x in range(img.size[0]):
+#             for alpha in range(1, 256):
+#                 old_rgb[3] = alpha
+#                 old_rba = tuple(old_rgb)
+#                 new_rgb[3] = alpha
+#                 new_rba = tuple(new_rgb)
+#                 if pixdata[x, y] == old_rba:
+#                     pixdata[x, y] = new_rba
+#     img.save(path+'new.png')
+#     return
 
 
 # Used to convert GPS from degrees to decimal

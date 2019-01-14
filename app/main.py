@@ -1,19 +1,24 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow, QSplashScreen
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
+import sys
+import networkx as nx
+
 import loginwindow as lw
 import mainwindow as mw
 import vesselwindow as vw
 import portwindow as pw
 import addwindow as aw
 import delwindow as dw
-import sys
-import networkx as nx
+
+from style import *
 from ut import *
 
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
+        self.theme = Theme(dark=False)
+
         splash_pix = QPixmap('images/icon.png')
         self.splash = QSplashScreen(splash_pix, Qt.WindowStaysOnTopHint)
         self.splash.setMask(splash_pix.mask())
@@ -108,34 +113,34 @@ class MainWindow(QMainWindow):
         self.auth = (self.login, self.pwd)
 
         if try_login(login=self.login, password=self.pwd):
-            self.uiLogin.loginLE.setStyleSheet("border-bottom: 2px solid #53DD6C;")
-            self.uiLogin.pwdLE.setStyleSheet("border-bottom: 2px solid #53DD6C;")
+            self.uiLogin.loginLE.setStyleSheet("border-bottom: 2px solid " + self.theme.green + ";")
+            self.uiLogin.pwdLE.setStyleSheet("border-bottom: 2px solid " + self.theme.green + ";")
             # sleep(1)
             self.startMain(auth=(self.login, self.pwd))
         else:
-            self.uiLogin.loginLE.setStyleSheet("border-bottom: 2px solid #D72638;")
-            self.uiLogin.pwdLE.setStyleSheet("border-bottom: 2px solid #D72638;")
+            self.uiLogin.loginLE.setStyleSheet("border-bottom: 2px solid " + self.theme.red + ";")
+            self.uiLogin.pwdLE.setStyleSheet("border-bottom: 2px solid " + self.theme.red + ";")
 
     def checkPort(self):
         p_name = self.uiMain.ports_line_edit.text()
         if p_name not in self.uiMain.port_list:
-            self.uiMain.ports_line_edit.setStyleSheet("border-bottom: 2px solid #D72638;")
+            self.uiMain.ports_line_edit.setStyleSheet("border-bottom: 2px solid " + self.theme.red + ";")
         else:
             self.splash.show()
             app.processEvents()
             point_map = plot_map(auth=(self.login, self.pwd), port_name=p_name)
-            self.uiMain.ports_line_edit.setStyleSheet("border-bottom: 2px solid #53DD6C;")
+            self.uiMain.ports_line_edit.setStyleSheet("border-bottom: 2px solid " + self.theme.green + ";")
             self.startPort(auth=(self.login, self.pwd), name=self.uiMain.ports_line_edit.text(), img=point_map)
 
     def checkVessel(self):
         p_name = self.uiMain.ships_line_edit.text()
         print('Ship name: ' + self.uiMain.ships_line_edit.text())
         if p_name not in self.uiMain.ship_list:
-            self.uiMain.ships_line_edit.setStyleSheet("border-bottom: 2px solid #D72638;")
+            self.uiMain.ships_line_edit.setStyleSheet("border-bottom: 2px solid " + self.theme.red + ";")
         else:
             self.splash.show()
             app.processEvents()
-            self.uiMain.ships_line_edit.setStyleSheet("border-bottom: 2px solid #53DD6C;")
+            self.uiMain.ships_line_edit.setStyleSheet("border-bottom: 2px solid " + self.theme.green + ";")
             self.startVessel(auth=(self.login, self.pwd), name=self.uiMain.ships_line_edit.text())
 
     def gotoMain(self):

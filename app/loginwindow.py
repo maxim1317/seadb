@@ -15,7 +15,6 @@ from ut import *
 class LoginWindow(QtWidgets.QWidget):
 
     def setupUi(self, LoginWindow):
-        self.style = Style().style
 
         LoginWindow.setObjectName("LoginWindow")
         LoginWindow.resize(680, 448)
@@ -30,10 +29,14 @@ class LoginWindow(QtWidgets.QWidget):
         font.setPointSize(18)
         LoginWindow.setFont(font)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/images/icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("images/icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         LoginWindow.setWindowIcon(icon)
         LoginWindow.setAutoFillBackground(False)
+
+        self.theme = Theme(dark=False)
+        self.style = Style().style
         LoginWindow.setStyleSheet(self.style)
+
         LoginWindow.setTabShape(QtWidgets.QTabWidget.Triangular)
         self.centralwidget = QtWidgets.QWidget(LoginWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -113,7 +116,7 @@ class LoginWindow(QtWidgets.QWidget):
     def retranslateUi(self, LoginWindow):
         _translate = QtCore.QCoreApplication.translate
         LoginWindow.setWindowTitle(_translate("LoginWindow", "Log in"))
-        self.label_4.setText(_translate("LoginWindow", "<html><head/><body><p><img src=\":/images/icon.png\"/></p></body></html>"))
+        self.label_4.setText(_translate("LoginWindow", "<html><head/><body><p><img src=\"./images/icon.png\"/></p></body></html>"))
         self.label_2.setText(_translate("LoginWindow", "Login"))
         self.label_3.setText(_translate("LoginWindow", "Password"))
         self.okPB.setText(_translate("LoginWindow", "OK"))
@@ -141,5 +144,3 @@ class LoginWindow(QtWidgets.QWidget):
         else:
             self.loginLE.setStyleSheet("border-bottom: 2px solid #D72638;")
             self.pwdLE.setStyleSheet("border-bottom: 2px solid #D72638;")
-
-import images_rc

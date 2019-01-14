@@ -771,16 +771,17 @@ class PortWindow(object):
 
         path = "images/plots/" + self.name.replace(" ", "") + ".png"
 
-        if os.path.exists(path):
-            return path
+        # if os.path.exists(path):
+        #     return path
 
-        x = list(self.dates_plot.keys())
-        y = list(self.dates_plot.values())
+        x = [i for i in self.dates_plot.keys()]
+        y = [i / (1000 * 1000) for i in self.dates_plot.values()]
 
         plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%m.%Y'))
         plt.gca().xaxis.set_major_locator(mdates.MonthLocator())
-        plt.ylabel("Turnover", color="#80CBC4")
-        plt.plot(x, y, color="#80CBC4")
+        plt.xlabel("Date", color="#80CBC4")
+        plt.ylabel("Turnover (MT)", color="#80CBC4")
+        plt.plot(x, y, '.', color="#80CBC4")
         plt.gcf().autofmt_xdate()
         [i.set_color("#546E7A") for i in plt.gca().get_xticklabels()]
         [i.set_color("#546E7A") for i in plt.gca().get_yticklabels()]
@@ -788,7 +789,7 @@ class PortWindow(object):
             path,
             transparent=True,
             frameon=False,
-            figsize=(600 / 96, 300 / 96),
+            figsize=(650 / 96, 300 / 96),
             dpi=96
         )
         plt.close()
